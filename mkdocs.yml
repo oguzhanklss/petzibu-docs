@@ -1,0 +1,86 @@
+site_name: Petzibu Docs
+site_description: Petzibu – pet kuaförü salon yönetimi uygulaması ürün dokümantasyonu
+repo_name: petzibu-docs
+docs_dir: docs
+
+theme:
+  name: material
+  language: tr
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: amber
+      toggle:
+        icon: material/weather-night
+        name: Koyu temaya geç
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/weather-sunny
+        name: Açık temaya geç
+  features:
+    - content.code.copy
+    - content.tabs.link
+    - navigation.footer
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.path
+    - navigation.top
+    - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+
+plugins:
+  - search:
+      lang:
+        - tr
+        - en
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Ana Sayfa: index.md
+  - Epic'ler:
+      - Epic Haritası: epics/index.md
+      - E1 · Kurulum & İşletme: epics/01-kurulum-isletme.md
+      - E2 · Müşteri & Hayvan: epics/02-musteri-hayvan.md
+      - E3 · Intake Form: epics/03-intake-form.md
+      - E4 · Takvim & Randevu: epics/04-takvim-randevu.md
+      - E5 · Randevu Operasyonu: epics/05-randevu-operasyonu.md
+      - E6 · Hatırlatmalar: epics/06-hatirlatmalar.md
+      - E7 · Tahsilat & Kasa: epics/07-tahsilat-kasa.md
+      - E8 · Hesap & Veri: epics/08-hesap-veri.md
+  - Kaynaklar:
+      - Rakip Analizi (23 Eylül 2026):
+          - Rakip Analizi v2: resources/2026-09-23-pet-kuafor-rakip-analizi/petzibu-rakip-analizi-v2.md
+          - Rakiplerden Öğrenilecekler: resources/2026-09-23-pet-kuafor-rakip-analizi/petzibu-rakiplerden-ogrenilecekler.md
+          - Türkiye Rakipleri: resources/2026-09-23-pet-kuafor-rakip-analizi/turkey-competitors.md
+          - Rakip Analizi v1 (arşiv): resources/2026-09-23-pet-kuafor-rakip-analizi/petzibu-rakip-analizi-v1.md
+  - Proje Kuralları: rules.md
