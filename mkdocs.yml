@@ -56,6 +56,7 @@ plugins:
       encryption_info_message: "Bu dokümantasyon şifre korumalıdır."
       remember_password: true
       session_storage: true
+      threshold_warning_min_entropy: 0
 
 markdown_extensions:
   - admonition
