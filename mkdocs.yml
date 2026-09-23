@@ -1,6 +1,8 @@
 site_name: Petzibu Docs
+site_url: https://oguzhanklss.github.io/petzibu-docs/
 site_description: Petzibu – pet kuaförü salon yönetimi uygulaması ürün dokümantasyonu
-repo_name: petzibu-docs
+repo_name: oguzhanklss/petzibu-docs
+repo_url: https://github.com/oguzhanklss/petzibu-docs
 docs_dir: docs
 
 theme:
@@ -44,6 +46,16 @@ plugins:
       lang:
         - tr
         - en
+  - encryptcontent:
+      password_inventory:
+        _global: !ENV [DOCUMENTATION_PASSWORD, "changeme"]
+      title_prefix: ""
+      summary: "Bu sayfa şifre korumalı."
+      placeholder: "Şifre"
+      decryption_failure_message: "Şifre yanlış."
+      encryption_info_message: "Bu dokümantasyon şifre korumalıdır."
+      remember_password: true
+      session_storage: true
 
 markdown_extensions:
   - admonition
