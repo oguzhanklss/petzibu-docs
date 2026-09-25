@@ -30,7 +30,8 @@ Out of MVP scope, do not build: staff, roles, shifts, commission/payroll; online
 | Server state       | TanStack Query                                                            |
 | Client state       | Zustand (only for true app-wide UI state)                                 |
 | Forms + validation | React Hook Form + Zod                                                     |
-| Backend            | Own REST API (separate project)                                           |
+| API contract       | `@repo/contracts` — the schemas the API and this app share                |
+| Backend            | `apps/api` in this monorepo (NestJS)                                      |
 | HTTP client        | `fetch` wrapped in `lib/api.ts`                                           |
 | Token storage      | expo-secure-store                                                         |
 | Dates              | date-fns, `tr` locale                                                     |
@@ -50,7 +51,8 @@ src/
     <feature>/          # appointments, customers, pets, services, finance, reports
       api.ts            # Endpoint calls for this feature. Only place that uses lib/api.ts.
       queries.ts        # TanStack Query hooks + query keys
-      schema.ts         # Zod schemas for requests/responses + inferred types
+      schema.ts         # Screen-only derivations (form values). Never entity schemas.
+      labels.ts         # Turkish copy for the contract's enums
       components/
   components/ui/        # Shared primitives: Button, Input, Card, ListItem, Screen
   lib/                  # api.ts, auth-token.ts, session.ts, query-client.ts, format.ts, theme.ts, utils.ts (cn)
@@ -63,13 +65,14 @@ src/
 
 - `lib/api.ts` is the single HTTP client. No direct `fetch` anywhere else.
   - Base URL from `EXPO_PUBLIC_API_URL`.
-  - Attaches the bearer token from `lib/auth-token.ts`.
-  - Throws a typed `ApiError` (status, code, message) on any non-2xx response.
-  - Handles `401` in one place: clear token, route to login.
+  - Attaches the access token from `lib/auth-token.ts`.
+  - Throws a typed `ApiError` (status, code, message, errors) on any non-2xx response.
+  - Handles `401` in one place: refresh once, replay the request, and sign out only if the refresh fails.
 - Flow: component → `queries.ts` hook → `api.ts` function → `lib/api.ts`.
-- Every response is parsed with its Zod schema in `api.ts`. The parsed type is the only type used downstream. No hand-written response interfaces.
-- Tenant is derived by the API from the auth token. The client never sends `business_id` as authority.
-- Token lives only in expo-secure-store. Never in Zustand, AsyncStorage or query cache.
+- Every response is parsed with its contract schema in `api.ts`, wrapped in `unwrap()` or `unwrapPaginated()` from `@repo/contracts`. The parsed type is the only type used downstream. No hand-written response interfaces.
+- Tenant is derived by the API from the auth token. The client never sends `businessId` as authority.
+- Both tokens live only in expo-secure-store. Never in Zustand, AsyncStorage or the query cache.
+- The session shell reads `GET /auth/me` through `useMe()`: business status, onboarding state and pending consents all come from that one call.
 - Mutations invalidate the exact affected query keys. No manual cache patching unless required.
 
 ## State
@@ -85,21 +88,29 @@ src/
 - Primitives come from React Native Reusables, copied into `components/ui/` with `npx @react-native-reusables/cli@latest add <name>` and then owned by us. Variants use `cva`, class merging uses `cn` from `lib/utils.ts`. Text goes through `components/ui/text`, never bare `Text` from react-native outside `components/ui/`.
 - Variants live inside the component in `components/ui/`, not repeated at call sites.
 - Fonts: Poppins everywhere, loaded in the root layout from `lib/fonts.ts`. `font-display` is the heading alias (Poppins SemiBold today). Weight is a family in React Native, so use `font-sans`, `font-sans-medium`, `font-sans-semibold`, `font-sans-bold`, `font-display`. Never `font-medium` / `font-bold`: they fake-bold on Android.
+- Never add `shadow-*`, `animate-*` or `transition-*` classes conditionally (e.g. `selected && 'shadow-sm'`). They set CSS variables or animation state; NativeWind remounts a component that gains them after the first render, and in dev its upgrade warning crashes with a navigation-context error. Give them from the first render or not at all; toggle with `border-*` / `bg-*` instead.
 - Touch targets ≥ 48px. Primary actions reachable one-handed.
 
-## API contract conventions
+## API contract
 
-- Envelope, mirrored from the NestJS base DTOs. Parsed by `lib/api.ts`; features never see the wrapper.
-  - Success: `{ success: true, status, data, message? }` → `envelope(schema)` returns `data`.
-  - List: `{ success: true, status, data: T[], meta }` → `paginated(schema)` returns `{ items, meta }`. `meta` is required: `{ page, limit, total, totalPages, hasNextPage, hasPreviousPage }`. No `count`.
-  - Error (any non-2xx): `{ success: false, status, code, message, errors?: [{ field?, message, code? }] }` → thrown as `ApiError(status, code, message, errors)`. `code` is machine-readable (`NOT_FOUND`, `VALIDATION_FAILED`, `SLOT_TAKEN`); `message` is human text and is never branched on. `errors[].field` maps to form fields via `error.fieldErrors`.
-- List queries use `ListQuery` from `lib/schemas.ts` (`page, limit, orderBy, sortDirection, search, status, dateFrom, dateTo`) and `toQuery()` to build the string. Page-based; `useInfiniteQuery` reads `meta.hasNextPage` / `meta.page`.
-- Date-window lists (the calendar) are not paginated: `dateFrom` + `dateTo`, plain `envelope(z.array(x))`.
-- Shared fragments in `lib/schemas.ts`: `id` (uuid), `timestamps` (`createdAt`, `updatedAt` ISO strings; `deletedAt` never reaches the app), `sortDirection`.
+`@repo/contracts` is the single source of the API contract: entity schemas, request bodies,
+enums, error codes and the envelope. The API builds its DTOs from the same file, so a schema
+copied into this app would be a second source and is not allowed.
+
+- **Import schemas from `@repo/contracts`.** A `features/*/schema.ts` file holds screen-only
+  derivations — form values typed as text, a `sameForAll` toggle — and nothing that crosses
+  the wire. A new field goes into contracts first, then API and mobile in the same PR.
+- Turkish labels for a contract enum live in the feature's `labels.ts`. The contract carries
+  no display copy.
+- Envelope, parsed by `lib/api.ts`; features never see the wrapper.
+  - Success: `{ success: true, status, data, message? }` → `unwrap(schema)` returns `data`.
+  - List: `{ success: true, status, data: T[], meta }` → `unwrapPaginated(schema)` returns `{ items, meta }`. `meta` is required: `{ page, limit, total, totalPages, hasNextPage, hasPreviousPage }`. No `count`.
+  - Error (any non-2xx): `{ success: false, status, code, message, errors?: [{ field?, message, code? }] }` → thrown as `ApiError(status, code, message, errors)`. `code` is machine-readable and listed in `contracts/errors.ts` (`NOT_FOUND`, `VALIDATION_FAILED`, `TENANT_SUSPENDED`…); `message` is human text and is never branched on. `errors[].field` maps to form fields via `error.fieldErrors`.
+- List queries use `ListQuery` from `@repo/contracts` (`page, limit, orderBy, sortDirection, search, dateFrom, dateTo`) plus the endpoint's own filters, and `toQuery()` to build the string. Page-based; `useInfiniteQuery` reads `meta.hasNextPage` / `meta.page`.
+- Date-window lists (the calendar) are not paginated: `dateFrom` + `dateTo`, plain `unwrap(z.array(x))`.
 - Money: integer kuruş in API and code. Format only at display.
-- Time: ISO 8601 UTC strings over the wire. Display in `Europe/Istanbul`.
-- Phone: E.164 (`+905xxxxxxxxx`). Normalized before sending. Phone is the customer lookup key.
-- Appointment status: `pending | confirmed | arrived | completed | no_show | cancelled`, as a Zod enum mirroring the API.
+- Time: absolute moments are UTC ISO 8601 with a `Z`; a salon calendar day is `YYYY-MM-DD` and a salon time is `HH:mm`, both plain strings that are never turned into a `Date`. Display in `Europe/Istanbul`.
+- Phone: E.164 (`+905xxxxxxxxx`). Normalized in the form schema before sending. Phone is the customer lookup key.
 - IDs are opaque strings on the client.
 
 ## Code rules
@@ -114,4 +125,7 @@ src/
 
 ## Not now
 
-Monorepo, shared contract package or client codegen, web app, i18n, offline sync, payments, e-invoice. Revisit sharing schemas with the backend once its stack is chosen and the web booking page (Phase 2) starts.
+Client codegen, i18n, offline sync, payments, e-invoice, the web back office (K47).
+
+The monorepo and the shared contract package are no longer "not now": the app lives in
+`apps/mobile` next to `apps/api`, and schemas come from `@repo/contracts`.

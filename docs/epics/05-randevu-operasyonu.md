@@ -191,7 +191,7 @@ Tam liste için bkz. [README](index.md#alınan-kararlar).
 | Rapor başlatma | Rapor oluşturma isteği, randevu `pending` veya `confirmed` ise sunucuda aynı transaction'da `arrived`'a geçirir. Durum geçiş tablosuna örtük geçiş olarak eklidir. | OPR-04, OPR-01 |
 | Rapor mesajı | Mesaj metnini backend üretir (HAT-02 şablon servisi); OPR-02 yanıtındaki hayvan kartı `reportMessage` alanını taşır. İstemci şablon çözmez. | OPR-04 |
 | Paylaşım | Hayvan başına tek görsel + metin. `expo-sharing` yalnızca dosya paylaştığı için metin React Native `Share` ile verilir; Android'de görsel ve metin ayrı ayrı paylaşılabilir, cihaz testine göre karar. Yeni kütüphane yok. | OPR-04 |
-| Kolaj | İstemcide görünüm yakalama: `react-native-view-shot`, [RULES.md](../../RULES.md) kütüphane tablosuna "görsel birleştirme" satırı olarak eklenir. Çıktı geçici dosyadır, paylaşımdan sonra silinir. | OPR-04 |
+| Kolaj | İstemcide görünüm yakalama: `react-native-view-shot`, [mobil RULES.md](../rules-mobile.md) kütüphane tablosuna "görsel birleştirme" satırı olarak eklenir. Çıktı geçici dosyadır, paylaşımdan sonra silinir. | OPR-04 |
 | Son ziyaret | OPR-02 yanıtında hayvan başına `lastReport` (nullable): `note`, `afterPhotoUrl`, `behavior`; ayrıca `referencePhotoUrl`. Ayrı istek yok. | OPR-02 |
 | Etiket önerisi | İstemci, son iki raporun `behavior` değerinden türetir; saklanmaz. | OPR-04 |
 | Rebook süresi | Sunucu hesaplar ve tamamlama yanıtında `suggestedRebookWeeks` döner (K49: rapor `nextCareWeeks` → son iki tamamlanmış randevu arası → 4). OPR-04 mesaj metni aynı değeri hayvan bazında kullanır (`groomingReport.nextCareWeeks` doluysa o). | OPR-04, OPR-06 |

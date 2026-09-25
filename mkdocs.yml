@@ -90,10 +90,25 @@ nav:
       - E6 · Hatırlatmalar: epics/06-hatirlatmalar.md
       - E7 · Tahsilat & Kasa: epics/07-tahsilat-kasa.md
       - E8 · Hesap & Veri: epics/08-hesap-veri.md
+  - Mimari:
+      - Backend Mimari Dokümanı: architecture/backend-architecture.md
+      - Kararlar (ADR):
+          - ADR Listesi: architecture/decisions/index.md
+          - 0001 · Tek monorepo: architecture/decisions/0001-tek-monorepo.md
+          - 0002 · contracts ve zod: architecture/decisions/0002-contracts-ve-zod.md
+          - 0003 · Servis ve Prisma: architecture/decisions/0003-servis-ve-prisma.md
+          - 0004 · Tenant extension: architecture/decisions/0004-tenant-extension.md
+          - 0005 · argon2id: architecture/decisions/0005-argon2id.md
+          - 0006 · i18n yok: architecture/decisions/0006-i18n-yok.md
+          - 0007 · UUID v7: architecture/decisions/0007-uuid-v7.md
+          - 0008 · Dokümanların kaynağı: architecture/decisions/0008-docs-kaynagi-kod-reposu.md
+      - Boilerplate Geçişi: architecture/boilerplate-migration.md
+  - Kod Kuralları:
+      - Backend (apps/api): rules-backend.md
+      - Mobil (apps/mobile): rules-mobile.md
   - Kaynaklar:
       - Rakip Analizi (23 Eylül 2026):
           - Rakip Analizi v2: resources/2026-09-23-pet-kuafor-rakip-analizi/petzibu-rakip-analizi-v2.md
           - Rakiplerden Öğrenilecekler: resources/2026-09-23-pet-kuafor-rakip-analizi/petzibu-rakiplerden-ogrenilecekler.md
           - Türkiye Rakipleri: resources/2026-09-23-pet-kuafor-rakip-analizi/turkey-competitors.md
           - Rakip Analizi v1 (arşiv): resources/2026-09-23-pet-kuafor-rakip-analizi/petzibu-rakip-analizi-v1.md
-  - Proje Kuralları: rules.md
