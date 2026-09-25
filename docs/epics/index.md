@@ -2,7 +2,6 @@
 
 > Kapsam: Yalnızca **salon sahibi** (owner). Pet sahibi uygulaması yok.
 > Tek müşteriye dönük yüzey: **Intake Form** linki (hesapsız).
-> Durum: Taslak v1.2 · 24 Eylül 2026
 
 Her epic kendi dosyasında yaşar. Story'ler her epic'in **story listesi** tablosunda durumlarıyla takip edilir; bir story bitince orada işaretlenir ve aşağıdaki tabloda epic durumu güncellenir. İlerleme tek yerden, bu tablodan takip edilir.
 
@@ -20,6 +19,21 @@ Her epic kendi dosyasında yaşar. Story'ler her epic'in **story listesi** tablo
 | E8  | [Hesap & Veri](08-hesap-veri.md)               | Yapılacak (story'ler hazır) | Mobil + Web                          | E1         |
 
 Durum değerleri: `Yapılacak` → `Devam ediyor` → `Tamamlandı`
+
+### Story ID önekleri
+
+| Önek | Epic |
+| --- | --- |
+| ADM | [E1 · Kurulum & İşletme](01-kurulum-isletme.md) (ADM-03 [E8](08-hesap-veri.md)'de) |
+| KUR | [E1 · Kurulum & İşletme](01-kurulum-isletme.md) |
+| MUS | [E2 · Müşteri & Hayvan](02-musteri-hayvan.md) |
+| HAY | [E2 · Müşteri & Hayvan](02-musteri-hayvan.md) |
+| INT | [E3 · Intake Form](03-intake-form.md) |
+| RAN | [E4 · Takvim & Randevu](04-takvim-randevu.md) |
+| OPR | [E5 · Randevu Operasyonu](05-randevu-operasyonu.md) |
+| HAT | [E6 · Hatırlatmalar](06-hatirlatmalar.md) |
+| KAS | [E7 · Tahsilat & Kasa](07-tahsilat-kasa.md) |
+| HES | [E8 · Hesap & Veri](08-hesap-veri.md) |
 
 ## Story yazım durumu
 
@@ -43,6 +57,8 @@ Sekiz epic'in story'leri de yazıldı; açık soru kalmadı. Yapılış sırası
 ---
 
 ## Alınan kararlar
+
+Karar metinlerinin tek kaynağı bu tablodur; epic dosyaları ve diğer dokümanlar karara yalnızca numara ve kısa başlıkla atıf verir, metni kopyalamaz.
 
 | # | Karar | Etkisi |
 | --- | --- | --- |

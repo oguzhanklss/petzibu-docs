@@ -4,7 +4,7 @@
 | --------- | --- | ----------- | --------------------------------------------------- |
 | Yapılacak | MVP | Mobil + Web | [E1](01-kurulum-isletme.md) (boyut kademesi tanımı) |
 
-> Story'ler: Kesinleşti v1.5 · 23 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -12,21 +12,22 @@ Müşteri ve hayvan hakkındaki her bilgi tek yerde dursun, saniyeler içinde bu
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K1 | Bir randevu içinde birden fazla hayvan olabilir. Bir müşterinin birden fazla hayvanı olabilir. |
-| K5 | Tüm müşteri ve hayvan kayıtları bir işletmeye aittir. |
-| K12 | Boyut kademesi kilodan önerilir. Sabit eşikler: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
-| K16 | Müşteri başına **tek telefon** vardır ve işletme içinde benzersizdir. İkinci telefon alanı yoktur. |
-| K17 | Hayvan uyarı etiketleri **sabit bir listeden** seçilir. Müşteri etiketleri serbest metindir. |
-| K18 | Aşı için son yapılma tarihi girilir. Geçerlilik bitişi otomatik olarak **son tarih + 12 ay** hesaplanır ve elle düzeltilebilir. |
-| K19 | Hayvan türleri yalnızca **Köpek** ve **Kedi**. |
-| K20 | Hayvan silinmez, **arşivlenir**. Kalıcı silme yalnızca müşteri silme ile olur (E8). |
-| K32 | Satır fiyatı: hayvan + hizmet özel fiyatı varsa o, yoksa kademe fiyatı. Son fiyat yalnızca bilgi. |
-| K35 | Müşteri ve hayvan verisi için veri sorumlusu salon, Petzibu veri işleyen. |
-| K39 | Rebook hatırlatması müşteri bazındadır; arşivlenmemiş hayvan kalmazsa temizlenir. |
+| [K1](index.md#alınan-kararlar) | Bir randevu içinde birden fazla hayvan olabilir. |
+| [K4](index.md#alınan-kararlar) | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat. |
+| [K5](index.md#alınan-kararlar) | Tenant salon sahibi değil, işletmedir. |
+| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
+| [K16](index.md#alınan-kararlar) | Müşteri başına tek telefon vardır ve işletme içinde benzersizdir. |
+| [K17](index.md#alınan-kararlar) | Hayvan uyarı etiketleri sabit bir listeden seçilir. |
+| [K18](index.md#alınan-kararlar) | Aşı için son yapılma tarihi girilir. |
+| [K19](index.md#alınan-kararlar) | Hayvan türleri yalnızca Köpek ve Kedi. |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
+| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı. |
+| [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
+| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil. |
 
 ## Story listesi
 

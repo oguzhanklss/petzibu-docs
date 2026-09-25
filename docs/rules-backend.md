@@ -6,6 +6,7 @@ Backend'in kod kuralları. "Neden" sorusunun cevabı [mimari dokümanda](archite
 
 | Alan | Seçim |
 | --- | --- |
+| Runtime | Node.js 24 (`.nvmrc`), pnpm |
 | Framework | NestJS 11, TypeScript `strict` |
 | ORM | Prisma 7, PostgreSQL 16 |
 | Doğrulama ve sözleşme | Zod 4 + nestjs-zod, `@repo/contracts` |
@@ -18,9 +19,12 @@ Backend'in kod kuralları. "Neden" sorusunun cevabı [mimari dokümanda](archite
 | Public web | Handlebars, sunucu tarafı render |
 | Şifre | argon2id |
 | Log | Winston, `LoggerService` |
+| i18n | Yok; mesajlar Türkçe ve inline (ADR-0006) |
+| API dokümantasyonu | Swagger, nestjs-zod ile şemalardan üretilir |
+| Monorepo | Turborepo + pnpm workspaces |
 | Test | Jest, Supertest, gerçek Postgres |
 
-Başka kütüphane için açık bir sebep gerekir. Alan başına tek kütüphane.
+Başka kütüphane için açık bir sebep gerekir. Alan başına tek kütüphane. Bu tablo yığının **kanonik listesidir**; mimari doküman yığını tekrar etmez, yalnızca seçimlerin gerekçesini anlatır.
 
 ## Klasör yapısı
 

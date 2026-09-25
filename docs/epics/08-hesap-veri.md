@@ -4,7 +4,7 @@
 | --------- | --- | ----------- | --------------------------- |
 | Yapılacak | MVP | Mobil + Web | [E1](01-kurulum-isletme.md) |
 
-> Story'ler: Kesinleşti v1.0 · 24 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -12,20 +12,20 @@ Güven vermek ve yasal gerekliliklere uymak. Owner istediği an verisini alabils
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K10 | Ödeme ve abonelik uygulama dışındadır; iptal talebi yalnızca iletişim açar. |
-| K20 | Hayvan kendi başına silinmez; müşteri silindiğinde hayvan verisi de anonimleştirilir, fotoğrafları silinir. |
-| K34 | Askıda salt okunur; 12 ay sonra silme. Askıda dışa aktarma ve KVKK işlemleri çalışır. |
-| K35 | Owner verisi için veri sorumlusu Petzibu; müşteri ve hayvan verisi için salon, Petzibu veri işleyen. Üç ayrı metin. |
-| K46 | Push yok; bildirim ayarı yok. |
-| K54 | Müşteri silme **tek yoldur: anonimleştirme.** Kişisel veri silinir, randevu ve kasa geçmişi "Silinmiş müşteri" adıyla kalır. Borçlu veya ileri tarihli randevusu olan müşteri silinemez. |
-| K55 | Dışa aktarma **tek Excel dosyasıdır**, dört sayfa: Müşteriler, Hayvanlar, Randevular, Kasa. Backend üretir. |
-| K56 | Tema, dil ve bildirim ayarı **yok**. Dil Türkçe, tema sistemi izler. |
-| K57 | Hesap silme: şifreyle onay, işletme **Silinecek** durumuna geçer (salt okunur), **30 gün** içinde vazgeçilebilir; süre dolunca ADM-02'deki günlük job kalıcı siler. |
-| K58 | Owner metinlerinin (aydınlatma, kullanım koşulları, veri işleme sözleşmesi) yeni sürümü yayınlanınca owner bir sonraki girişte yeniden onaylar. Müşteri metinlerinin yeni sürümü mevcut onayları geçersiz kılmaz; yalnızca yeni formlarda gösterilir. |
+| [K10](index.md#alınan-kararlar) | Ödeme uygulama dışında alınır. |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
+| [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
+| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok. |
+| [K54](index.md#alınan-kararlar) | Müşteri silme tek yoldur: anonimleştirme. |
+| [K55](index.md#alınan-kararlar) | Dışa aktarma tek Excel dosyasıdır, dört sayfa: Müşteriler, Hayvanlar, Randevular, Kasa. |
+| [K56](index.md#alınan-kararlar) | Tema, dil ve bildirim ayarı yok. |
+| [K57](index.md#alınan-kararlar) | Hesap silme şifreyle onaylanır; işletme Silinecek durumuna geçer, 30 gün içinde vazgeçilebilir. |
+| [K58](index.md#alınan-kararlar) | Owner metinlerinin yeni sürümü yayınlanınca owner bir sonraki girişte yeniden onaylar. |
 
 ## Story listesi
 

@@ -4,7 +4,7 @@
 | --------- | --- | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Yapılacak | MVP | Form müşteri tarafında web'de açılır; gönderme, inceleme ve onay tarafı Mobil + Web | [E2](02-musteri-hayvan.md) (müşteri ve hayvan modeli), [E8](08-hesap-veri.md) (KVKK metni), [E5](05-randevu-operasyonu.md) (randevu detayındaki "Formu gönder" butonu) |
 
-> Story'ler: Kesinleşti v1.4 · 23 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -21,21 +21,21 @@ Groomer telefonda müşteriyle konuşurken bir yandan hayvanın ırkını, kilos
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K3 | Gönderim yarı otomatiktir: uygulama hazır WhatsApp mesajını açar, owner gönderir. |
-| K14 | Form, MVP'deki küçük public web yüzeyinde (davet ve şifre sıfırlama sayfalarıyla aynı yerde) çalışır. |
-| K21 | Form Petzibu'nun kendi formudur. Google Forms ürünün parçası değildir; yalnızca ürün öncesi araştırma aracı olarak kullanılabilir. |
-| K22 | İki link türü vardır: işletme başına **genel link** ve müşteriye bağlı **kişiye özel link**. İkisi aynı mekanizmayla çalışır. |
-| K23 | Her form, kaynağı ne olursa olsun, owner **onayından geçmeden** kayıt oluşturmaz veya güncellemez. |
-| K24 | Form **sabit şablondur**. Alan açma/kapama ayarı yoktur (K6'nın yerine geçer). Zorunlu alanlar yalnızca: sahip ad soyad, telefon, hayvan adı, hayvan türü. |
-| K25 | Aşı karnesi fotoğrafı istenmez; yalnızca aşı tarihleri sorulur. Rakip analizi v2 sonrası yeniden teyit edildi; keşif görüşmelerinde ihtiyaç çıkarsa açılır. |
-| K34 | İşletme Askıda iken intake linki kapalıdır. |
-| K35 | Müşteri ve hayvan verisi için veri sorumlusu salon, Petzibu veri işleyen. Formdaki aydınlatma metni işletme bazlıdır. |
-| K46 | Push bildirimi MVP'de yok; yeni form yalnızca rozetle gösterilir. |
-| K48 | İşletme adresi zorunludur; KVKK metnindeki adres her zaman doludur. |
+| [K3](index.md#alınan-kararlar) | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
+| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır. |
+| [K21](index.md#alınan-kararlar) | Intake Form Petzibu'nun kendi formudur. |
+| [K22](index.md#alınan-kararlar) | İki link türü vardır: işletme başına genel link ve müşteriye bağlı kişiye özel link. |
+| [K23](index.md#alınan-kararlar) | Her form, kaynağı ne olursa olsun, owner onayından geçmeden kayıt oluşturmaz veya güncellemez. |
+| [K24](index.md#alınan-kararlar) | Intake Form sabit şablondur. |
+| [K25](index.md#alınan-kararlar) | Aşı karnesi fotoğrafı istenmez; yalnızca aşı tarihleri sorulur. |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
+| [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
+| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok. |
+| [K48](index.md#alınan-kararlar) | İşletme adresi zorunludur. |
 
 ## Story listesi
 

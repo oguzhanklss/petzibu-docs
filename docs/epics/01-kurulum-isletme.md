@@ -4,7 +4,7 @@
 | --------- | --- | --------------- | ---------------- |
 | Yapılacak | MVP | Mobil öncelikli | Yok (temel epic) |
 
-> Story'ler: Kesinleşti v1.5 · 24 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -12,25 +12,26 @@ Owner 5 dakikada uygulamayı kullanmaya hazır olsun.
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K5 | Tenant salon sahibi değil, **işletmedir**. Owner, o işletmenin bir kullanıcısıdır. MVP'de her işletmenin tek kullanıcısı vardır: owner. |
-| K8 | Giriş **e-posta + şifre** ile yapılır. SMS OTP, Google ile giriş ve Apple ile giriş MVP'de yok. |
-| K9 | Uygulamada **kayıt ekranı yok**. İşletme ve owner hesabını Petzibu ekibi açar; owner davet linkiyle şifresini belirler. |
-| K10 | Ödeme **uygulama dışında** alınır. Uygulamada fiyat, abonelik ekranı veya ödemeye yönlendiren bir ifade bulunmaz (App Store 3.1.3(f)). |
-| K11 | Pilot → ücretli geçişte hesap ve veri aynı kalır; yalnızca işletmenin durumu değişir. |
-| K12 | Hizmetlerde boyut kademesi var: küçük / orta / büyük. Kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
-| K13 | Çalışma saatlerinde öğle arası yok. Özel kapalı günler MVP'de var. |
-| K14 | Davet ve şifre sıfırlama linkleri **her zaman web'de** açılır. MVP'de tek amaçlı sayfalardan oluşan küçük bir public web yüzeyi olur: davet kabulü, şifre sıfırlama, intake formu (E3), onay linki (E6). Owner back office'i değildir. Universal link / app link MVP'de yok. |
-| K15 | Onboarding ilerlemesi adım numarası olarak saklanmaz. Sunucuda yalnızca `onboardingCompletedAt` tutulur; eksik adımlar veriden türetilir. |
-| K34 | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda (salt okunur). Ödeme MVP'de manuel; hesabı Petzibu ekibi aktifleştirir. |
-| K35 | Owner verisi için veri sorumlusu Petzibu; müşteri ve hayvan verisi için salon, Petzibu veri işleyen. |
-| K36 | Hizmetin türü vardır: Köpek / Kedi / İkisi. |
-| K47 | Owner web back office ayrı bir React uygulamasıdır; MVP'de önce mobil yapılır. |
-| K48 | İşletme adresi zorunludur. |
-| K57 | Hesap silme işletmeyi **Silinecek** durumuna alır; 30 gün sonra ADM-02'deki günlük job siler. |
+| [K4](index.md#alınan-kararlar) | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat. |
+| [K5](index.md#alınan-kararlar) | Tenant salon sahibi değil, işletmedir. |
+| [K8](index.md#alınan-kararlar) | Giriş e-posta + şifre ile yapılır. |
+| [K9](index.md#alınan-kararlar) | Uygulamada kayıt ekranı yok. |
+| [K10](index.md#alınan-kararlar) | Ödeme uygulama dışında alınır. |
+| [K11](index.md#alınan-kararlar) | Pilot → ücretli geçişte hesap ve veri aynı kalır; yalnızca işletmenin durumu değişir. |
+| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
+| [K13](index.md#alınan-kararlar) | Çalışma saatlerinde öğle arası yok. |
+| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır. |
+| [K15](index.md#alınan-kararlar) | Onboarding ilerlemesi adım numarası olarak saklanmaz. |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
+| [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
+| [K36](index.md#alınan-kararlar) | Hizmetin bir türü vardır: Köpek / Kedi / İkisi. |
+| [K47](index.md#alınan-kararlar) | Owner web back office ayrı bir React uygulamasıdır. |
+| [K48](index.md#alınan-kararlar) | İşletme adresi zorunludur. |
+| [K57](index.md#alınan-kararlar) | Hesap silme şifreyle onaylanır; işletme Silinecek durumuna geçer, 30 gün içinde vazgeçilebilir. |
 
 ## Story listesi
 

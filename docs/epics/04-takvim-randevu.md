@@ -4,7 +4,7 @@
 | --------- | --- | ---------------------------------------------- | ------------------------------------------------------- |
 | Yapılacak | MVP | Mobil + Web (web'de hafta görünümü varsayılan) | [E1](01-kurulum-isletme.md), [E2](02-musteri-hayvan.md) |
 
-> Story'ler: Kesinleşti v1.5 · 23 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -12,22 +12,23 @@ Randevu telefonda, müşteriyi bekletmeden oluşturulabilsin.
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
-| -------- | --- |
-| K1 | Bir randevu bir müşteriye aittir ve içinde **bir veya birden fazla hayvan** bulunur. Her hayvanın altında bir veya birden fazla hizmet satırı vardır. |
-| K4 / K12 | Hizmet fiyatı ve süresi hayvanın boyut kademesinden gelir. |
-| K7 | Tekrarlayan randevu MVP'de yok. |
-| K20 | Arşivlenmiş hayvan randevuya eklenemez. |
-| K26 | **Geçmiş tarihe** randevu girilebilir. Geçmiş tarihli randevu da "Bekliyor" durumunda oluşur. |
-| K27 | İptal edilen randevular takvimde **gizlenir**. "Gelmedi" olarak işaretlenen randevular görünür kalır. |
-| K28 | Başlangıç saati **15 dakikalık** adımlarla seçilir. Bitiş saati hesaplandığı için 5 dakikalık değerlere düşebilir. |
-| K29 | Mobilde hafta görünümü **gün satırlarından oluşan kompakt bir liste**dir. Zaman çizelgesi biçimindeki hafta görünümü yalnızca web'dedir. |
-| K30 | Hayvanlar sırayla yapılır. Randevunun süresi, bütün hizmet satırlarının sürelerinin toplamıdır. |
-| K31 | Uyarılar (çakışma, çalışma saati dışı, kapalı gün) hiçbir zaman kaydı engellemez. |
-| K32 | Satır fiyatı: hayvan + hizmet özel fiyatı varsa o, yoksa kademe fiyatı. Son fiyat yalnızca bilgi. |
-| K36 | Hizmet chip'leri hayvanın türüne göre süzülür (Köpek / Kedi / İkisi). |
+| # | Başlık |
+| --- | --- |
+| [K1](index.md#alınan-kararlar) | Bir randevu içinde birden fazla hayvan olabilir. |
+| [K4](index.md#alınan-kararlar) | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat. |
+| [K7](index.md#alınan-kararlar) | Tekrarlayan randevu MVP'de yok. |
+| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
+| [K26](index.md#alınan-kararlar) | Geçmiş tarihe randevu girilebilir. |
+| [K27](index.md#alınan-kararlar) | İptal edilen randevular takvimde gizlenir. |
+| [K28](index.md#alınan-kararlar) | Başlangıç saati 15 dakikalık adımlarla seçilir. |
+| [K29](index.md#alınan-kararlar) | Mobilde hafta görünümü gün satırlarından oluşan kompakt bir listedir. |
+| [K30](index.md#alınan-kararlar) | Hayvanlar sırayla yapılır; randevunun süresi hizmet satırlarının sürelerinin toplamıdır. |
+| [K31](index.md#alınan-kararlar) | Uyarılar (çakışma, çalışma saati dışı, kapalı gün) hiçbir zaman kaydı engellemez. |
+| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı. |
+| [K36](index.md#alınan-kararlar) | Hizmetin bir türü vardır: Köpek / Kedi / İkisi. |
 
 ## Story listesi
 

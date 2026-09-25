@@ -4,7 +4,7 @@
 | --- | --- | --- | --- |
 | Yapılacak | MVP | Mobil + Web | [E5](05-randevu-operasyonu.md) |
 
-> Story'ler: Kesinleşti v1.2 · 24 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -12,18 +12,18 @@ Kimin ne kadar ödediği ve ne kadar borcu kaldığı her zaman net olsun. Aylı
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K2 | "Fatura" yasal fatura değil; **hizmet dökümü ve tahsilat kaydıdır**. Gelir, tamamlama anında değil **ödeme alındığında** oluşur. |
-| K37 | Tamamlanan randevu geri alınamaz; düzeltmeler döküm üzerinden yapılır. |
-| K41 | Borç tahsilatı, **en eski dökümden başlayarak** dökümlere otomatik dağıtılır. |
-| K42 | Döküm **PDF olarak backend'de** üretilir (mevcut PDF adapter). Mobilde paylaşım menüsüyle, web'de indirme ile paylaşılır. Ayrı bir metin versiyonu yoktur. |
-| K43 | İndirim yalnızca **toplam tutara** uygulanır; tutar veya yüzde olarak girilir. |
-| K44 | Gider kategorileri **sabit listedir**: Malzeme, Kira, Faturalar, Ekipman, Diğer. |
-| K45 | Fiyatlar KDV dahildir; vergi hesaplanmaz. Döküm mali belge değildir ve bunu üzerinde belirtir. |
-| K54 | Silinen (anonimleştirilen) müşterinin dökümleri ve ödemeleri kalır; borçlu müşteri silinemez. |
+| [K2](index.md#alınan-kararlar) | "Fatura", müşteriye gönderilen hizmet dökümü ve tahsilat kaydıdır. |
+| [K37](index.md#alınan-kararlar) | Tamamlanan randevu geri alınamaz. |
+| [K41](index.md#alınan-kararlar) | Borç tahsilatı en eski dökümden başlayarak dökümlere otomatik dağıtılır. |
+| [K42](index.md#alınan-kararlar) | Döküm PDF olarak backend'de üretilir. |
+| [K43](index.md#alınan-kararlar) | İndirim yalnızca toplam tutara uygulanır; tutar veya yüzde. |
+| [K44](index.md#alınan-kararlar) | Gider kategorileri sabit liste: Malzeme, Kira, Faturalar, Ekipman, Diğer. |
+| [K45](index.md#alınan-kararlar) | Fiyatlar KDV dahil; vergi hesaplanmaz. |
+| [K54](index.md#alınan-kararlar) | Müşteri silme tek yoldur: anonimleştirme. |
 
 ## Story listesi
 

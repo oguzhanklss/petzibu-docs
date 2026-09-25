@@ -4,7 +4,7 @@
 | --------- | --- | --------------- | ---------------------------------------------------------- |
 | Yapılacak | MVP | Mobil öncelikli | [E4](04-takvim-randevu.md), [E5](05-randevu-operasyonu.md) |
 
-> Story'ler: Kesinleşti v1.0 · 24 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -16,20 +16,20 @@ Uygulama hiçbir mesajı kendisi göndermez (K3). Her sabah owner'ın önünde b
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K3 | Hatırlatmalar yarı otomatik: kuyruk + tek dokunuşla WhatsApp. Şablonlar Faz 2'de otomatik gönderimde yeniden kullanılır. |
-| K14 | Tek tıkla onay linki public web yüzeyinde açılır. |
-| K20 | Arşivlenmiş hayvan hatırlatma sorgularına girmez. |
-| K34 | İşletme Askıda iken kuyruk üretilmez. |
-| K39 | Rebook hatırlatması müşteri bazındadır (`rebookReminderAt`). |
-| K46 | Push bildirimi MVP'de yok. |
-| K50 | Randevu hatırlatması **1 gün önce 18:00** gider; owner isteğe bağlı ikinci zaman olarak **aynı gün 09:00** açabilir. En fazla iki zaman. Bekliyor ve Onaylandı randevulara gider. |
-| K51 | Kuyruktaki mesaj **WhatsApp açıldığı anda** "gönderildi" sayılır; geri alınabilir. |
-| K52 | **Tek tıkla onay linki MVP'de.** Hesapsız public web sayfası; randevu başlayana kadar geçerli; tıklanınca randevu Onaylandı olur. |
-| K53 | Ayrı aşı hatırlatma mesajı yok. Aşı durumu Bilinmiyor veya Süresi geçmiş ise randevu hatırlatmasına bir satır eklenir. |
+| [K3](index.md#alınan-kararlar) | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
+| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır. |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
+| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil. |
+| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok. |
+| [K50](index.md#alınan-kararlar) | Randevu hatırlatması 1 gün önce 18:00 kuyruğa düşer; ikinci zaman olarak aynı gün 09:00 açılabilir. |
+| [K51](index.md#alınan-kararlar) | Kuyruktaki mesaj WhatsApp açıldığı anda "gönderildi" sayılır; geri alınabilir. |
+| [K52](index.md#alınan-kararlar) | Tek tıkla onay linki MVP'de. |
+| [K53](index.md#alınan-kararlar) | Ayrı aşı hatırlatma mesajı yok. |
 
 ## Story listesi
 

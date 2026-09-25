@@ -13,5 +13,3 @@ Petzibu, Türkiye'deki pet kuaförü salonları için mobil öncelikli, çok kir
 !!! warning "Bu sayfalar üretilmiştir"
     Dokümanların tek kaynağı kod reposudur (`oguzhanklss/petzibu`): `docs/` ağacı ve uygulama kökündeki `RULES.md` dosyaları. Bu repo yalnızca yayın kabuğudur — buradaki içerik dosyalarını elle düzenleme, bir sonraki kopyalamada kaybolur. Bir kararı değiştiren PR dokümanı da taşır (ADR-0008).
 
-!!! note "Geçiş sürüyor"
-    `apps/api` bir boilerplate'ten dönüştürülüyor. Kodun mimari dokümanın neresinde olduğu [Boilerplate Geçişi](architecture/boilerplate-migration.md) belgesinde takip edilir; o belge kapanınca silinecek.

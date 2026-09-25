@@ -1,9 +1,7 @@
 # Petzibu – Backend Mimari Dokümanı
 
-> Durum: Taslak v1.2 · 25 Eylül 2026
 > Kapsam: `apps/api` (NestJS + Prisma + PostgreSQL) ve monorepo düzeni.
 > İlgili: [Epic'ler](../epics/index.md) · [Backend kuralları](../rules-backend.md) · [Mobil kuralları](../rules-mobile.md) · [ADR'ler](decisions/index.md)
-> Geçiş durumu: boilerplate'ten bu mimariye geçiş [boilerplate-migration.md](boilerplate-migration.md) dosyasında takip edilir. Kod o belge kapanana kadar bu dokümanın gerisindedir.
 
 Bu belge backend'in nasıl kurulduğunu ve hangi kurallarla büyüyeceğini tanımlar. Ürün kararları (K1–K58) epic dosyalarında yaşar; burada yalnızca mimariyi etkileyenlere atıf yapılır.
 
@@ -25,25 +23,7 @@ Petzibu **tek bir NestJS uygulaması** olarak çalışır. Tek süreç, tek Post
 
 ## 2. Teknoloji yığını
 
-| Alan | Seçim | Not |
-| --- | --- | --- |
-| Runtime | Node.js LTS, TypeScript (strict) | |
-| Framework | NestJS | |
-| ORM | Prisma | Şema modül bazında dosyalara bölünür (§5.1) |
-| Veritabanı | PostgreSQL | |
-| Doğrulama ve sözleşme | Zod 4 + nestjs-zod | Tek kaynak: `packages/contracts` (§6) |
-| Env doğrulaması | Zod | Aynı kütüphane, ayrı şema (§11.2) |
-| Şifre hash | argon2id (`argon2`) | §7.1 |
-| i18n | Yok | Mesajlar Türkçe ve inline; istemci `message`'a göre dallanmaz (§6.3) |
-| Request context | nestjs-cls | Tenant ve transaction bağlamı (§5.2, §5.3) |
-| Transaction | `@nestjs-cls/transactional` + Prisma adapter | |
-| Kuyruk ve zamanlanmış işler | BullMQ + Redis | §8 |
-| Dosya | S3 uyumlu depolama (yerelde MinIO) | Presigned URL (§9) |
-| E-posta | Boilerplate `mail` modülü | Davet, şifre sıfırlama, askı uyarısı |
-| PDF / Excel | Boilerplate `document-generator` modülü | K42, K55 |
-| Public web | NestJS view engine (Handlebars) | K14 (§10) |
-| API dokümantasyonu | Swagger, zod şemalarından üretilir | |
-| Monorepo | Turborepo + pnpm workspaces | §3 |
+Yığının kanonik listesi [backend kurallarında](../rules-backend.md#stack) durur; burada tekrar edilmez. Bu doküman yalnızca **mimari gerekçesi olan** seçimleri kendi bölümlerinde anlatır: monorepo düzeni ve `packages/contracts`'ın paylaşımı §3, Prisma şemasının modül başına bölünmesi §5.1, tenant ve transaction bağlamı (nestjs-cls) §5.2 ve §5.3, Zod tabanlı API sözleşmesi ve Swagger üretimi §6 (hata modeli ve i18n'in neden olmadığı §6.3), argon2id §7.1, BullMQ ile arka plan işleri §8, S3 dosyaları ile döküm PDF'i ve dışa aktarma Excel'i §9, Handlebars ile public web §10, env doğrulaması §11.2.
 
 ---
 

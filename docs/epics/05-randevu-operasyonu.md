@@ -4,7 +4,7 @@
 | --- | --- | --- | --- |
 | Yapılacak | MVP | Mobil öncelikli | [E4](04-takvim-randevu.md) |
 
-> Story'ler: Kesinleşti v1.3 · 24 Eylül 2026
+> Story'ler: Kesinleşti
 
 ## Amaç
 
@@ -12,22 +12,22 @@ Müşterinin salona gelişinden bakımın bitişine kadar olan süreç akıcı o
 
 ## Bu epic'i etkileyen kararlar
 
-Tam liste için bkz. [README](index.md#alınan-kararlar).
+Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Karar |
+| # | Başlık |
 | --- | --- |
-| K1 | Randevu içinde birden fazla hayvan olabilir; her hayvanın kendi hizmet satırları ve bakım raporu vardır. |
-| K2 | Tamamlama gelir oluşturmaz; gelir yalnızca tahsilatta oluşur (E7). |
-| K3 | Bakım raporu ve mesajlar yarı otomatik gönderilir (paylaşım menüsü / WhatsApp). |
-| K26 | Geçmiş tarihli randevu girilebilir. |
-| K32 | Satır fiyatı: hayvan + hizmet özel fiyatı varsa o, yoksa kademe fiyatı. |
-| K33 | Önce/sonra kolajı telefonda, paylaşım anında üretilir; saklanmaz. Paylaşım hayvan başınadır. |
-| K37 | Tamamlanan randevu **geri alınamaz**. Tutar ve kalem düzeltmeleri E7'deki döküm üzerinden yapılır. |
-| K38 | "Geldi" adımı **atlanabilir**: Bekliyor veya Onaylandı durumundaki randevu doğrudan tamamlanabilir (geçmiş tarihli randevular dahil). |
-| K39 | Rebook hatırlatması **müşteri bazındadır**; hayvan bazında değildir. |
-| K40 | Bakım raporu tamamlama akışından **bağımsızdır**; zorunlu bir adım değildir. |
-| K49 | Rebook süresi tek kuralla: hayvanın son raporundaki öneri → müşterinin son iki tamamlanmış randevusu arası → 4 hafta. |
-| K52 | Tek tıkla onay linki `pending → confirmed` geçişini kullanır (HAT-05). |
+| [K1](index.md#alınan-kararlar) | Bir randevu içinde birden fazla hayvan olabilir. |
+| [K2](index.md#alınan-kararlar) | "Fatura", müşteriye gönderilen hizmet dökümü ve tahsilat kaydıdır. |
+| [K3](index.md#alınan-kararlar) | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
+| [K26](index.md#alınan-kararlar) | Geçmiş tarihe randevu girilebilir. |
+| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı. |
+| [K33](index.md#alınan-kararlar) | Önce/sonra kolajı telefonda, paylaşım anında üretilir; saklanmaz. |
+| [K37](index.md#alınan-kararlar) | Tamamlanan randevu geri alınamaz. |
+| [K38](index.md#alınan-kararlar) | "Geldi" adımı atlanabilir. |
+| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil. |
+| [K40](index.md#alınan-kararlar) | Bakım raporu tamamlama akışından bağımsızdır; zorunlu adım değildir. |
+| [K49](index.md#alınan-kararlar) | Rebook süresi tek kuralla belirlenir: son rapordaki öneri, yoksa son iki randevu arasındaki süre, yoksa 4 hafta. |
+| [K52](index.md#alınan-kararlar) | Tek tıkla onay linki MVP'de. |
 
 ## Story listesi
 
