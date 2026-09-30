@@ -12,6 +12,7 @@ Sapmanın nedeni yapısaldır: bir epic kararı koda dokunan bir PR'da değişir
 
 - Bütün dokümanların **tek kaynağı** kod reposudur: `docs/` (epic'ler, mimari, ADR'ler, kaynaklar) ve uygulama kökündeki `RULES.md` dosyaları. Bir kararın değiştiği PR dokümanı da taşır.
 - `petzibu-docs` yalnızca **yayın kabuğudur**: `mkdocs.yml`, tema, `requirements.txt`, giriş sayfası ve deploy workflow'u. İçerik dosyası tutmaz.
+- **Sprint dokümanları bu kuralın dışındadır.** `docs/sprints/` yalnızca kod reposunda yaşar: kopyalanmaz ve `nav`'a girmez. Sprintler günlük çalışma takibidir; ürün kararı değil, koşu defteridir ve yayınlanacak bir kitlesi yoktur. Sprint sırasında alınan ürün kararı epic dosyasına yazılır, oradan siteye çıkar.
 - Kopyalama yönü **çekmedir**: `petzibu-docs`'un deploy workflow'u build sırasında kod reposunu checkout eder, `docs/` ağacını ve `RULES.md` dosyalarını `docs/` altına kopyalar, sonra `mkdocs build` çalıştırır. Kod reposu docs reposuna yazmaz.
 - Kod reposu özel olduğu için workflow'a yalnızca okuma yetkisi olan bir token (`PETZIBU_REPO_TOKEN`) verilir.
 
@@ -23,4 +24,5 @@ Sapmanın nedeni yapısaldır: bir epic kararı koda dokunan bir PR'da değişir
 - Kod reposundaki bir doküman herkese açık olmayabilir. Site şifre korumalıdır (`encryptcontent`), ama yayına girmemesi gereken bir dosya `nav` dışında bırakılır.
 - Mobil ve backend kuralları siteye `rules-mobile.md` ve `rules-backend.md` olarak çıkar; kaynakları `apps/mobile/RULES.md` ve `apps/api/RULES.md`'dir.
 - Bazı göreli yollar iki ağaçta aynı olamaz: `docs/architecture/backend-architecture.md` depoda `../rules-backend.md`'ye, sitede `../rules-backend.md`'ye bakar. Kopyalama adımı bu dönüşümü yapar ve listeyi kısa tutar; kaynak depoda doğru kalır. Aynı şekilde `decisions/index.md` sitede `decisions/index.md` olur (MkDocs bölüm girişini böyle bekler).
+- Kopyalanmayan tek ağaç `docs/sprints/`'tir; script bunu açıkça yazar. Çekme workflow'u kurulurken aynı istisna oraya da taşınır.
 - Kopyalama bugün `scripts/sync-docs.sh` ile **elle** çalıştırılır. Çekme workflow'u kurulana kadar site, script en son ne zaman çalıştıysa o kadar günceldir.

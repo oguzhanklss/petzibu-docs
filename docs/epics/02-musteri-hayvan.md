@@ -2,7 +2,7 @@
 
 | Durum     | Faz | Platform    | Bağımlılık                                          |
 | --------- | --- | ----------- | --------------------------------------------------- |
-| Yapılacak | MVP | Mobil + Web | [E1](01-kurulum-isletme.md) (boyut kademesi tanımı) |
+| Devam ediyor | MVP | Mobil + Web | [E1](01-kurulum-isletme.md) (boyut kademesi tanımı) |
 
 > Story'ler: Kesinleşti
 
@@ -14,38 +14,40 @@ Müşteri ve hayvan hakkındaki her bilgi tek yerde dursun, saniyeler içinde bu
 
 Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Başlık |
-| --- | --- |
-| [K1](index.md#alınan-kararlar) | Bir randevu içinde birden fazla hayvan olabilir. |
-| [K4](index.md#alınan-kararlar) | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat. |
-| [K5](index.md#alınan-kararlar) | Tenant salon sahibi değil, işletmedir. |
-| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
-| [K16](index.md#alınan-kararlar) | Müşteri başına tek telefon vardır ve işletme içinde benzersizdir. |
-| [K17](index.md#alınan-kararlar) | Hayvan uyarı etiketleri sabit bir listeden seçilir. |
-| [K18](index.md#alınan-kararlar) | Aşı için son yapılma tarihi girilir. |
-| [K19](index.md#alınan-kararlar) | Hayvan türleri yalnızca Köpek ve Kedi. |
-| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
-| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı. |
+| #                               | Başlık                                                                                                         |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| [K1](index.md#alınan-kararlar)  | Bir randevu içinde birden fazla hayvan olabilir.                                                               |
+| [K4](index.md#alınan-kararlar)  | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat.                                  |
+| [K5](index.md#alınan-kararlar)  | Tenant salon sahibi değil, işletmedir.                                                                         |
+| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg.                               |
+| [K16](index.md#alınan-kararlar) | Müşteri başına tek telefon vardır ve işletme içinde benzersizdir.                                              |
+| [K17](index.md#alınan-kararlar) | Hayvan uyarı etiketleri sabit bir listeden seçilir.                                                            |
+| [K18](index.md#alınan-kararlar) | Aşı için son yapılma tarihi girilir.                                                                           |
+| [K19](index.md#alınan-kararlar) | Hayvan türleri yalnızca Köpek ve Kedi.                                                                         |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir.                                                                                   |
+| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı.                              |
 | [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
-| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil. |
+| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil.                                                  |
 
 ## Story listesi
 
 İlerleme bu tablodan takip edilir. Durum: `Yapılacak` → `Devam ediyor` → `Tamamlandı`.
 
+Backend tarafı BS2'de kapandı; story'leri `Tamamlandı`ya mobil sprint (MS2) taşır. MUS-06'nın backend işi yok. Randevuya bağlı alanlar (son ziyaret, "Yeni" rozeti, sayaçlar, randevu listesi, arşiv kilidi) E4 gelene kadar sözleşmedeki boş hâlleriyle dönüyor.
+
 | ID     | Başlık                              | Platform        | Durum     |
 | ------ | ----------------------------------- | --------------- | --------- |
-| MUS-01 | Müşteri listesi ve arama            | Mobil + Web     | Yapılacak |
-| MUS-02 | Müşteri ekleme                      | Mobil + Web     | Yapılacak |
-| MUS-03 | Rehberden içe aktarma               | Mobil           | Yapılacak |
-| MUS-04 | Müşteri detayı                      | Mobil + Web     | Yapılacak |
-| MUS-05 | Müşteri düzenleme, etiketler ve not | Mobil + Web     | Yapılacak |
+| MUS-01 | Müşteri listesi ve arama            | Mobil + Web     | Devam ediyor |
+| MUS-02 | Müşteri ekleme                      | Mobil + Web     | Devam ediyor |
+| MUS-03 | Rehberden içe aktarma               | Mobil           | Devam ediyor |
+| MUS-04 | Müşteri detayı                      | Mobil + Web     | Devam ediyor |
+| MUS-05 | Müşteri düzenleme, etiketler ve not | Mobil + Web     | Devam ediyor |
 | MUS-06 | Hızlı iletişim                      | Mobil + Web     | Yapılacak |
-| HAY-01 | Hayvan ekleme ve düzenleme          | Mobil + Web     | Yapılacak |
-| HAY-02 | Uyarı etiketleri                    | Mobil + Web     | Yapılacak |
-| HAY-03 | Aşı takibi                          | Mobil + Web     | Yapılacak |
-| HAY-04 | Fotoğraf geçmişi                    | Mobil öncelikli | Yapılacak |
-| HAY-05 | Hayvanı arşivleme                   | Mobil + Web     | Yapılacak |
+| HAY-01 | Hayvan ekleme ve düzenleme          | Mobil + Web     | Devam ediyor |
+| HAY-02 | Uyarı etiketleri                    | Mobil + Web     | Devam ediyor |
+| HAY-03 | Aşı takibi                          | Mobil + Web     | Devam ediyor |
+| HAY-04 | Fotoğraf geçmişi                    | Mobil öncelikli | Devam ediyor |
+| HAY-05 | Hayvanı arşivleme                   | Mobil + Web     | Devam ediyor |
 
 ---
 
@@ -66,8 +68,8 @@ _Salon sahibi olarak müşterilerimi isim, telefon veya hayvan adıyla arayabilm
 - Arama Türkçe karakterlere ve büyük/küçük harfe duyarsızdır: "sukru" yazınca "Şükrü" bulunur.
 - Filtre chip'leri: Tümü / Köpek / Kedi / Borçlu. "Borçlu" filtresi E7 hazır olunca görünür.
 - Web'de liste tablo olarak gösterilir: ad, hayvanlar, telefon, toplam ödeme, randevu sayısı, yaklaşan randevu. Kolonlar sıralanabilir.
-**MUS-02 · Müşteri ekleme** · Mobil + Web
-_Salon sahibi olarak yeni müşteriyi yalnızca ad ve telefonla, 10 saniyede ekleyebilmek istiyorum._
+  **MUS-02 · Müşteri ekleme** · Mobil + Web
+  _Salon sahibi olarak yeni müşteriyi yalnızca ad ve telefonla, 10 saniyede ekleyebilmek istiyorum._
 
 - Zorunlu alanlar: ad soyad (tek alan) ve telefon.
 - Telefon Türkiye formatında doğrulanır ve "+90" ön ekiyle saklanır.
@@ -75,8 +77,8 @@ _Salon sahibi olarak yeni müşteriyi yalnızca ad ve telefonla, 10 saniyede ekl
 - İsteğe bağlı **"Eski borç"** alanı: girilirse müşteri için randevusuz bir açılış dökümü oluşur (KAS-01). E7 hazır olana kadar alan gizlidir.
 - Müşteri eklendikten sonra "Hayvan ekle" adımı önerilir, ama atlanabilir.
 - Randevu formundan da müşteri eklenebilir (RAN-02). Orada telefon alanına yazılmış numara, yeni müşteri formuna dolu gelir.
-**MUS-03 · Rehberden içe aktarma** · Mobil
-_Salon sahibi olarak telefon rehberimdeki müşterileri seçip aktarabilmek istiyorum, böylece ilk gün sıfırdan başlamam._
+  **MUS-03 · Rehberden içe aktarma** · Mobil
+  _Salon sahibi olarak telefon rehberimdeki müşterileri seçip aktarabilmek istiyorum, böylece ilk gün sıfırdan başlamam._
 
 - Rehber izni yalnızca bu ekran açıldığında istenir.
 - Kişiler tek tek seçilir. **"Tümünü seç" seçeneği yoktur ve hiçbir kişi varsayılan olarak seçili gelmez** (Apple 5.1.2(v), KVKK).
@@ -86,8 +88,8 @@ _Salon sahibi olarak telefon rehberimdeki müşterileri seçip aktarabilmek isti
 - Numarası Türkiye formatına çevrilemeyen kişiler seçilemez ve nedeni gösterilir.
 - Aktarım sonunda "12 müşteri eklendi" özeti gösterilir.
 - Rehber izni verilmezse ekran bunu açıklar ve müşteri elle eklenebilir.
-**MUS-04 · Müşteri detayı** · Mobil + Web
-_Salon sahibi olarak müşteriyi açtığımda onu tek ekranda tanımak istiyorum: ne kadar değerli, ne kadar riskli, hangi hayvanları var._
+  **MUS-04 · Müşteri detayı** · Mobil + Web
+  _Salon sahibi olarak müşteriyi açtığımda onu tek ekranda tanımak istiyorum: ne kadar değerli, ne kadar riskli, hangi hayvanları var._
 
 - Üst blok: ad, telefon, etiketler, ara ve WhatsApp butonları (MUS-06).
 - Müşteri bakım riski onayını (INT-03) hiç vermemişse üst blokta küçük bir "Bakım onayı yok" işareti görünür; dokununca "Formu gönder" (INT-02) açılır. Telefonla eklenen müşteriler bu işaretle başlar.
@@ -104,16 +106,16 @@ _Salon sahibi olarak müşteriyi açtığımda onu tek ekranda tanımak istiyoru
 - Hayvanlar bölümü: yatay kartlar ve sonda "+ Hayvan ekle" kartı. Aşı sorunu veya uyarı etiketi olan hayvanın kartında ikon görünür. Arşivlenen hayvanlar ayrı bir "Arşiv" bölümünde, kapalı halde durur.
 - Randevular bölümü: önce yaklaşanlar, sonra geçmiştekiler (tarih, hayvanlar, hizmetler, tutar, durum).
 - Not alanı (MUS-05) bu ekranda görünür.
-**MUS-05 · Müşteri düzenleme, etiketler ve not** · Mobil + Web
-_Salon sahibi olarak müşteri bilgilerini düzenleyebilmek, "VIP", "Pazarlık yapar" gibi etiketler ve serbest not ekleyebilmek istiyorum._
+  **MUS-05 · Müşteri düzenleme, etiketler ve not** · Mobil + Web
+  _Salon sahibi olarak müşteri bilgilerini düzenleyebilmek, "VIP", "Pazarlık yapar" gibi etiketler ve serbest not ekleyebilmek istiyorum._
 
 - Ad ve telefon düzenlenebilir. Telefon değişirken de benzersizlik kuralı geçerlidir.
 - Açılış dökümü yoksa "Eski borç" buradan da girilebilir; varsa düzenleme döküm üzerinden yapılır (KAS-02).
 - Etiketler serbest metinle girilir. İşletmede daha önce kullanılmış etiketler öneri olarak gösterilir.
 - Etiketler müşteri listesinde ve randevu detayındaki müşteri kartında (OPR-02) görünür.
 - Not alanı tek ve serbest metindir; müşteriye ait genel bilgiler içindir (ör. "Öğleden sonra aranmayı tercih ediyor").
-**MUS-06 · Hızlı iletişim** · Mobil + Web
-_Salon sahibi olarak müşteri kartından tek dokunuşla arama yapabilmek veya WhatsApp'ı açabilmek istiyorum._
+  **MUS-06 · Hızlı iletişim** · Mobil + Web
+  _Salon sahibi olarak müşteri kartından tek dokunuşla arama yapabilmek veya WhatsApp'ı açabilmek istiyorum._
 
 - "Ara" butonu telefonun arama ekranını numara dolu olarak açar.
 - "WhatsApp" butonu bu numarayla boş bir sohbet açar.
@@ -139,8 +141,8 @@ _Salon sahibi olarak bir müşteriye birden fazla hayvan ekleyebilmek ve bilgile
 - **Özel fiyatlar** (K32): hayvan profilinde hayvan + hizmet bazında sabitlenmiş fiyatlar listelenir (ör. "Tıraş · 500 ₺"). Buradan kaldırılabilir. Yeni özel fiyat randevu formundan "Paşa için bu fiyatı sabitle" ile eklenir (RAN-02); profilden doğrudan eklenmez.
 - Yaş, doğum yılından hesaplanıp gösterilir ("4 yaş").
 - Uyarı etiketleri (HAY-02) ve aşı bilgileri (HAY-03) aynı formda düzenlenir (tasarım 17).
-**HAY-02 · Uyarı etiketleri** · Mobil + Web
-_Salon sahibi olarak "Isırır", "Ağızlık" gibi uyarıları hayvana etiketleyebilmek istiyorum, böylece bu uyarılar takvimde ve randevu detayında her zaman görünür._
+  **HAY-02 · Uyarı etiketleri** · Mobil + Web
+  _Salon sahibi olarak "Isırır", "Ağızlık" gibi uyarıları hayvana etiketleyebilmek istiyorum, böylece bu uyarılar takvimde ve randevu detayında her zaman görünür._
 
 - Etiketler sabit bir listeden, ikonlarıyla seçilir (K17):
   - Isırır
@@ -154,8 +156,8 @@ _Salon sahibi olarak "Isırır", "Ağızlık" gibi uyarıları hayvana etiketley
 - Bir hayvana birden fazla etiket eklenebilir.
 - Etiketler takvim bloğunda ikon olarak (RAN-01), randevu detayında uyarı şeridi olarak (OPR-02) gösterilir.
 - Etiketin detaylı açıklaması huy ve sağlık notu alanlarına yazılır.
-**HAY-03 · Aşı takibi** · Mobil + Web
-_Salon sahibi olarak kuduz ve karma aşılarının tarihlerini girebilmek ve süresi geçmek üzere olan veya geçmiş aşılar için uyarılmak istiyorum._
+  **HAY-03 · Aşı takibi** · Mobil + Web
+  _Salon sahibi olarak kuduz ve karma aşılarının tarihlerini girebilmek ve süresi geçmek üzere olan veya geçmiş aşılar için uyarılmak istiyorum._
 
 - Takip edilen aşılar: kuduz ve karma.
 - Her aşı için son yapılma tarihi girilir. Geçerlilik bitişi otomatik olarak son tarih + 12 ay hesaplanır ve elle düzeltilebilir (K18).
@@ -168,8 +170,8 @@ _Salon sahibi olarak kuduz ve karma aşılarının tarihlerini girebilmek ve sü
 - Aşı durumu hayvan profilinde, randevu detayında ve randevu formunda gösterilir (tasarım 16, 18, 22).
 - Aşı sorunu hiçbir durumda randevuyu engellemez; yalnızca uyarı verir.
 - Aşı süresi dolma hatırlatması E6'da ele alınır.
-**HAY-04 · Fotoğraf geçmişi** · Mobil öncelikli
-_Salon sahibi olarak her bakımın fotoğraflarının hayvanın profilinde tarihli olarak birikmesini istiyorum, böylece müşteri "geçen seferki gibi" dediğinde fotoğrafa bakarak yaparım._
+  **HAY-04 · Fotoğraf geçmişi** · Mobil öncelikli
+  _Salon sahibi olarak her bakımın fotoğraflarının hayvanın profilinde tarihli olarak birikmesini istiyorum, böylece müşteri "geçen seferki gibi" dediğinde fotoğrafa bakarak yaparım._
 
 - Bakım raporundaki önce/sonra fotoğrafları (OPR-04) otomatik olarak geçmişe eklenir.
 - Galeriden veya kameradan elle de fotoğraf eklenebilir.
@@ -178,8 +180,8 @@ _Salon sahibi olarak her bakımın fotoğraflarının hayvanın profilinde tarih
 - Bir fotoğraf **referans** olarak işaretlenebilir ("Böyle kesilsin"). Hayvan başına en fazla bir referans; profilde sabit görünür ve randevu detayındaki hayvan kartında gösterilir (E5).
 - Fotoğraflar yüklenmeden önce sıkıştırılır.
 - Web'de fotoğraflar görüntülenebilir; fotoğraf ekleme yalnızca mobilde.
-**HAY-05 · Hayvanı arşivleme** · Mobil + Web
-_Salon sahibi olarak artık gelmeyen veya vefat eden bir hayvanı arşivleyebilmek istiyorum, böylece müşteriye yanlış bir hatırlatma gitmez ama geçmiş kayıtları kaybolmaz._
+  **HAY-05 · Hayvanı arşivleme** · Mobil + Web
+  _Salon sahibi olarak artık gelmeyen veya vefat eden bir hayvanı arşivleyebilmek istiyorum, böylece müşteriye yanlış bir hatırlatma gitmez ama geçmiş kayıtları kaybolmaz._
 
 - Arşivlenen hayvan için yeni randevu oluşturulamaz ve aşı hatırlatması gönderilmez.
 - Rebook hatırlatması müşteri bazındadır (K39). Müşterinin arşivlenmemiş hayvanı kalmazsa `rebookReminderAt` temizlenir; en az bir hayvanı kalıyorsa rebook hatırlatması etkilenmez.
@@ -205,41 +207,41 @@ _Salon sahibi olarak artık gelmeyen veya vefat eden bir hayvanı arşivleyebilm
 
 ## Teknik notlar
 
-| Konu | Karar | Story |
-| ------------------ | --- | ---------------------- |
-| Müşteri adı | Tek alan: `name` (ad soyad). Ayrı ad/soyad yok. | MUS-02, MUS-03, MUS-05 |
-| Telefon formatı | Tüm telefonlar E.164 formatında (`+905551234567`) saklanır. Benzersizlik bu normalize değer üzerinden kontrol edilir. | MUS-02, MUS-03, MUS-05 |
-| Arama | Arama; ad, hayvan adı ve normalize telefon üzerinde yapılır. Türkçe karakterler aramadan önce sadeleştirilir (ş→s, ı→i, ğ→g vb.). | MUS-01 |
-| Alfabetik sıralama | Harf gruplama ve sıralama Türkçe alfabeye göre yapılır (Ç, Ş, İ yerli yerinde). `localeCompare(..., 'tr')`. | MUS-01 |
-| Aşı verisi | Aşı kaydında `lastDate` ve `validUntil` saklanır. `validUntil` varsayılan olarak `lastDate + 12 ay` ile doldurulur. Durum saklanmaz, `validUntil` ile bugünün tarihinden hesaplanır. | HAY-03 |
-| Aşı renkleri | Story'deki hex değerler tasarım referansıdır. Kodda token kullanılır (`global.css` / `tailwind.config.js`); yeni token gerekiyorsa orada tanımlanır. | HAY-03 |
-| Uyarı etiketleri | Sabit liste istemcide ve API'de enum olarak tanımlanır. | HAY-02 |
-| Boyut kademesi | `sizeTier` hayvanda nullable. Kademe boşken randevu formu sorar (RAN-02). | HAY-01 |
-| Özel fiyat | `petServicePrice` (`petId`, `serviceId`, `price`); hayvan + hizmet başına en fazla bir kayıt. Hizmet pasife alınınca kayıt kalır, görünmez. | HAY-01 |
-| Referans fotoğrafı | Fotoğrafta `isReference` bayrağı; hayvan başına en fazla bir true. | HAY-04 |
-| Arşiv | Hayvanda `archivedAt` alanı. Randevu oluşturma ve hatırlatma sorguları arşivlenmiş hayvanları dışarıda bırakır. Arşivleme isteği, müşterinin arşivlenmemiş hayvanı kalmıyorsa aynı transaction'da `customer.rebookReminderAt` alanını boşaltır. | HAY-05 |
-| Rehber | Rehbere yalnızca MUS-03 ekranında erişilir; izin reddedilirse uygulama akışı bozulmaz. `expo-contacts` eklenir; Expo Go'da çalışır. | MUS-03 |
-| Hızlı iletişim | `tel:` ve `whatsapp://send?phone=` şemaları; WhatsApp yoksa ve web'de `https://wa.me/`. Yeni kütüphane gerekmez. | MUS-06 |
-| Fotoğraf | Yüklemeden önce istemcide sıkıştırılır (`expo-image-manipulator`). Yükleme kendi API'ye **multipart** ile yapılır; `lib/api.ts`'e multipart desteği eklenir, backend dosyayı alıp depolar. Presigned URL yok. | HAY-04, HAY-01 |
-| Liste alanları | `lastVisitAt` (nullable) ve `isNew` müşteri listesi yanıtında yer alır. E4 öncesi `lastVisitAt` boş, `isNew` true gelir. Alan adları E4 teknik notlarıyla aynıdır. | MUS-01 |
-| Arşiv kilidi | Arşivleme isteği, ileri tarihli Bekliyor/Onaylandı randevu varsa `409 PET_HAS_UPCOMING_APPOINTMENTS` ile reddedilir ve yanıt randevu listesini taşır. İstemci de aynı kontrolü butonu pasifleştirmek için yapar. | HAY-05 |
+| Konu               | Karar                                                                                                                                                                                                                                           | Story                  |
+| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Müşteri adı        | Tek alan: `name` (ad soyad). Ayrı ad/soyad yok.                                                                                                                                                                                                 | MUS-02, MUS-03, MUS-05 |
+| Telefon formatı    | Tüm telefonlar E.164 formatında (`+905551234567`) saklanır. Benzersizlik bu normalize değer üzerinden kontrol edilir.                                                                                                                           | MUS-02, MUS-03, MUS-05 |
+| Arama | Arama; ad, hayvan adı ve telefon üzerinde yapılır. Ad ve hayvan adı yazarken sadeleştirilmiş bir kolona (`searchName`: küçük harf, ş→s, ı→i, ğ→g vb.) yazılır, terim de aynı fonksiyondan geçer; "sukru" "Şükrü"yü bulur. Telefonda rakamların alt dizisi eşleşir: `0532…`, `+90532…` ve `532 12` aynı müşteriyi bulur. Aramada yalnızca arşivlenmemiş hayvanlara bakılır (BS2-05). | MUS-01 |
+| Alfabetik sıralama | Harf gruplama ve sıralama Türkçe alfabeye göre yapılır (Ç, Ş, İ yerli yerinde). `localeCompare(..., 'tr')`. Sunucu listeyi varsayılan olarak `searchName`'e göre sıralar (veritabanı harmanlaması Türkçe değil); sıralama alanı sözleşmede `name` ya da `createdAt`. | MUS-01 |
+| Aşı verisi | Aşı kaydında `lastDate` ve `validUntil` saklanır. İstemci `validUntil`'ı boş gönderebilir; sunucu `lastDate + 12 ay` ile doldurur (29 Şubat → 28 Şubat), gönderilirse dokunmaz. Durum saklanmaz, `validUntil` ile bugünün tarihinden hesaplanır. | HAY-03 |
+| Aşı renkleri       | Story'deki hex değerler tasarım referansıdır. Kodda token kullanılır (`global.css` / `tailwind.config.js`); yeni token gerekiyorsa orada tanımlanır.                                                                                            | HAY-03                 |
+| Uyarı etiketleri   | Sabit liste istemcide ve API'de enum olarak tanımlanır.                                                                                                                                                                                         | HAY-02                 |
+| Boyut kademesi     | `sizeTier` hayvanda nullable. Kademe boşken randevu formu sorar (RAN-02).                                                                                                                                                                       | HAY-01                 |
+| Özel fiyat         | `petServicePrice` (`petId`, `serviceId`, `price`); hayvan + hizmet başına en fazla bir kayıt. Hizmet pasife alınınca kayıt kalır, görünmez.                                                                                                     | HAY-01                 |
+| Referans fotoğrafı | Fotoğrafta `isReference` bayrağı; hayvan başına en fazla bir true, yeni referans öncekini aynı transaction'da düşürür. Referans fotoğraf aynı zamanda profil fotoğrafıdır (`photoUrl`); ayrı bir profil fotoğrafı ucu yok. Yükleme isteğe bağlı `isReference=true` alır (BS2-08). | HAY-04 |
+| Arşiv              | Hayvanda `archivedAt` alanı. Randevu oluşturma ve hatırlatma sorguları arşivlenmiş hayvanları dışarıda bırakır. Arşivleme isteği, müşterinin arşivlenmemiş hayvanı kalmıyorsa aynı transaction'da `customer.rebookReminderAt` alanını boşaltır. | HAY-05                 |
+| Rehber             | Rehbere yalnızca MUS-03 ekranında erişilir; izin reddedilirse uygulama akışı bozulmaz. `expo-contacts` eklenir; Expo Go'da çalışır.                                                                                                             | MUS-03                 |
+| Hızlı iletişim     | `tel:` ve `whatsapp://send?phone=` şemaları; WhatsApp yoksa ve web'de `https://wa.me/`. Yeni kütüphane gerekmez.                                                                                                                                | MUS-06                 |
+| Fotoğraf | Yüklemeden önce istemcide sıkıştırılır (`expo-image-manipulator`). Yükleme kendi API'ye **multipart** ile yapılır (alan adı `photo`), backend dosyayı alıp depolar. Okuma adresleri ön imzalı ve 15 dakika geçerli. Ön imzalı PUT'a geçiş Faz 5'te. | HAY-04, HAY-01 |
+| Liste alanları     | `lastVisitAt` (nullable) ve `isNew` müşteri listesi yanıtında yer alır. E4 öncesi `lastVisitAt` boş, `isNew` true gelir. Alan adları E4 teknik notlarıyla aynıdır.                                                                              | MUS-01                 |
+| Arşiv kilidi       | Arşivleme isteği, ileri tarihli Bekliyor/Onaylandı randevu varsa `409 PET_HAS_UPCOMING_APPOINTMENTS` ile reddedilir ve yanıt randevu listesini taşır. İstemci de aynı kontrolü butonu pasifleştirmek için yapar.                                | HAY-05                 |
 
 ## Diğer epic'lere bağlantılar
 
-| Buradan        | Oraya          | Konu                                                  |
-| -------------- | -------------- | ----------------------------------------------------- |
-| HAY-01         | KUR-07, RAN-02 | Boyut kademesi ve otomatik fiyat                      |
-| HAY-02, HAY-03 | RAN-01, OPR-02 | Takvimde ikon, randevu detayında uyarı şeridi         |
-| HAY-03         | E6             | Aşı süresi dolma hatırlatması                         |
-| HAY-04         | OPR-04         | Bakım raporu fotoğrafları                             |
-| HAY-05         | E6, RAN-02     | Arşivlenen hayvana hatırlatma ve randevu yok          |
+| Buradan        | Oraya          | Konu                                                   |
+| -------------- | -------------- | ------------------------------------------------------ |
+| HAY-01         | KUR-07, RAN-02 | Boyut kademesi ve otomatik fiyat                       |
+| HAY-02, HAY-03 | RAN-01, OPR-02 | Takvimde ikon, randevu detayında uyarı şeridi          |
+| HAY-03         | E6             | Aşı süresi dolma hatırlatması                          |
+| HAY-04         | OPR-04         | Bakım raporu fotoğrafları                              |
+| HAY-05         | E6, RAN-02     | Arşivlenen hayvana hatırlatma ve randevu yok           |
 | HAY-05         | OPR-06         | Arşivlenmemiş hayvan kalmazsa rebook tarihi temizlenir |
-| HAY-05         | RAN-05, RAN-06 | Arşiv öncesi randevudan çıkarma veya iptal            |
-| MUS-04         | E7             | Borç ve toplam ödeme metrikleri                       |
-| MUS-02, MUS-05 | KAS-01         | "Eski borç" alanı açılış dökümü oluşturur             |
-| MUS-02         | RAN-02         | Randevu formundan müşteri ekleme                      |
-| —              | E3             | Intake formu aynı müşteri ve hayvan modelini doldurur |
-| —              | E8             | Müşteri silme ve anonimleştirme                       |
+| HAY-05         | RAN-05, RAN-06 | Arşiv öncesi randevudan çıkarma veya iptal             |
+| MUS-04         | E7             | Borç ve toplam ödeme metrikleri                        |
+| MUS-02, MUS-05 | KAS-01         | "Eski borç" alanı açılış dökümü oluşturur              |
+| MUS-02         | RAN-02         | Randevu formundan müşteri ekleme                       |
+| —              | E3             | Intake formu aynı müşteri ve hayvan modelini doldurur  |
+| —              | E8             | Müşteri silme ve anonimleştirme                        |
 
 ## Açık sorular
 

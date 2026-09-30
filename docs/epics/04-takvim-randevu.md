@@ -14,21 +14,21 @@ Randevu telefonda, müşteriyi bekletmeden oluşturulabilsin.
 
 Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Başlık |
-| --- | --- |
-| [K1](index.md#alınan-kararlar) | Bir randevu içinde birden fazla hayvan olabilir. |
-| [K4](index.md#alınan-kararlar) | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat. |
-| [K7](index.md#alınan-kararlar) | Tekrarlayan randevu MVP'de yok. |
-| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
-| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
-| [K26](index.md#alınan-kararlar) | Geçmiş tarihe randevu girilebilir. |
-| [K27](index.md#alınan-kararlar) | İptal edilen randevular takvimde gizlenir. |
-| [K28](index.md#alınan-kararlar) | Başlangıç saati 15 dakikalık adımlarla seçilir. |
-| [K29](index.md#alınan-kararlar) | Mobilde hafta görünümü gün satırlarından oluşan kompakt bir listedir. |
+| #                               | Başlık                                                                                   |
+| ------------------------------- | ---------------------------------------------------------------------------------------- |
+| [K1](index.md#alınan-kararlar)  | Bir randevu içinde birden fazla hayvan olabilir.                                         |
+| [K4](index.md#alınan-kararlar)  | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat.            |
+| [K7](index.md#alınan-kararlar)  | Tekrarlayan randevu MVP'de yok.                                                          |
+| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg.         |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir.                                                             |
+| [K26](index.md#alınan-kararlar) | Geçmiş tarihe randevu girilebilir.                                                       |
+| [K27](index.md#alınan-kararlar) | İptal edilen randevular takvimde gizlenir.                                               |
+| [K28](index.md#alınan-kararlar) | Başlangıç saati 15 dakikalık adımlarla seçilir.                                          |
+| [K29](index.md#alınan-kararlar) | Mobilde hafta görünümü gün satırlarından oluşan kompakt bir listedir.                    |
 | [K30](index.md#alınan-kararlar) | Hayvanlar sırayla yapılır; randevunun süresi hizmet satırlarının sürelerinin toplamıdır. |
-| [K31](index.md#alınan-kararlar) | Uyarılar (çakışma, çalışma saati dışı, kapalı gün) hiçbir zaman kaydı engellemez. |
-| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı. |
-| [K36](index.md#alınan-kararlar) | Hizmetin bir türü vardır: Köpek / Kedi / İkisi. |
+| [K31](index.md#alınan-kararlar) | Uyarılar (çakışma, çalışma saati dışı, kapalı gün) hiçbir zaman kaydı engellemez.        |
+| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı.        |
+| [K36](index.md#alınan-kararlar) | Hizmetin bir türü vardır: Köpek / Kedi / İkisi.                                          |
 
 ## Story listesi
 
@@ -107,14 +107,14 @@ _Salon sahibi olarak telefondaki müşteriyi bekletmeden randevu oluşturmak ist
   - Kaydetmeden önce RAN-04'teki kontroller yapılır.
 - Yeni randevunun durumu "Bekliyor"dur. Durum akışı E5'tedir.
 - Kayıttan sonra, müşteri bu formda yeni eklendiyse "Formu gönder" önerisi gösterilir (INT-02).
-**RAN-03 · Boş saate dokunarak randevu** · Mobil + Web
-_Salon sahibi olarak takvimde boş bir saate dokunup randevu formunu o tarih ve saat dolu olarak açmak istiyorum._
+  **RAN-03 · Boş saate dokunarak randevu** · Mobil + Web
+  _Salon sahibi olarak takvimde boş bir saate dokunup randevu formunu o tarih ve saat dolu olarak açmak istiyorum._
 
 - Dokunulan saat, en yakın önceki 15 dakikalık dilime yuvarlanır.
 - **Walk-in:** yeni randevu butonunda "Şimdi" seçeneği vardır. Form, tarih bugün ve saat şu an (önceki 15 dakikalık dilime yuvarlanmış) olarak açılır; randevusuz gelen müşteri için saat seçme adımı atlanır.
 - Kapalı bir güne veya çalışma saati dışına dokunulursa form yine açılır; uyarı kaydetme sırasında verilir (RAN-04).
-**RAN-04 · Uyarılar** · Mobil + Web
-_Salon sahibi olarak sorunlu bir randevu girersem uyarılmak istiyorum, ama yine de kaydedebilmeliyim._
+  **RAN-04 · Uyarılar** · Mobil + Web
+  _Salon sahibi olarak sorunlu bir randevu girersem uyarılmak istiyorum, ama yine de kaydedebilmeliyim._
 
 - Kontrol edilen durumlar:
   - Başka bir sonuçlanmamış randevuyla zaman çakışması
@@ -141,8 +141,8 @@ _Salon sahibi olarak randevunun tarihini, saatini, hayvanlarını ve hizmetlerin
   - Randevuda tek hayvan kalmışsa o hayvan çıkarılamaz; bunun yerine randevuyu iptal etme seçeneği sunulur (RAN-06).
 - Erteleme ayrı bir durum değildir; yalnızca tarih ve saat değişir. Hatırlatmalar (E6) yeni saate göre çalışır.
 - Müşteri değiştirilemez. Yanlış müşteriye açılmış randevu iptal edilip yeniden oluşturulur.
-**RAN-06 · İptal** · Mobil + Web
-_Salon sahibi olarak randevuyu iptal edebilmek ve iptali kimin yaptığını kaydetmek istiyorum._
+  **RAN-06 · İptal** · Mobil + Web
+  _Salon sahibi olarak randevuyu iptal edebilmek ve iptali kimin yaptığını kaydetmek istiyorum._
 
 - Yalnızca sonuçlanmamış randevular iptal edilebilir.
 - İptal ederken "Müşteri iptal etti" veya "Salon iptal etti" seçimi zorunludur; isteğe bağlı bir sebep notu eklenebilir.
@@ -150,8 +150,8 @@ _Salon sahibi olarak randevuyu iptal edebilmek ve iptali kimin yaptığını kay
 - İptal edilen randevu takvimde gizlenir (K27); müşteri detayındaki randevu geçmişinde "İptal" etiketiyle ve kimin iptal ettiği bilgisiyle görünür.
 - İptal geri alınamaz; gerekirse yeni randevu oluşturulur.
 - İptal edilen randevu için hatırlatma gönderilmez (E6).
-**RAN-07 · Ziyarete özel not** · Mobil + Web
-_Salon sahibi olarak "bu sefer kısa kesilecek" gibi yalnızca bu randevuya ait bir not düşebilmek istiyorum._
+  **RAN-07 · Ziyarete özel not** · Mobil + Web
+  _Salon sahibi olarak "bu sefer kısa kesilecek" gibi yalnızca bu randevuya ait bir not düşebilmek istiyorum._
 
 - Not, randevu oluştururken veya sonradan eklenebilir.
 - Randevu detayında görünür; takvim bloğunda not ikonu çıkar.
@@ -172,38 +172,38 @@ _Salon sahibi olarak "bu sefer kısa kesilecek" gibi yalnızca bu randevuya ait 
 
 ## Teknik notlar
 
-| Konu | Karar | Story |
-| --------------- | --- | -------------- |
-| Veri modeli | `appointment` (`customerId`, `startAt`, `endAt`, `status`, `note`, `cancelledBy`, `cancelReason`) → `appointmentPet` (`petId`, `position`) → `appointmentLine` (`type: service \| extra`, `serviceId` veya `extraChargeId`, `tier`, `name`, `durationMin`, `price`). Ad, süre ve fiyat satıra kopyalanır (snapshot). Ek ücret satırında `durationMin` 0 (OPR-03). `price` kuruş cinsinden tam sayıdır. | RAN-02 |
-| Fiyat kaynağı | Sunucu satır fiyatını `petServicePrice` → kademe sırasıyla hesaplar ve yanıtta `priceSource: custom \| tier` ile `lastPaidPrice` (nullable) döner. İstemci hesaplamaz, yalnızca gösterir. | RAN-02 |
-| Çevrimdışı | MVP'de yok ([mobil RULES.md](../rules-mobile.md)). Faz 2'de bugünün takvimi ve randevu detayları salt okunur çevrimdışı açılabilsin diye TanStack Query önbelleğinin kalıcı yapılmasına kapı açık tutulur; token asla önbelleğe girmez. | RAN-01 |
-| Doğrulama | En az bir hayvan ve her hayvanda en az bir hizmet satırı zorunludur (K1). Aynı hayvan bir randevuda bir kez bulunur. API de aynı kuralı uygular. | RAN-02, RAN-05 |
-| Bitiş saati | `endAt` saklanır. Satır değişince `startAt + toplam süre` ile yeniden hesaplanır; elle yapılan değişiklik yalnızca bir sonraki satır değişikliğine kadar geçerlidir. | RAN-02, RAN-05 |
-| Uyarılar | Uyarıları sunucu hesaplar. Uyarı varsa ve istekte `confirmWarnings: true` yoksa API `422 APPOINTMENT_WARNINGS` döner; uyarılar hata zarfındaki `errors[]` içinde, her biri kendi koduyla (`OVERLAP`, `OUTSIDE_HOURS`, `CLOSED_DAY`) ve mesajıyla gelir. İstemci listeyi gösterir ve onayla tekrar gönderir. Tek doğruluk kaynağı sunucudur. `startAt < şimdi` ise sunucu uyarı hesaplamaz (K26). | RAN-04 |
-| Çakışma | Yalnızca sonuçlanmamış randevular (Bekliyor, Onaylandı, Geldi) çakışma hesabına girer. Çakışma `endAt` üzerinden hesaplanır; elle uzatılmış bitiş de sayılır. | RAN-04 |
-| Takvim sorgusu | Gün ve hafta görünümü `dateFrom` + `dateTo` ile sayfasız liste çeker (`envelope(z.array(appointment))`, bkz. [mobil RULES.md](../rules-mobile.md)). İptal edilenler sunucuda elenir. | RAN-01 |
-| Zaman | Zamanlar UTC saklanır; işletmenin saat dilimi Europe/Istanbul olarak gösterilir. 15 dakikalık yuvarlama yerel saate göre yapılır. | Tümü |
-| Durum enum'u | `pending \| confirmed \| arrived \| completed \| no_show \| cancelled`. "Onaylandı" = `confirmed`. [mobil RULES.md](../rules-mobile.md) bu enum'a göre güncellendi. | RAN-04, RAN-05 |
-| Sonuçlanmış randevu | **Sonuçlanmamış** = `pending`, `confirmed`, `arrived`. **Sonuçlanmış** = `completed`, `no_show`, `cancelled`. E4 ve E5'teki bütün "sonuçlanmış / sonuçlanmamış" ifadeleri bu tanımı kullanır. `no_show` → `pending` geri alması bir durum geçişidir (OPR-01), düzenleme değildir. | Tümü |
-| Durum kısıtları | Düzenleme ve iptal isteği sonuçlanmış randevu için API'de de reddedilir (`409 APPOINTMENT_FINALIZED`). | RAN-05, RAN-06 |
-| Arşiv | Arşivlenmiş hayvan (`archivedAt` dolu) randevuya eklenmek istenirse API reddeder. | RAN-02, RAN-05 |
-| E2 alanları | E4 ve E5 ile `lastVisitAt` (son tamamlanan randevu) ve `isNew` (tamamlanmış randevu yok) dolmaya başlar (MUS-01). | — |
-| Kod yeri | `features/appointments/` (api, queries, schema, components). Takvim ekranı `app/(tabs)/index.tsx` yalnızca kompozisyon. Web (K47) aynı API'yi ayrı bir React uygulamasından tüketir. | Tümü |
+| Konu                | Karar                                                                                                                                                                                                                                                                                                                                                                                                  | Story          |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------- |
+| Veri modeli         | `appointment` (`customerId`, `startAt`, `endAt`, `status`, `note`, `cancelledBy`, `cancelReason`) → `appointmentPet` (`petId`, `position`) → `appointmentLine` (`type: service \| extra`, `serviceId` veya `extraChargeId`, `tier`, `name`, `durationMin`, `price`). Ad, süre ve fiyat satıra kopyalanır (snapshot). Ek ücret satırında `durationMin` 0 (OPR-03). `price` kuruş cinsinden tam sayıdır. | RAN-02         |
+| Fiyat kaynağı       | Sunucu satır fiyatını `petServicePrice` → kademe sırasıyla hesaplar ve yanıtta `priceSource: custom \| tier` ile `lastPaidPrice` (nullable) döner. İstemci hesaplamaz, yalnızca gösterir.                                                                                                                                                                                                              | RAN-02         |
+| Çevrimdışı          | MVP'de yok ([mobil RULES.md](../rules-mobile.md)). Faz 2'de bugünün takvimi ve randevu detayları salt okunur çevrimdışı açılabilsin diye TanStack Query önbelleğinin kalıcı yapılmasına kapı açık tutulur; token asla önbelleğe girmez.                                                                                                                                                                | RAN-01         |
+| Doğrulama           | En az bir hayvan ve her hayvanda en az bir hizmet satırı zorunludur (K1). Aynı hayvan bir randevuda bir kez bulunur. API de aynı kuralı uygular.                                                                                                                                                                                                                                                       | RAN-02, RAN-05 |
+| Bitiş saati         | `endAt` saklanır. Satır değişince `startAt + toplam süre` ile yeniden hesaplanır; elle yapılan değişiklik yalnızca bir sonraki satır değişikliğine kadar geçerlidir.                                                                                                                                                                                                                                   | RAN-02, RAN-05 |
+| Uyarılar            | Uyarıları sunucu hesaplar. Uyarı varsa ve istekte `confirmWarnings: true` yoksa API `422 APPOINTMENT_WARNINGS` döner; uyarılar hata zarfındaki `errors[]` içinde, her biri kendi koduyla (`OVERLAP`, `OUTSIDE_HOURS`, `CLOSED_DAY`) ve mesajıyla gelir. İstemci listeyi gösterir ve onayla tekrar gönderir. Tek doğruluk kaynağı sunucudur. `startAt < şimdi` ise sunucu uyarı hesaplamaz (K26).       | RAN-04         |
+| Çakışma             | Yalnızca sonuçlanmamış randevular (Bekliyor, Onaylandı, Geldi) çakışma hesabına girer. Çakışma `endAt` üzerinden hesaplanır; elle uzatılmış bitiş de sayılır.                                                                                                                                                                                                                                          | RAN-04         |
+| Takvim sorgusu      | Gün ve hafta görünümü `dateFrom` + `dateTo` ile sayfasız liste çeker (`envelope(z.array(appointment))`, bkz. [mobil RULES.md](../rules-mobile.md)). İptal edilenler sunucuda elenir.                                                                                                                                                                                                                   | RAN-01         |
+| Zaman               | Zamanlar UTC saklanır; işletmenin saat dilimi Europe/Istanbul olarak gösterilir. 15 dakikalık yuvarlama yerel saate göre yapılır.                                                                                                                                                                                                                                                                      | Tümü           |
+| Durum enum'u        | `pending \| confirmed \| arrived \| completed \| no_show \| cancelled`. "Onaylandı" = `confirmed`. [mobil RULES.md](../rules-mobile.md) bu enum'a göre güncellendi.                                                                                                                                                                                                                                    | RAN-04, RAN-05 |
+| Sonuçlanmış randevu | **Sonuçlanmamış** = `pending`, `confirmed`, `arrived`. **Sonuçlanmış** = `completed`, `no_show`, `cancelled`. E4 ve E5'teki bütün "sonuçlanmış / sonuçlanmamış" ifadeleri bu tanımı kullanır. `no_show` → `pending` geri alması bir durum geçişidir (OPR-01), düzenleme değildir.                                                                                                                      | Tümü           |
+| Durum kısıtları     | Düzenleme ve iptal isteği sonuçlanmış randevu için API'de de reddedilir (`409 APPOINTMENT_FINALIZED`).                                                                                                                                                                                                                                                                                                 | RAN-05, RAN-06 |
+| Arşiv               | Arşivlenmiş hayvan (`archivedAt` dolu) randevuya eklenmek istenirse API reddeder.                                                                                                                                                                                                                                                                                                                      | RAN-02, RAN-05 |
+| E2 alanları         | E4 ve E5 ile `lastVisitAt` (son tamamlanan randevu) ve `isNew` (tamamlanmış randevu yok) dolmaya başlar (MUS-01).                                                                                                                                                                                                                                                                                      | —              |
+| Kod yeri            | `features/appointments/` (api, queries, schema, components). Takvim ekranı `app/(tabs)/index.tsx` yalnızca kompozisyon. Web (K47) aynı API'yi ayrı bir React uygulamasından tüketir.                                                                                                                                                                                                                   | Tümü           |
 
 ## Diğer epic'lere bağlantılar
 
-| Buradan        | Oraya                  | Konu                                                                |
-| -------------- | ---------------------- | ------------------------------------------------------------------- |
-| RAN-01         | KUR-04, KUR-06, KUR-09 | Kurulum kartı, çalışma saatleri, kapalı günler                      |
-| RAN-01         | HAY-02, HAY-03         | Takvim bloğunda uyarı ve aşı ikonları                               |
-| RAN-02         | MUS-01, MUS-02         | Müşteri arama ve hızlı ekleme                                       |
-| RAN-02         | HAY-01, KUR-07         | Hızlı hayvan ekleme, boyut kademesi ve fiyat                        |
-| RAN-02         | INT-02                 | Yeni müşteriye "Formu gönder" önerisi                               |
-| RAN-05         | HAY-05                 | Arşivlemeden önce hayvanı randevudan çıkarma                        |
-| RAN-06         | MUS-04                 | Müşteri iptal sayısı                                                |
-| RAN-01, RAN-05 | E5                     | Durum akışı, randevu detayı, tamamlanmış randevu                    |
+| Buradan        | Oraya                  | Konu                                                                 |
+| -------------- | ---------------------- | -------------------------------------------------------------------- |
+| RAN-01         | KUR-04, KUR-06, KUR-09 | Kurulum kartı, çalışma saatleri, kapalı günler                       |
+| RAN-01         | HAY-02, HAY-03         | Takvim bloğunda uyarı ve aşı ikonları                                |
+| RAN-02         | MUS-01, MUS-02         | Müşteri arama ve hızlı ekleme                                        |
+| RAN-02         | HAY-01, KUR-07         | Hızlı hayvan ekleme, boyut kademesi ve fiyat                         |
+| RAN-02         | INT-02                 | Yeni müşteriye "Formu gönder" önerisi                                |
+| RAN-05         | HAY-05                 | Arşivlemeden önce hayvanı randevudan çıkarma                         |
+| RAN-06         | MUS-04                 | Müşteri iptal sayısı                                                 |
+| RAN-01, RAN-05 | E5                     | Durum akışı, randevu detayı, tamamlanmış randevu                     |
 | RAN-01, RAN-02 | OPR-01                 | "Geldi mi?" sorusu: takvim bloğunda ve geçmiş tarihli yeni randevuda |
-| RAN-05, RAN-06 | E6                     | Hatırlatmaların yeni saate göre çalışması ve iptalde durması        |
+| RAN-05, RAN-06 | E6                     | Hatırlatmaların yeni saate göre çalışması ve iptalde durması         |
 
 ## Açık sorular
 

@@ -23,32 +23,32 @@ Groomer telefonda müşteriyle konuşurken bir yandan hayvanın ırkını, kilos
 
 Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Başlık |
-| --- | --- |
-| [K3](index.md#alınan-kararlar) | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
-| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır. |
-| [K21](index.md#alınan-kararlar) | Intake Form Petzibu'nun kendi formudur. |
-| [K22](index.md#alınan-kararlar) | İki link türü vardır: işletme başına genel link ve müşteriye bağlı kişiye özel link. |
-| [K23](index.md#alınan-kararlar) | Her form, kaynağı ne olursa olsun, owner onayından geçmeden kayıt oluşturmaz veya güncellemez. |
-| [K24](index.md#alınan-kararlar) | Intake Form sabit şablondur. |
-| [K25](index.md#alınan-kararlar) | Aşı karnesi fotoğrafı istenmez; yalnızca aşı tarihleri sorulur. |
-| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
+| #                               | Başlık                                                                                                         |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| [K3](index.md#alınan-kararlar)  | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
+| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır.                                                     |
+| [K21](index.md#alınan-kararlar) | Intake Form Petzibu'nun kendi formudur.                                                                        |
+| [K22](index.md#alınan-kararlar) | İki link türü vardır: işletme başına genel link ve müşteriye bağlı kişiye özel link.                           |
+| [K23](index.md#alınan-kararlar) | Her form, kaynağı ne olursa olsun, owner onayından geçmeden kayıt oluşturmaz veya güncellemez.                 |
+| [K24](index.md#alınan-kararlar) | Intake Form sabit şablondur.                                                                                   |
+| [K25](index.md#alınan-kararlar) | Aşı karnesi fotoğrafı istenmez; yalnızca aşı tarihleri sorulur.                                                |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda.                                                            |
 | [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
-| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok. |
-| [K48](index.md#alınan-kararlar) | İşletme adresi zorunludur. |
+| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok.                                                                                     |
+| [K48](index.md#alınan-kararlar) | İşletme adresi zorunludur.                                                                                     |
 
 ## Story listesi
 
 İlerleme bu tablodan takip edilir. Durum: `Yapılacak` → `Devam ediyor` → `Tamamlandı`.
 
-| ID     | Başlık                          | Platform                                | Durum     |
-| ------ | ------------------------------- | --------------------------------------- | --------- |
-| INT-01 | Genel form linki                | Mobil + Web                             | Yapılacak |
-| INT-02 | Kişiye özel form linki gönderme | Mobil + Web                             | Yapılacak |
-| INT-03 | Müşterinin formu doldurması     | Public web (müşteri tarafı)             | Yapılacak |
-| INT-04 | Başvuru kutusu ve bildirim      | Mobil + Web                             | Yapılacak |
-| INT-05 | İnceleme ve onay                | Mobil + Web                             | Yapılacak |
-| INT-06 | Formu reddetme                  | Mobil + Web                             | Yapılacak |
+| ID     | Başlık                          | Platform                    | Durum     |
+| ------ | ------------------------------- | --------------------------- | --------- |
+| INT-01 | Genel form linki                | Mobil + Web                 | Yapılacak |
+| INT-02 | Kişiye özel form linki gönderme | Mobil + Web                 | Yapılacak |
+| INT-03 | Müşterinin formu doldurması     | Public web (müşteri tarafı) | Yapılacak |
+| INT-04 | Başvuru kutusu ve bildirim      | Mobil + Web                 | Yapılacak |
+| INT-05 | İnceleme ve onay                | Mobil + Web                 | Yapılacak |
+| INT-06 | Formu reddetme                  | Mobil + Web                 | Yapılacak |
 
 INT-03 mobil uygulamada iş çıkarmaz; public web yüzeyinde (K14) ve backend'de yapılır. Burada duruyor çünkü INT-04, INT-05 ve INT-06 onun ürettiği veriye bağımlı.
 
@@ -63,8 +63,8 @@ _Salon sahibi olarak salonuma ait sabit bir form linkine sahip olmak istiyorum, 
 - Link ayarlardan kopyalanabilir ve telefonun paylaşım menüsüyle paylaşılabilir.
 - Link yenilenebilir. Yenilenince eski link çalışmaz; eski linki açan kişiye "Bu link artık geçerli değil" mesajı gösterilir.
 - Genel linkten gelen form hiçbir müşteriye önceden bağlı değildir; eşleştirme telefonla yapılır (INT-05).
-**INT-02 · Kişiye özel form linki gönderme** · Mobil + Web
-_Salon sahibi olarak telefonda konuştuğum müşteriye kişiye özel bir form linki gönderebilmek istiyorum, böylece müşteri bilgileri kendisi tamamlar ve bu bilgiler doğrudan o müşterinin kaydına eklenir._
+  **INT-02 · Kişiye özel form linki gönderme** · Mobil + Web
+  _Salon sahibi olarak telefonda konuştuğum müşteriye kişiye özel bir form linki gönderebilmek istiyorum, böylece müşteri bilgileri kendisi tamamlar ve bu bilgiler doğrudan o müşterinin kaydına eklenir._
 
 - "Formu gönder" butonu şu yerlerde bulunur:
   - Müşteri detayı (MUS-04)
@@ -116,8 +116,8 @@ _Salon sahibi olarak yeni bir form geldiğinde haberdar olmak ve bekleyen formla
   - Eşleşme etiketi: "Yeni müşteri" veya "Mevcut: Ayşe Yılmaz"
 - Liste en yeni form en üstte olacak şekilde sıralanır.
 - İncelenmeyen form **30 gün** sonra fotoğraflarıyla birlikte otomatik silinir (KVKK). Silinmeye 7 gün kala satırda ve rozette uyarı görünür ("3 form 7 gün içinde silinecek").
-**INT-05 · İnceleme ve onay** · Mobil + Web
-_Salon sahibi olarak gelen formu inceleyip tek dokunuşla onaylamak istiyorum, böylece kayıtlar kendiliğinden oluşur._
+  **INT-05 · İnceleme ve onay** · Mobil + Web
+  _Salon sahibi olarak gelen formu inceleyip tek dokunuşla onaylamak istiyorum, böylece kayıtlar kendiliğinden oluşur._
 
 - Eşleştirme kuralları:
   - Kişiye özel linkten gelen form, linkin bağlı olduğu müşteriye eşleşir.
@@ -134,8 +134,8 @@ _Salon sahibi olarak gelen formu inceleyip tek dokunuşla onaylamak istiyorum, b
 - Onaylanan formdaki fotoğraflar hayvanın fotoğraf geçmişine (HAY-04) ve hayvanın fotoğrafı boşsa profil fotoğrafı olarak eklenir.
 - KVKK onayının zamanı ve onaylanan metnin sürümü müşteri kaydında saklanır.
 - Onaydan sonra form kutudan çıkar ve owner oluşan veya güncellenen müşteri kaydına yönlendirilir.
-**INT-06 · Formu reddetme** · Mobil + Web
-_Salon sahibi olarak spam veya hatalı bir formu kayıt oluşturmadan silebilmek istiyorum._
+  **INT-06 · Formu reddetme** · Mobil + Web
+  _Salon sahibi olarak spam veya hatalı bir formu kayıt oluşturmadan silebilmek istiyorum._
 
 - Reddetmeden önce onay istenir.
 - Reddedilen formun verisi, fotoğrafları dahil, kalıcı olarak silinir. İşlenmeyecek kişisel veri saklanmaz (KVKK).
@@ -161,26 +161,26 @@ Kod yazılmadan önce, pilot salonda iki hafta boyunca bir Google Form ile aynı
 - Müşterilerin kaçı formu dolduruyor?
 - Hangi sorular boş bırakılıyor?
 - Form ortalama kaç dakikada tamamlanıyor?
-Sonuçlar INT-03'teki alan listesini kesinleştirmek için kullanılır.
+  Sonuçlar INT-03'teki alan listesini kesinleştirmek için kullanılır.
 
 ## Teknik notlar
 
-| Konu | Karar | Story |
-| ----------------- | --- | ------------------------- |
-| Link modeli | Tek tablo: `intakeLink` (`businessId`, `customerId` nullable, `token`, `expiresAt` nullable, `usedAt`, `revokedAt`). `customerId` boşsa genel link, doluysa kişiye özel link. Genel linkin süresi yoktur. | INT-01, INT-02 |
-| Link süresi | Kişiye özel link 14 gün geçerlidir. | INT-02 |
-| Başvuru verisi | Gönderilen form, onaya kadar `intakeSubmission` kaydında ham veri (JSON) olarak durur; müşteri ve hayvan tablolarına onaya kadar dokunulmaz. | INT-03, INT-05 |
-| Fotoğraflar | Form fotoğrafları geçici bir alana yüklenir; onayda hayvanın fotoğraf geçmişine taşınır, redde silinir. Yükleme yöntemi HAY-04 ile aynıdır (multipart, object storage). | INT-03, INT-05, INT-06 |
-| Eşleştirme | Telefon E.164 formatında karşılaştırılır. Hayvan adı, E2'deki arama sadeleştirmesiyle (Türkçe karakter ve büyük/küçük harf) karşılaştırılır. | INT-05 |
-| Uyarı etiketleri | Formdaki onay kutuları, HAY-02'deki enum ile birebir eşleşir; yalnızca müşteriye gösterilen metin farklıdır. | INT-03 |
-| KVKK | Onay zamanı ve aydınlatma metni sürümü saklanır. Metnin sürümlenmesi E8'de tanımlanır. Bakım riski onayı da aynı yapıyla (`consentType`, `version`, `acceptedAt`) tutulur. | INT-03, INT-05 |
-| Spam | Genel link için IP başına istek sınırı ve honeypot alan. | INT-03 |
-| Saklama süresi | `intakeSubmission.createdAt` + 30 gün; ADM-02'deki günlük job siler. Liste yanıtında `expiresAt` döner, istemci 7 gün kala uyarır. | INT-04 |
-| Bildirim | Push yok (K46); yalnızca rozet. Bekleyen form sayısı müşteri listesi / ayarlar sorgularından bağımsız küçük bir `GET /intake/submissions/count` ile alınır. | INT-04 |
-| Public web yüzeyi | Backend (NestJS) sunucu tarafında render eder: davet kabulü, şifre sıfırlama, intake formu. Ayrı web repo yok. INT-03 backend projesinde takip edilir. Owner web back office (K47) bundan ayrıdır. | INT-03 |
-| Belirsiz eşleşme | `preview` yanıtı her form hayvanı için `matchedPetId`, `candidates[]` döner; birden fazla aday varsa istemci seçim ister ve onay isteğinde `petId` ya da `null` (yeni) gönderir. | INT-05 |
-| Onay işlemi | Onay tek bir API çağrısıdır ve atomiktir: müşteri, hayvanlar, etiketler, aşılar ve fotoğraflar tek transaction'da yazılır. İstemci "nelerin oluşacağı" önizlemesini ayrı bir `preview` uç noktasından alır; birleştirme mantığı yalnızca backend'de yaşar. | INT-05 |
-| Mobil kod yeri | Link üretme, kutu, önizleme, onay ve red `features/intake/` altında. INT-03 bu repoda değildir. | INT-01, INT-02, INT-04…06 |
+| Konu              | Karar                                                                                                                                                                                                                                                      | Story                     |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| Link modeli       | Tek tablo: `intakeLink` (`businessId`, `customerId` nullable, `token`, `expiresAt` nullable, `usedAt`, `revokedAt`). `customerId` boşsa genel link, doluysa kişiye özel link. Genel linkin süresi yoktur.                                                  | INT-01, INT-02            |
+| Link süresi       | Kişiye özel link 14 gün geçerlidir.                                                                                                                                                                                                                        | INT-02                    |
+| Başvuru verisi    | Gönderilen form, onaya kadar `intakeSubmission` kaydında ham veri (JSON) olarak durur; müşteri ve hayvan tablolarına onaya kadar dokunulmaz.                                                                                                               | INT-03, INT-05            |
+| Fotoğraflar       | Form fotoğrafları geçici bir alana yüklenir; onayda hayvanın fotoğraf geçmişine taşınır, redde silinir. Yükleme yöntemi HAY-04 ile aynıdır (multipart, object storage).                                                                                    | INT-03, INT-05, INT-06    |
+| Eşleştirme        | Telefon E.164 formatında karşılaştırılır. Hayvan adı, E2'deki arama sadeleştirmesiyle (Türkçe karakter ve büyük/küçük harf) karşılaştırılır.                                                                                                               | INT-05                    |
+| Uyarı etiketleri  | Formdaki onay kutuları, HAY-02'deki enum ile birebir eşleşir; yalnızca müşteriye gösterilen metin farklıdır.                                                                                                                                               | INT-03                    |
+| KVKK              | Onay zamanı ve aydınlatma metni sürümü saklanır. Metnin sürümlenmesi E8'de tanımlanır. Bakım riski onayı da aynı yapıyla (`consentType`, `version`, `acceptedAt`) tutulur.                                                                                 | INT-03, INT-05            |
+| Spam              | Genel link için IP başına istek sınırı ve honeypot alan.                                                                                                                                                                                                   | INT-03                    |
+| Saklama süresi    | `intakeSubmission.createdAt` + 30 gün; ADM-02'deki günlük job siler. Liste yanıtında `expiresAt` döner, istemci 7 gün kala uyarır.                                                                                                                         | INT-04                    |
+| Bildirim          | Push yok (K46); yalnızca rozet. Bekleyen form sayısı müşteri listesi / ayarlar sorgularından bağımsız küçük bir `GET /intake/submissions/count` ile alınır.                                                                                                | INT-04                    |
+| Public web yüzeyi | Backend (NestJS) sunucu tarafında render eder: davet kabulü, şifre sıfırlama, intake formu. Ayrı web repo yok. INT-03 backend projesinde takip edilir. Owner web back office (K47) bundan ayrıdır.                                                         | INT-03                    |
+| Belirsiz eşleşme  | `preview` yanıtı her form hayvanı için `matchedPetId`, `candidates[]` döner; birden fazla aday varsa istemci seçim ister ve onay isteğinde `petId` ya da `null` (yeni) gönderir.                                                                           | INT-05                    |
+| Onay işlemi       | Onay tek bir API çağrısıdır ve atomiktir: müşteri, hayvanlar, etiketler, aşılar ve fotoğraflar tek transaction'da yazılır. İstemci "nelerin oluşacağı" önizlemesini ayrı bir `preview` uç noktasından alır; birleştirme mantığı yalnızca backend'de yaşar. | INT-05                    |
+| Mobil kod yeri    | Link üretme, kutu, önizleme, onay ve red `features/intake/` altında. INT-03 bu repoda değildir.                                                                                                                                                            | INT-01, INT-02, INT-04…06 |
 
 ## Diğer epic'lere bağlantılar
 

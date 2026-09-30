@@ -18,33 +18,33 @@ Uygulama hiçbir mesajı kendisi göndermez (K3). Her sabah owner'ın önünde b
 
 Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Başlık |
-| --- | --- |
-| [K3](index.md#alınan-kararlar) | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
-| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır. |
-| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir. |
-| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
-| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil. |
-| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok. |
-| [K50](index.md#alınan-kararlar) | Randevu hatırlatması 1 gün önce 18:00 kuyruğa düşer; ikinci zaman olarak aynı gün 09:00 açılabilir. |
-| [K51](index.md#alınan-kararlar) | Kuyruktaki mesaj WhatsApp açıldığı anda "gönderildi" sayılır; geri alınabilir. |
-| [K52](index.md#alınan-kararlar) | Tek tıkla onay linki MVP'de. |
-| [K53](index.md#alınan-kararlar) | Ayrı aşı hatırlatma mesajı yok. |
+| #                               | Başlık                                                                                                         |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| [K3](index.md#alınan-kararlar)  | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
+| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır.                                                     |
+| [K20](index.md#alınan-kararlar) | Hayvan silinmez, arşivlenir.                                                                                   |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda.                                                            |
+| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil.                                                  |
+| [K46](index.md#alınan-kararlar) | Push bildirimi MVP'de yok.                                                                                     |
+| [K50](index.md#alınan-kararlar) | Randevu hatırlatması 1 gün önce 18:00 kuyruğa düşer; ikinci zaman olarak aynı gün 09:00 açılabilir.            |
+| [K51](index.md#alınan-kararlar) | Kuyruktaki mesaj WhatsApp açıldığı anda "gönderildi" sayılır; geri alınabilir.                                 |
+| [K52](index.md#alınan-kararlar) | Tek tıkla onay linki MVP'de.                                                                                   |
+| [K53](index.md#alınan-kararlar) | Ayrı aşı hatırlatma mesajı yok.                                                                                |
 
 ## Story listesi
 
 İlerleme bu tablodan takip edilir. Durum: `Yapılacak` → `Devam ediyor` → `Tamamlandı`.
 
-| ID     | Başlık                              | Platform    | Durum     |
-| ------ | ----------------------------------- | ----------- | --------- |
-| HAT-01 | Hatırlatma zamanları                | Mobil + Web | Yapılacak |
-| HAT-02 | Mesaj şablonları                    | Mobil + Web | Yapılacak |
-| HAT-03 | Gönderim kuyruğu                    | Mobil       | Yapılacak |
-| HAT-04 | Randevu hatırlatması                | Mobil       | Yapılacak |
-| HAT-05 | Tek tıkla onay sayfası              | Public web  | Yapılacak |
-| HAT-06 | Rebook hatırlatması                 | Mobil       | Yapılacak |
-| HAT-07 | Gelmeyenler listesi                 | Mobil + Web | Yapılacak |
-| HAT-08 | "Hazır, alabilirsiniz" mesajı       | Mobil       | Yapılacak |
+| ID     | Başlık                        | Platform    | Durum     |
+| ------ | ----------------------------- | ----------- | --------- |
+| HAT-01 | Hatırlatma zamanları          | Mobil + Web | Yapılacak |
+| HAT-02 | Mesaj şablonları              | Mobil + Web | Yapılacak |
+| HAT-03 | Gönderim kuyruğu              | Mobil       | Yapılacak |
+| HAT-04 | Randevu hatırlatması          | Mobil       | Yapılacak |
+| HAT-05 | Tek tıkla onay sayfası        | Public web  | Yapılacak |
+| HAT-06 | Rebook hatırlatması           | Mobil       | Yapılacak |
+| HAT-07 | Gelmeyenler listesi           | Mobil + Web | Yapılacak |
+| HAT-08 | "Hazır, alabilirsiniz" mesajı | Mobil       | Yapılacak |
 
 HAT-05 mobil uygulamada iş çıkarmaz; public web yüzeyinde (K14) ve backend'de yapılır. Burada duruyor çünkü HAT-04'ün ürettiği linke bağımlı.
 
@@ -61,8 +61,8 @@ _Salon sahibi olarak randevu hatırlatmasının ne zaman kuyruğa düşeceğini 
 - Saatler değiştirilebilir (15 dakikalık adımlar); zaman sayısı artırılamaz.
 - Ayar değişince yalnızca henüz kuyruğa düşmemiş hatırlatmalar etkilenir.
 - Gelmeyenler listesi eşiği de bu ekrandadır (HAT-07): varsayılan 8 hafta, 4–26 hafta arası.
-**HAT-02 · Mesaj şablonları** · Mobil + Web
-_Salon sahibi olarak müşteriye giden hazır mesajları kendi dilimle yazabilmek istiyorum._
+  **HAT-02 · Mesaj şablonları** · Mobil + Web
+  _Salon sahibi olarak müşteriye giden hazır mesajları kendi dilimle yazabilmek istiyorum._
 
 - Şablon seti sabittir, her biri düzenlenebilir:
   1. Randevu hatırlatması (HAT-04)
@@ -92,8 +92,8 @@ _Salon sahibi olarak bugün göndermem gereken bütün mesajları tek listede g�
 - Kuyruk her açılışta sunucudan yeniden hesaplanır. Zamanı geçmiş satırlar (başlamış randevu, iptal edilmiş randevu) kendiliğinden düşer.
 - İşletme Askıda ise kuyruk boştur ve "Hesabın askıda" şeridi görünür (K34).
 - Web'de kuyruk yoktur; web'e yalnızca ayarlar (HAT-01, HAT-02) ve gelmeyenler listesi (HAT-07) girer.
-**HAT-04 · Randevu hatırlatması** · Mobil
-_Salon sahibi olarak yarınki randevular için müşterilere tek dokunuşla hatırlatma gönderebilmek istiyorum, böylece gelmeyen sayısı düşer._
+  **HAT-04 · Randevu hatırlatması** · Mobil
+  _Salon sahibi olarak yarınki randevular için müşterilere tek dokunuşla hatırlatma gönderebilmek istiyorum, böylece gelmeyen sayısı düşer._
 
 - Bekliyor ve Onaylandı durumundaki randevular için, HAT-01'deki her açık zaman dilimi bir kuyruk satırı üretir (K50). Onaylandı randevunun satırı "Onaylandı" etiketiyle gelir; owner isterse atlar.
 - Mesaj, "Randevu hatırlatması" şablonundan üretilir (HAT-02). `{onay_linki}` randevuya özel tek tıkla onay linkidir (HAT-05).
@@ -101,8 +101,8 @@ _Salon sahibi olarak yarınki randevular için müşterilere tek dokunuşla hat�
 - Aynı randevu için aynı zaman dilimi yalnızca bir kez kuyruğa girer. Randevunun tarihi değişirse (RAN-05) gönderilmemiş satırlar yeni tarihe göre yeniden hesaplanır; gönderilmiş olanlar kalır.
 - İptal edilen randevunun satırları kuyruktan düşer (RAN-06).
 - Randevu detayında (OPR-02) hatırlatma durumu görünür: "Hatırlatma gönderilmedi" / "Dün 18:05 gönderildi".
-**HAT-05 · Tek tıkla onay sayfası** · Public web
-_Pet sahibi olarak hatırlatma mesajındaki linke dokunup randevumu tek adımda onaylamak istiyorum._
+  **HAT-05 · Tek tıkla onay sayfası** · Public web
+  _Pet sahibi olarak hatırlatma mesajındaki linke dokunup randevumu tek adımda onaylamak istiyorum._
 
 - Link hesapsız açılır (K14). Sayfada salon adı, tarih, saat ve hayvan adları görünür; tek buton: "Randevumu onaylıyorum".
 - Butona basınca randevu Onaylandı olur (OPR-01'deki `pending → confirmed` geçişi) ve "Teşekkürler, görüşmek üzere" ekranı gösterilir.
@@ -123,8 +123,8 @@ _Salon sahibi olarak "şimdi değil" diyen müşteriye zamanı gelince tek dokun
 - Mesaj "Rebook" şablonundan üretilir; `{hayvanlar}` müşterinin arşivlenmemiş hayvanlarıdır, `{hafta}` OPR-06'da seçilen aralıktır.
 - Gönderilince `rebookReminderAt` temizlenir; müşteri yeniden gelmezse gelmeyenler listesi (HAT-07) devreye girer. Aynı müşteriye ikinci bir rebook mesajı otomatik üretilmez.
 - Hatırlatma gönderildikten sonra müşteri detayında "Rebook hatırlatması gönderildi · 12 Eyl" bilgisi görünür.
-**HAT-07 · Gelmeyenler listesi** · Mobil + Web
-_Salon sahibi olarak uzun süredir gelmeyen müşterileri görmek ve onlara tek dokunuşla ulaşmak istiyorum._
+  **HAT-07 · Gelmeyenler listesi** · Mobil + Web
+  _Salon sahibi olarak uzun süredir gelmeyen müşterileri görmek ve onlara tek dokunuşla ulaşmak istiyorum._
 
 - Liste "Hatırlatmalar" sekmesinin altında ayrı bir bölümdür; web'de kendi sayfasıdır.
 - Kural: son tamamlanan randevusu (`lastVisitAt`) eşikten eski (HAT-01, varsayılan 8 hafta), ileri tarihli sonuçlanmamış randevusu yok, en az bir arşivlenmemiş hayvanı var. `lastVisitAt` boş olan (hiç gelmemiş) müşteriler listeye girmez.
@@ -133,8 +133,8 @@ _Salon sahibi olarak uzun süredir gelmeyen müşterileri görmek ve onlara tek 
 - Satırdaki "Mesaj" butonu WhatsApp'ı "Rebook" şablonuyla açar; `{hafta}` boş geçer ve şablon bu durumda "yakında" der. Bu gönderim kuyruğa girmez, durum tutulmaz.
 - Satırdaki "Randevu" butonu RAN-02'yi müşteri seçili açar.
 - Satır sola kaydırılıp "Gizle" ile listeden çıkarılabilir; müşteri tekrar gelene kadar bir daha görünmez.
-**HAT-08 · "Hazır, alabilirsiniz" mesajı** · Mobil
-_Salon sahibi olarak bakım bitince müşteriye tek dokunuşla "hazır" mesajı göndermek istiyorum._
+  **HAT-08 · "Hazır, alabilirsiniz" mesajı** · Mobil
+  _Salon sahibi olarak bakım bitince müşteriye tek dokunuşla "hazır" mesajı göndermek istiyorum._
 
 - Randevu detayındaki her hayvan kartında (OPR-02) "Hazır" butonu bulunur; yalnızca Geldi durumunda görünür.
 - Butona basınca WhatsApp "Hazır, alabilirsiniz" şablonuyla açılır; `{hayvanlar}` yalnızca o hayvandır.
@@ -155,36 +155,36 @@ _Salon sahibi olarak bakım bitince müşteriye tek dokunuşla "hazır" mesajı 
 
 ## Teknik notlar
 
-| Konu | Karar | Story |
-| --- | --- | --- |
-| Ayar modeli | `business.reminderSlots`: `[{ offsetDays: 1, time: "18:00" }, { offsetDays: 0, time: "09:00", enabled: false }]` biçiminde iki sabit giriş; `business.inactiveWeeks` (varsayılan 8). Saatler Europe/Istanbul'a göredir. | HAT-01, HAT-07 |
-| Şablon modeli | `messageTemplate` (`businessId`, `type: appointment \| rebook \| ready \| report \| debt \| intake`, `body`). Varsayılanlar backend'de sabittir; işletme kaydı yoksa varsayılan döner, "Varsayılana dön" işletme kaydını siler. Yer tutucu doğrulaması (zorunlu `{onay_linki}`, izin verilmeyen yer tutucu) API'de `422 VALIDATION_FAILED`. | HAT-02 |
-| Mesaj üretimi | Şablondan mesaj üretimi yalnızca **backend'de** yapılır: `GET /reminders/queue` satırla birlikte hazır `message` döner; OPR-04, KAS-09, INT-02 ve HAT-07/08 de kendi mesajlarını aynı servisten alır. İstemci şablon çözmez. Aşı satırı (K53) bu serviste eklenir. | Tümü |
-| Kuyruk hesabı | Kuyruk saklanmaz; `GET /reminders/queue` her çağrıda hesaplar. Gönderim durumu saklanır: `reminderLog` (`type`, `appointmentId` veya `customerId`, `slot` nullable, `sentAt`, `skippedAt`). Bir satır kuyruğa girer ancak `reminderLog`'da eşleşen kayıt yoksa. "Geri al" ilgili log kaydını siler. | HAT-03, HAT-04, HAT-06 |
-| Kuyruk süzgeci | Randevu satırı: `status in (pending, confirmed)`, `startAt` gelecekte, slot zamanı geçmiş ya da bugün. Rebook satırı: `rebookReminderAt <= bugün`, ileri tarihli sonuçlanmamış randevu yok, arşivlenmemiş hayvan var. Askıda işletme için boş liste. | HAT-03 |
-| Rozet | `GET /reminders/queue/count`; INT-04'teki count uç noktasıyla aynı desende. | HAT-03 |
-| Onay linki | Randevuda `confirmToken` (rastgele, benzersiz). `GET /confirm/:token` public web sayfası; `POST` `pending → confirmed` geçişini OPR-01'deki durum servisiyle yapar, ayrı bir yol yoktur. `startAt` geçmişse veya durum uygun değilse `410 LINK_EXPIRED`. Rate limit INT-03 ile aynı. | HAT-05 |
-| WhatsApp açma | MUS-06 ile aynı `whatsapp://send?phone=&text=` şeması; metin URL-encode edilir. Uygulama geri planda kaldığında (WhatsApp açıldı) `POST /reminders/:id/sent` gönderilir; yanıt beklenmez, hata olursa satır bir sonraki açılışta yeniden görünür. | HAT-03 |
-| Gelmeyenler | `GET /customers?inactive=true`: MUS-01 liste uç noktasına filtre. `customer.hiddenFromInactiveAt`; tamamlanan randevu bu alanı boşaltır (OPR-05). | HAT-07 |
-| Rebook temizleme | `POST /reminders/:id/sent` rebook satırı için `rebookReminderAt` alanını boşaltır ve `customer.rebookRemindedAt` yazar. | HAT-06 |
-| Hazır butonu | OPR-02 hayvan kartına eklenir; mesajı `GET /appointments/:id/pets/:petId/ready-message` döner. | HAT-08 |
-| Kod yeri | `features/reminders/` (queue, settings, templates, inactive). Sekme `app/(tabs)/reminders.tsx` yalnızca kompozisyon. Public onay sayfası backend projesinde. | Tümü |
+| Konu             | Karar                                                                                                                                                                                                                                                                                                                                       | Story                  |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Ayar modeli      | `business.reminderSlots`: `[{ offsetDays: 1, time: "18:00" }, { offsetDays: 0, time: "09:00", enabled: false }]` biçiminde iki sabit giriş; `business.inactiveWeeks` (varsayılan 8). Saatler Europe/Istanbul'a göredir.                                                                                                                     | HAT-01, HAT-07         |
+| Şablon modeli    | `messageTemplate` (`businessId`, `type: appointment \| rebook \| ready \| report \| debt \| intake`, `body`). Varsayılanlar backend'de sabittir; işletme kaydı yoksa varsayılan döner, "Varsayılana dön" işletme kaydını siler. Yer tutucu doğrulaması (zorunlu `{onay_linki}`, izin verilmeyen yer tutucu) API'de `422 VALIDATION_FAILED`. | HAT-02                 |
+| Mesaj üretimi    | Şablondan mesaj üretimi yalnızca **backend'de** yapılır: `GET /reminders/queue` satırla birlikte hazır `message` döner; OPR-04, KAS-09, INT-02 ve HAT-07/08 de kendi mesajlarını aynı servisten alır. İstemci şablon çözmez. Aşı satırı (K53) bu serviste eklenir.                                                                          | Tümü                   |
+| Kuyruk hesabı    | Kuyruk saklanmaz; `GET /reminders/queue` her çağrıda hesaplar. Gönderim durumu saklanır: `reminderLog` (`type`, `appointmentId` veya `customerId`, `slot` nullable, `sentAt`, `skippedAt`). Bir satır kuyruğa girer ancak `reminderLog`'da eşleşen kayıt yoksa. "Geri al" ilgili log kaydını siler.                                         | HAT-03, HAT-04, HAT-06 |
+| Kuyruk süzgeci   | Randevu satırı: `status in (pending, confirmed)`, `startAt` gelecekte, slot zamanı geçmiş ya da bugün. Rebook satırı: `rebookReminderAt <= bugün`, ileri tarihli sonuçlanmamış randevu yok, arşivlenmemiş hayvan var. Askıda işletme için boş liste.                                                                                        | HAT-03                 |
+| Rozet            | `GET /reminders/queue/count`; INT-04'teki count uç noktasıyla aynı desende.                                                                                                                                                                                                                                                                 | HAT-03                 |
+| Onay linki       | Randevuda `confirmToken` (rastgele, benzersiz). `GET /confirm/:token` public web sayfası; `POST` `pending → confirmed` geçişini OPR-01'deki durum servisiyle yapar, ayrı bir yol yoktur. `startAt` geçmişse veya durum uygun değilse `410 LINK_EXPIRED`. Rate limit INT-03 ile aynı.                                                        | HAT-05                 |
+| WhatsApp açma    | MUS-06 ile aynı `whatsapp://send?phone=&text=` şeması; metin URL-encode edilir. Uygulama geri planda kaldığında (WhatsApp açıldı) `POST /reminders/:id/sent` gönderilir; yanıt beklenmez, hata olursa satır bir sonraki açılışta yeniden görünür.                                                                                           | HAT-03                 |
+| Gelmeyenler      | `GET /customers?inactive=true`: MUS-01 liste uç noktasına filtre. `customer.hiddenFromInactiveAt`; tamamlanan randevu bu alanı boşaltır (OPR-05).                                                                                                                                                                                           | HAT-07                 |
+| Rebook temizleme | `POST /reminders/:id/sent` rebook satırı için `rebookReminderAt` alanını boşaltır ve `customer.rebookRemindedAt` yazar.                                                                                                                                                                                                                     | HAT-06                 |
+| Hazır butonu     | OPR-02 hayvan kartına eklenir; mesajı `GET /appointments/:id/pets/:petId/ready-message` döner.                                                                                                                                                                                                                                              | HAT-08                 |
+| Kod yeri         | `features/reminders/` (queue, settings, templates, inactive). Sekme `app/(tabs)/reminders.tsx` yalnızca kompozisyon. Public onay sayfası backend projesinde.                                                                                                                                                                                | Tümü                   |
 
 ## Diğer epic'lere bağlantılar
 
-| Buradan | Oraya | Konu |
-| --- | --- | --- |
-| HAT-02 | OPR-04, KAS-09, INT-02 | Rapor, borç ve form mesajlarının şablonları buradan gelir |
-| HAT-03 | INT-04 | Rozet mekanizması |
-| HAT-04 | HAY-03 | Aşı satırı |
-| HAT-04 | RAN-05, RAN-06 | Tarih değişince yeniden hesap, iptalde düşme |
-| HAT-04 | OPR-02 | Randevu detayında hatırlatma durumu |
-| HAT-05 | OPR-01 | `pending → confirmed` geçişi |
-| HAT-05 | K14 | Public web yüzeyi |
-| HAT-06 | OPR-06, HAY-05 | `rebookReminderAt` yazılması ve temizlenmesi |
-| HAT-07 | MUS-01, RAN-02 | Liste uç noktası ve randevu formu |
-| HAT-08 | OPR-02 | Hayvan kartındaki "Hazır" butonu |
-| — | ADM-02 | Askıda kuyruk boş |
+| Buradan | Oraya                  | Konu                                                      |
+| ------- | ---------------------- | --------------------------------------------------------- |
+| HAT-02  | OPR-04, KAS-09, INT-02 | Rapor, borç ve form mesajlarının şablonları buradan gelir |
+| HAT-03  | INT-04                 | Rozet mekanizması                                         |
+| HAT-04  | HAY-03                 | Aşı satırı                                                |
+| HAT-04  | RAN-05, RAN-06         | Tarih değişince yeniden hesap, iptalde düşme              |
+| HAT-04  | OPR-02                 | Randevu detayında hatırlatma durumu                       |
+| HAT-05  | OPR-01                 | `pending → confirmed` geçişi                              |
+| HAT-05  | K14                    | Public web yüzeyi                                         |
+| HAT-06  | OPR-06, HAY-05         | `rebookReminderAt` yazılması ve temizlenmesi              |
+| HAT-07  | MUS-01, RAN-02         | Liste uç noktası ve randevu formu                         |
+| HAT-08  | OPR-02                 | Hayvan kartındaki "Hazır" butonu                          |
+| —       | ADM-02                 | Askıda kuyruk boş                                         |
 
 ## Açık sorular
 

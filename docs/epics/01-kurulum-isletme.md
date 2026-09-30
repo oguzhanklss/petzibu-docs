@@ -1,8 +1,8 @@
 # E1 · Kurulum & İşletme
 
-| Durum     | Faz | Platform        | Bağımlılık       |
-| --------- | --- | --------------- | ---------------- |
-| Yapılacak | MVP | Mobil öncelikli | Yok (temel epic) |
+| Durum        | Faz | Platform        | Bağımlılık       |
+| ------------ | --- | --------------- | ---------------- |
+| Tamamlandı   | MVP | Mobil öncelikli | Yok (temel epic) |
 
 > Story'ler: Kesinleşti
 
@@ -14,42 +14,44 @@ Owner 5 dakikada uygulamayı kullanmaya hazır olsun.
 
 Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Başlık |
-| --- | --- |
-| [K4](index.md#alınan-kararlar) | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat. |
-| [K5](index.md#alınan-kararlar) | Tenant salon sahibi değil, işletmedir. |
-| [K8](index.md#alınan-kararlar) | Giriş e-posta + şifre ile yapılır. |
-| [K9](index.md#alınan-kararlar) | Uygulamada kayıt ekranı yok. |
-| [K10](index.md#alınan-kararlar) | Ödeme uygulama dışında alınır. |
-| [K11](index.md#alınan-kararlar) | Pilot → ücretli geçişte hesap ve veri aynı kalır; yalnızca işletmenin durumu değişir. |
-| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg. |
-| [K13](index.md#alınan-kararlar) | Çalışma saatlerinde öğle arası yok. |
-| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır. |
-| [K15](index.md#alınan-kararlar) | Onboarding ilerlemesi adım numarası olarak saklanmaz. |
-| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda. |
+| #                               | Başlık                                                                                                         |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| [K4](index.md#alınan-kararlar)  | Hizmetlerde boyut kademesi var: küçük / orta / büyük için ayrı süre ve fiyat.                                  |
+| [K5](index.md#alınan-kararlar)  | Tenant salon sahibi değil, işletmedir.                                                                         |
+| [K8](index.md#alınan-kararlar)  | Giriş e-posta + şifre ile yapılır.                                                                             |
+| [K9](index.md#alınan-kararlar)  | Uygulamada kayıt ekranı yok.                                                                                   |
+| [K10](index.md#alınan-kararlar) | Ödeme uygulama dışında alınır.                                                                                 |
+| [K11](index.md#alınan-kararlar) | Pilot → ücretli geçişte hesap ve veri aynı kalır; yalnızca işletmenin durumu değişir.                          |
+| [K12](index.md#alınan-kararlar) | Boyut kademesi kilo eşikleri sabit: küçük < 10 kg, orta 10–25 kg, büyük > 25 kg.                               |
+| [K13](index.md#alınan-kararlar) | Çalışma saatlerinde öğle arası yok.                                                                            |
+| [K14](index.md#alınan-kararlar) | Davet ve şifre sıfırlama linkleri her zaman web'de açılır.                                                     |
+| [K15](index.md#alınan-kararlar) | Onboarding ilerlemesi adım numarası olarak saklanmaz.                                                          |
+| [K34](index.md#alınan-kararlar) | Ödeme gecikince 7 gün Ödeme bekliyor, sonra Askıda.                                                            |
 | [K35](index.md#alınan-kararlar) | KVKK rolleri: owner verisinde veri sorumlusu Petzibu; müşteri ve hayvan verisinde salon, Petzibu veri işleyen. |
-| [K36](index.md#alınan-kararlar) | Hizmetin bir türü vardır: Köpek / Kedi / İkisi. |
-| [K47](index.md#alınan-kararlar) | Owner web back office ayrı bir React uygulamasıdır. |
-| [K48](index.md#alınan-kararlar) | İşletme adresi zorunludur. |
-| [K57](index.md#alınan-kararlar) | Hesap silme şifreyle onaylanır; işletme Silinecek durumuna geçer, 30 gün içinde vazgeçilebilir. |
+| [K36](index.md#alınan-kararlar) | Hizmetin bir türü vardır: Köpek / Kedi / İkisi.                                                                |
+| [K47](index.md#alınan-kararlar) | Owner web back office ayrı bir React uygulamasıdır.                                                            |
+| [K48](index.md#alınan-kararlar) | İşletme adresi zorunludur.                                                                                     |
+| [K57](index.md#alınan-kararlar) | Hesap silme şifreyle onaylanır; işletme Silinecek durumuna geçer, 30 gün içinde vazgeçilebilir.                |
 
 ## Story listesi
 
 İlerleme bu tablodan takip edilir. Durum: `Yapılacak` → `Devam ediyor` → `Tamamlandı`.
 
+Epic kapandı. Backend ve mobil tarafı BS1 ve MS1 sprintlerinde, davet ve şifre sıfırlama sayfaları BS2'de yazıldı (K14). E-posta teslimi SendGrid kurulana kadar ertelendi (BS2-04); linkler üretiliyor ve sayfalar çalışıyor, story'leri bekletmez. Back office'teki karşılıkları E8'den sonra gelecek ve story'leri bekletmez (K47, K59).
+
 | ID     | Başlık                                 | Platform          | Durum     |
 | ------ | -------------------------------------- | ----------------- | --------- |
-| ADM-01 | İşletme oluşturma ve owner davet etme  | İç araç (backend) | Yapılacak |
-| ADM-02 | İşletme durumunu yönetme               | İç araç (backend) | Yapılacak |
-| KUR-01 | Daveti kabul edip hesabı aktifleştirme | Mobil + Web       | Yapılacak |
-| KUR-02 | Giriş ve oturum                        | Mobil + Web       | Yapılacak |
-| KUR-03 | Şifremi unuttum                        | Mobil + Web       | Yapılacak |
-| KUR-04 | Onboarding sihirbazı                   | Mobil             | Yapılacak |
-| KUR-05 | İşletme bilgileri                      | Mobil + Web       | Yapılacak |
-| KUR-06 | Çalışma saatleri                       | Mobil + Web       | Yapılacak |
-| KUR-07 | Hizmet ekleme ve düzenleme             | Mobil + Web       | Yapılacak |
-| KUR-08 | Ek ücret kalemleri                     | Mobil + Web       | Yapılacak |
-| KUR-09 | Özel kapalı günler                     | Mobil + Web       | Yapılacak |
+| ADM-01 | İşletme oluşturma ve owner davet etme  | İç araç (backend) | Tamamlandı |
+| ADM-02 | İşletme durumunu yönetme               | İç araç (backend) | Tamamlandı |
+| KUR-01 | Daveti kabul edip hesabı aktifleştirme | Mobil + Web       | Tamamlandı |
+| KUR-02 | Giriş ve oturum                        | Mobil + Web       | Tamamlandı |
+| KUR-03 | Şifremi unuttum                        | Mobil + Web       | Tamamlandı |
+| KUR-04 | Onboarding sihirbazı                   | Mobil             | Tamamlandı |
+| KUR-05 | İşletme bilgileri                      | Mobil + Web       | Tamamlandı |
+| KUR-06 | Çalışma saatleri                       | Mobil + Web       | Tamamlandı |
+| KUR-07 | Hizmet ekleme ve düzenleme             | Mobil + Web       | Tamamlandı |
+| KUR-08 | Ek ücret kalemleri                     | Mobil + Web       | Tamamlandı |
+| KUR-09 | Özel kapalı günler                     | Mobil + Web       | Tamamlandı |
 
 ---
 
@@ -66,8 +68,8 @@ _Petzibu ekibi olarak yeni bir salon için işletme ve owner hesabı açıp owne
 - Owner'a tek kullanımlık, süreli bir davet linki gönderilir.
 - Süresi dolan veya kaybolan davet yeniden gönderilebilir; eski link geçersiz olur.
 - MVP'de bu bir yönetim paneli olmak zorunda değil; basit bir iç script veya sayfa yeterli.
-**ADM-02 · İşletme durumunu yönetme** · İç araç
-_Petzibu ekibi olarak bir işletmeyi pilot, aktif, ödeme bekliyor veya askıda durumuna alabilmek istiyorum, böylece ödemesi gelmeyen salonun erişimini veri kaybetmeden kısıtlayabilirim._
+  **ADM-02 · İşletme durumunu yönetme** · İç araç
+  _Petzibu ekibi olarak bir işletmeyi pilot, aktif, ödeme bekliyor veya askıda durumuna alabilmek istiyorum, böylece ödemesi gelmeyen salonun erişimini veri kaybetmeden kısıtlayabilirim._
 
 - Durumlar: **Pilot**, **Aktif**, **Ödeme bekliyor**, **Askıda** (K34), **Silinecek** (K57). İlk dördünü Petzibu ekibi buradan değiştirir; Silinecek'e yalnızca owner kendisi alır (HES-07) ve yalnızca owner vazgeçebilir.
 - Durum değişikliği hesabı ve veriyi etkilemez. Pilottan aktife geçişte her şey olduğu gibi kalır (K11).
@@ -93,8 +95,8 @@ _Salon sahibi olarak davet e-postasındaki linkle şifremi belirleyip uygulamaya
 - Link kullanılmış veya süresi dolmuşsa, owner'a Petzibu ekibiyle iletişime geçmesi söylenir.
 - Şifre belirlenince başarı ekranı gösterilir: "Uygulamayı aç" butonu ve App Store / Google Play linkleri.
 - Owner uygulamada ilk kez giriş yaptığında onboarding sihirbazı (KUR-04) başlar.
-**KUR-02 · Giriş ve oturum** · Mobil + Web
-_Salon sahibi olarak bir kez giriş yaptıktan sonra her seferinde şifre girmek istemiyorum._
+  **KUR-02 · Giriş ve oturum** · Mobil + Web
+  _Salon sahibi olarak bir kez giriş yaptıktan sonra her seferinde şifre girmek istemiyorum._
 
 - Giriş ekranında yalnızca e-posta, şifre ve "Şifremi unuttum" bulunur. "Kayıt ol" butonu yoktur (K9).
 - Oturum cihazda açık kalır; kullanıcı çıkış yapana kadar tekrar şifre istenmez.
@@ -102,8 +104,8 @@ _Salon sahibi olarak bir kez giriş yaptıktan sonra her seferinde şifre girmek
 - Hatalı girişte hangi alanın yanlış olduğu söylenmez; genel bir "e-posta veya şifre hatalı" mesajı gösterilir.
 - Art arda çok sayıda hatalı denemede giriş geçici olarak kısıtlanır.
 - Girişte bekleyen metin onayı varsa (K58) uygulama açılmadan önce onay adımı gösterilir (HES-03).
-**KUR-03 · Şifremi unuttum** · Mobil + Web
-_Salon sahibi olarak şifremi unuttuğumda e-postama gelen linkle yeni şifre belirleyebilmek istiyorum._
+  **KUR-03 · Şifremi unuttum** · Mobil + Web
+  _Salon sahibi olarak şifremi unuttuğumda e-postama gelen linkle yeni şifre belirleyebilmek istiyorum._
 
 - E-posta sistemde kayıtlı olsun ya da olmasın aynı mesaj gösterilir ("Kayıtlıysa e-posta gönderdik").
 - Sıfırlama linki web sayfasında açılır (K14); yeni şifre belirlenince KUR-01'deki başarı ekranının aynısı gösterilir.
@@ -144,16 +146,16 @@ _Salon sahibi olarak işletme adımı, telefonumu ve adresimi girip düzenleyebi
 - Zorunluluk form kaydedilirken geçerlidir. Sihirbazda bu adım atlanırsa salon telefonu ve adres boş kalabilir; bu durum "Kurulumu tamamla" kartında görünür (KUR-04). İşletme adı ADM-01'de girildiği için hiçbir zaman boş olmaz.
 - Salon telefonu Türkiye formatında doğrulanır ve "+90" ön ekiyle saklanır.
 - Bu bilgiler hatırlatma şablonlarında, bakım raporunda, hizmet dökümünde ve intake formunda kullanılır. Adres, intake formundaki KVKK metninde veri sorumlusu adresi olarak geçer (INT-03).
-**KUR-06 · Çalışma saatleri** · Mobil + Web
-_Salon sahibi olarak hangi gün hangi saatler arasında açık olduğumu tanımlamak istiyorum, böylece takvim buna göre şekillenir._
+  **KUR-06 · Çalışma saatleri** · Mobil + Web
+  _Salon sahibi olarak hangi gün hangi saatler arasında açık olduğumu tanımlamak istiyorum, böylece takvim buna göre şekillenir._
 
 - Her gün için açık/kapalı durumu ve tek bir saat aralığı girilir. Öğle arası yoktur (K13).
 - Varsayılan: Pazartesi–Cumartesi 09:00–19:00, Pazar kapalı.
 - Kapanış saati açılış saatinden önce olamaz.
 - Çalışma saatleri dışı takvimde gri görünür. Randevu yine de alınabilir, sadece uyarı verilir (RAN-04).
 - Çalışma saatleri değişince mevcut randevular etkilenmez.
-**KUR-07 · Hizmet ekleme ve düzenleme** · Mobil + Web
-_Salon sahibi olarak hizmetlerimi boyut kademesine göre süre ve fiyatla tanımlamak istiyorum, böylece randevuda doğru fiyat otomatik gelir._
+  **KUR-07 · Hizmet ekleme ve düzenleme** · Mobil + Web
+  _Salon sahibi olarak hizmetlerimi boyut kademesine göre süre ve fiyatla tanımlamak istiyorum, böylece randevuda doğru fiyat otomatik gelir._
 
 - Alanlar: ad, **tür** (Köpek / Kedi / İkisi, K36) ve her kademe (küçük / orta / büyük) için ayrı süre ve fiyat.
 - Tür "Kedi" seçilince "Tüm boyutlar için aynı" varsayılan olarak açık gelir; owner kapatabilir.
@@ -163,16 +165,17 @@ _Salon sahibi olarak hizmetlerimi boyut kademesine göre süre ve fiyatla tanım
 - Hizmetler **yukarı/aşağı butonlarıyla** sıralanır. Bu sıra, randevu formundaki chip sırasını belirler. Sürükle-bırak MVP'de yok.
 - Hizmet silinmez, **pasife alınır**. Pasif hizmet yeni randevuda görünmez; geçmiş randevu ve dökümlerde adı ve fiyatı değişmeden kalır.
 - Hizmetin fiyatı değişince mevcut randevuların fiyatı değişmez.
-**KUR-08 · Ek ücret kalemleri** · Mobil + Web
-_Salon sahibi olarak "keçe açma", "huysuzluk ücreti" gibi ek ücretleri önceden tanımlamak istiyorum, böylece işlem sırasında tek dokunuşla eklerim (OPR-03)._
+  **KUR-08 · Ek ücret kalemleri** · Mobil + Web
+  _Salon sahibi olarak "keçe açma", "huysuzluk ücreti" gibi ek ücretleri önceden tanımlamak istiyorum, böylece işlem sırasında tek dokunuşla eklerim (OPR-03)._
 
 - Alanlar: ad ve varsayılan tutar.
 - Ek ücret kalemi küçük ürün satışı için de kullanılır (şampuan, tasma). Ayrı ürün veya stok kavramı yoktur; dökümde ek ücret satırı olarak görünür (E7).
 - Tutar randevuya eklenirken değiştirilebilir.
 - Ek ücret randevu süresini değiştirmez.
+- Kalemler **yukarı/aşağı butonlarıyla** sıralanır; bu sıra randevuda ve dökümde görünen sıradır. Hizmetlerdeki kuralın aynısı (KUR-07), sürükle-bırak yoktur.
 - Hizmetlerde olduğu gibi silinmez, pasife alınır.
-**KUR-09 · Özel kapalı günler** · Mobil + Web
-_Salon sahibi olarak bayram veya izin gibi belirli tarihleri kapalı olarak işaretlemek istiyorum, böylece o günlere yanlışlıkla randevu vermem._
+  **KUR-09 · Özel kapalı günler** · Mobil + Web
+  _Salon sahibi olarak bayram veya izin gibi belirli tarihleri kapalı olarak işaretlemek istiyorum, böylece o günlere yanlışlıkla randevu vermem._
 
 - Tek bir gün ya da tarih aralığı seçilebilir; isteğe bağlı bir açıklama eklenebilir (ör. "Kurban Bayramı").
 - Kapalı gün takvimde gri ve etiketli görünür.
@@ -197,28 +200,48 @@ _Salon sahibi olarak bayram veya izin gibi belirli tarihleri kapalı olarak işa
 
 ## Teknik notlar
 
-| Konu | Karar | Story |
-| -------------------- | --- | -------------- |
-| Link açılışı | Davet ve sıfırlama linkleri web'de açılır. Uygulamada açılması universal link / app link ve dev build gerektirir, Expo Go'da çalışmaz. | KUR-01, KUR-03 |
-| Web back office | Ayrı React uygulaması, MVP'de mobilden sonra (K47). Public web yüzeyi (K14) ondan bağımsızdır ve NestJS'te sunucu tarafında render edilir. | Tümü |
-| İşletme durumu | `business.status: pilot \| active \| payment_due \| suspended \| deleting`. Askıda ve Silinecek için yazma istekleri `403 TENANT_SUSPENDED` ile reddedilir, okuma çalışır. `lib/api.ts` bu kodu tek yerde yakalar; yönlendirme yapmaz, oturum durumuna `suspended` bayrağı yazar. Şerit ve pasif butonlar bu bayrağı okur; şerit metni `status` alanına göre seçilir. İşletme yanıtında `status`, `graceEndsAt`, `suspendedAt`, `deleteAt` alanları bulunur. | ADM-02, HES-07 |
+| Konu                 | Karar                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Story                  |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- |
+| Link açılışı         | Davet ve sıfırlama linkleri web'de açılır. Uygulamada açılması universal link / app link ve dev build gerektirir, Expo Go'da çalışmaz.                                                                                                                                                                                                                                                                                                                          | KUR-01, KUR-03         |
+| Web back office      | Ayrı React uygulaması, MVP'de mobilden sonra (K47). Public web yüzeyi (K14) ondan bağımsızdır ve NestJS'te sunucu tarafında render edilir.                                                                                                                                                                                                                                                                                                                      | Tümü                   |
+| İşletme durumu       | `business.status: pilot \| active \| payment_due \| suspended \| deleting`. Askıda ve Silinecek için yazma istekleri `403 TENANT_SUSPENDED` ile reddedilir, okuma çalışır. İstemcide salt okunur bayrağının **otoritesi `GET /auth/me`'dir**: her yanıt bayrağı yeniden yazar, böylece hesap yeniden aktifleşince uygulama kendiliğinden açılır. `lib/api.ts`'in `403`'te bayrağı kurması yalnızca iki yanıt arasındaki boşluğu kapatır; yönlendirme yapılmaz. Şerit ve pasif butonlar bayrağı okur, şerit metni `status`'a göre seçilir. Durum değişikliğinin çalışan uygulamaya ulaşması için mobilde `AppState` TanStack Query'nin odak yöneticisine bağlanır: telefonda tarayıcı odak olayı yoktur ve o köprü olmadan `me` yalnızca soğuk açılışta tazelenir. İşletme yanıtında `status`, `graceEndsAt`, `suspendedAt`, `deleteAt` alanları bulunur. | ADM-02, HES-07         |
 | Zamanlanmış görevler | Backend'de günlük bir job: (1) `graceEndsAt` geçen işletmeleri Askıda'ya alır, (2) `suspendedAt` + 11 ay olanlara silme uyarısı e-postası gönderir, (3) `suspendedAt` + 12 ay olanları ve `deleteAt` geçmiş olanları **aynı silme fonksiyonuyla** siler (HES-07), (4) `deleteAt` − 7 gün olanlara hatırlatma e-postası gönderir, (5) 30 günü dolan bekleyen intake formlarını siler (INT-04). E-posta gönderimi ADM-01'deki davet e-postasıyla aynı altyapıdır. | ADM-02, INT-04, HES-07 |
-| Hizmet türü | `service.species: dog \| cat \| both`. Randevu formu hizmet listesini hayvanın türüne göre süzer; API yanlış türde satırı reddeder. | KUR-07, RAN-02 |
-| Onboarding | Sunucuda yalnızca `business.onboardingCompletedAt`. Eksik adımlar veriden türetilir. | KUR-04 |
-| Hizmet kademeleri | API her zaman üç kademe tutar; "tümü aynı" yalnızca UI'da. | KUR-07 |
-| Sıralama | Yukarı/aşağı butonları; yeni kütüphane gerekmez. | KUR-07 |
-| Onaylar | KUR-01'deki üç onay E8'deki `consent` tablosuna yazılır; `GET /me` bekleyen onayları döner (K58). | KUR-01, KUR-02 |
+| Hizmet türü          | `service.species: dog \| cat \| both`. Randevu formu hizmet listesini hayvanın türüne göre süzer; API yanlış türde satırı reddeder.                                                                                                                                                                                                                                                                                                                             | KUR-07, RAN-02         |
+| Onboarding           | Sunucuda yalnızca `business.onboardingCompletedAt`. Eksik adımlar veriden türetilir.                                                                                                                                                                                                                                                                                                                                                                            | KUR-04                 |
+| Hizmet kademeleri    | API her zaman üç kademe tutar; "tümü aynı" yalnızca UI'da.                                                                                                                                                                                                                                                                                                                                                                                                      | KUR-07                 |
+| Sıralama             | Yukarı/aşağı butonları; yeni kütüphane gerekmez.                                                                                                                                                                                                                                                                                                                                                                                                                | KUR-07                 |
+| Onaylar              | KUR-01'deki üç onay E8'deki `consent` tablosuna yazılır; `GET /me` bekleyen onayları döner (K58).                                                                                                                                                                                                                                                                                                                                                               | KUR-01, KUR-02         |
+| İşletme açma         | İşletme, varsayılan çalışma saatleri (K13) ve owner kullanıcısı **tek işlemde** yazılır; davet e-postası işlem tamamlandıktan sonra kuyruğa girer. Owner'ın e-postası kayıtlıysa `409 CONFLICT` döner ve işletme açılmaz. Uçlar `admin` modülündedir (`POST /admin/businesses`), owner'ın kendi işletmesine baktığı uçlar `/business` altındadır.                                                                                                                | ADM-01                 |
+| Davet yenileme       | Daveti yeniden göndermek eski linki geçersiz kılar (aynı türdeki kullanılmamış token silinir). Hesabını kurmuş owner'a davet **gönderilmez**, `409 CONFLICT` döner: davet linki şifre belirletir ve aktif hesapta ikinci bir sıfırlama yolu açardı. O iş KUR-03'ündür.                                                                                                                                                                                          | ADM-01, KUR-03         |
+| Adres zorunluluğu    | `PATCH /business` gövdesi KUR-05 formunun tamamıdır; kısmi güncelleme yoktur. Salon telefonu ve adres **zorunludur** (K48), ilçe/şehir boş geçilebilir. Sihirbazda adımı atlamak isteği hiç göndermemektir, boş değer göndermek değildir — bu yüzden kaydedilen form K48'i her zaman karşılar, ama yeni işletmenin iki alanı da boş doğar ve işletme yanıtı ikisini de boş taşıyabilir. Eksik adım türetmesi telefon **veya** adres boşsa işletme bilgilerini eksik sayar. | KUR-04, KUR-05 |
+| Çalışma saatleri     | `PUT /business/working-hours` toptan yazar: yedi gün eksiksiz ve her gün tam bir kez gönderilir, aksi hâlde `400 VALIDATION_FAILED`. Satırlar yerinde güncellenir (silinip yeniden yazılmaz) ve yedisi tek transaction içindedir: yedi gün işletmeyle birlikte doğar, arada eksik saatli bir an oluşmaz. Kapalı günün saatleri sıfırlanmaz. | KUR-06 |
+| Onboarding kapanışı  | `POST /business/onboarding/complete` idempotenttir: ikinci çağrı ilk tamamlanma anını tazelemez. Sihirbazın kapanmasını istemci `GET /auth/me`'deki `onboardingCompletedAt`'ten okur. | KUR-04 |
+| Telefon biçimi       | Sunucu normalize **etmez**: sözleşme sınırda E.164 (`+905XXXXXXXXX`) şart koşar. Ulusal biçimi çeviren tek yer istemcinin form şemasıdır. | KUR-05 |
+| Hizmet sıralaması    | `PUT /services/order` gövdesi **bütün katalog olmak zorunda değildir**: ekran aktif hizmetleri sıralar ve yalnızca onların id'lerini gönderir. Sunucu gönderilen id'lere sırayla `sortOrder` yazar, listede olmayana dokunmaz. Bütün id'ler ilk yazmadan önce doğrulanır: yabancı ya da bilinmeyen id `404` döner ve sıra hiç değişmez; aynı id iki kez `400`. | KUR-07 |
+| Katalog sorgusu      | `orderBy` sayılı bir kümedir (`sortOrder \| name \| createdAt`, varsayılan `sortOrder`) ve bu sorguda `sortDirection` varsayılanı `asc`'dir: kataloğun kendi sırası artan sıradır, genel liste sorgusunun `desc` varsayılanı burada sırayı ters çevirirdi. Varsayılan `status` `active`'tir; ayarlardaki katalog `all` ister. | KUR-07 |
+| Hizmet silme         | Silme ucu yoktur. Pasife alma `PATCH /services/:id` + `isActive: false` ile yapılır; kayıt ve kademeleri yerinde kalır, geçmiş randevular adını ve fiyatını taşımaya devam eder. | KUR-07 |
+| Kademe yazımı        | Üç kademe her zaman dolu tutulur ve **`Service` üzerinden** yazılır; `ServiceTier` doğrudan sorgulanmaz. Nedeni teknik: `ServiceTier`'ın `businessId` alanı yoktur ve tenant listesinde değildir, kapsamı yalnızca `Service` üzerinden gelir. `tiers` güncellemede gönderilirse üçü birlikte yazılır, kısmi kademe güncellemesi yoktur. | KUR-07 |
+| Ek kalem sıralaması  | Ek kalemler de sıralanır (`PUT /extra-charges/order`); kural `reorderBody` ile hizmetlerinkiyle aynıdır. `ExtraCharge.sortOrder` alanı şemada zaten vardı ve sabit kalması yerine kullanılması seçildi: randevuda kalem listesi de owner'ın çalışma düzenine göre dizilmeli. | KUR-08 |
+| Ek kalem listesi     | `GET /extra-charges` sayfalanmaz, düz dizi döner ve aktif + pasif kalemleri birlikte verir; ekran ikiye ayırır. Sıralama **sorgu parametresi yoktur**: sıralama parametresi yalnızca sayfalanmış listelerde anlamlıdır, çünkü istemci orada kümenin tamamına sahip değildir. Burada uç her zaman `sortOrder` artan döner. | KUR-08 |
+| Kapalı gün çakışması | `closedDayResponse.conflictingAppointments` **E4'e kadar her zaman boş dizidir**. Alan sözleşmede ve istemcideki uyarı kutusunda hazır bekliyor; `Appointment` modülü yazılınca doldurulacak ve istemci değişmeyecek. KUR-09 bu yüzden E4 sonrasına ertelenmedi: çakışma listesi uyarının kendisi değil, kapalı gün zaten randevuyu engellemiyor. | KUR-09, RAN-04 |
+| Onay kapısı          | Bekleyen onay (K58) uygulama açılmadan gösterilir ve **sihirbazdan önce** gelir. Kapıyı `GET /auth/me`'deki `pendingConsents` açar; `403 CONSENT_REQUIRED` hangi metnin beklediğini söylemediği için yalnızca bir `me` tazelemesi ister. Mobildeki ekran sadedir: metin başına ayrı onay ve görülen sürümün gönderilmesi. Metin geçmişi, yeniden okuma ve müşteri metinleri HES-03'ündür. Onay vermek işletme verisi yazmak sayılmaz; salt okunur moddaki owner da onay verebilmelidir. | KUR-02, HES-03 |
+| Yazılmamış sekmeler  | Müşteriler (E2) ve Kasa (E7) sekmeleri, uçları yazılana kadar sekme çubuğunda görünmez (`href: null`); rotalar ve ekranlar yerinde kalır ve epic'leri gelince sekme geri açılır. E1'i bitirmiş bir owner uygulamayı gezerken boş ya da hatalı ekran görmez. | KUR-04 |
+| Kapalı gün listesi   | `GET /business/closed-days` yalnızca yaklaşanları döner; ölçüt `endDate`'tir, yani başlangıcı geçmişte kalan ama süren aralık listede kalır. "Bugün" işletmenin saat diliminde (`business.timezone`) hesaplanır: sunucu UTC'de ertesi güne geçmişken salon hâlâ bugünü yaşıyor olabilir. Liste sayfalanmaz. `PATCH` gövdesi formun tamamıdır; kayıt gerçekten silinir, pasife alınmaz. | KUR-09 |
+| Zamanlayıcı seçimi   | `@nestjs/schedule` (sürüm 6.x; 12.x ESM-only ve repo CommonJS). Zamanlayıcı süreç içinde çalışır ve **tek süreç varsayar**: uygulama çok kopyalı koşarsa iş her kopyada çalışır. Bugünkü tek adım idempotent olduğu için bu zararsız; kalıcı silme adımı eklenmeden önce dağıtım kararı verilmeli ve gerekiyorsa BullMQ repeatable job'a geçilmelidir. Job her gece işletmenin saat diliminde 03:00'te koşar. | ADM-02, HES-07, INT-04 |
+| Durum değiştirme     | `PATCH /admin/businesses/:id/status`, `admin` rolü. Tarihler durumdan türer, gövdede taşınmaz: `payment_due` → `graceEndsAt` = +7 gün, `suspended` → `suspendedAt`. `pilot` ve `active`'e dönüşte ikisi de temizlenir, yoksa job aktife alınan işletmeyi ertesi gece yeniden askıya alırdı. Tekrarlanan `suspended` isteği `suspendedAt`'i tazelemez: o tarih +11 ay uyarısının ve +12 ay silmesinin çapasıdır. `deleting` gövdede kabul edilmez ve o durumdaki işletme `409` alır (HES-07). | ADM-02 |
+| Davet kabulünde onay | Davet ancak **yayınlanmış owner metinlerinin tamamı** onaylandığında kabul edilir; eksikse `400 VALIDATION_FAILED` ve eksik metinler `errors[]` ile döner. Yayınlanmamış tür zorunlu sayılmaz. Kontrol token tüketilmeden **önce** çalışır: davet linki tek kullanımlıktır ve eksik onaylı bir istek onu yakmamalı. Sonradan gelen yeniden onay akışı (HES-03) bu şartı taşımaz; orada yalnızca bekleyen metinler gönderilir. | KUR-01, HES-03 |
+| Askıda onay verme    | `POST /legal/consents` askıdaki ve silinmek üzere olan işletmede de çalışır (`@AllowWhenSuspended()`), ADM-02'nin "askıdayken KVKK işlemleri yürür" maddesi gereği. Zorunlu, çünkü iki guard aksi hâlde kapalı bir kapı üretir: `ConsentGuard` onay vermemiş owner'ın her isteğini keser ve istisnası yalnızca bu uçtur, `TenantStatusGuard` ise ondan **önce** koşup askıdaki işletmenin bütün yazmalarını keser. Askıya alınmış bir salonda yeni metin sürümü yayınlanırsa owner onay veremez, onay vermediği için verisini okuyamaz. Onay kaydı işletme verisi değil kullanıcının yasal beyanıdır; askının yasakladığı "yeni kayıt ve düzenleme" kapsamına girmez. | ADM-02, HES-03, K58 |
 
 ## Diğer epic'lere bağlantılar
 
-| Buradan        | Oraya          | Konu                                             |
-| -------------- | -------------- | ------------------------------------------------ |
-| KUR-06, KUR-09 | RAN-04         | Çalışma saati ve kapalı gün uyarısı              |
-| KUR-07         | HAY-01, RAN-02 | Boyut kademesi ve otomatik fiyat                 |
-| KUR-08         | OPR-03         | İşlem sırasında ek ücret ekleme                  |
-| KUR-05         | E3, E6, E7     | Salon bilgilerinin mesaj ve dökümlerde kullanımı |
-| KUR-01, KUR-02 | HES-03, ADM-03 | Onay modeli ve yeniden onay                      |
-| ADM-02         | HES-07         | Silinecek durumu ve ortak silme job'u            |
+| Buradan        | Oraya          | Konu                                                          |
+| -------------- | -------------- | ------------------------------------------------------------- |
+| KUR-06, KUR-09 | RAN-04         | Çalışma saati ve kapalı gün uyarısı                           |
+| KUR-07         | HAY-01, RAN-02 | Boyut kademesi ve otomatik fiyat                              |
+| KUR-08         | OPR-03         | İşlem sırasında ek ücret ekleme                               |
+| KUR-05         | E3, E6, E7     | Salon bilgilerinin mesaj ve dökümlerde kullanımı              |
+| KUR-01, KUR-02 | HES-03, ADM-03 | Onay modeli ve yeniden onay                                   |
+| ADM-02         | HES-07         | Silinecek durumu ve ortak silme job'u                         |
 | K14            | E3, E6         | Public web yüzeyi intake formunu ve onay sayfasını barındırır |
 
 ## Açık sorular

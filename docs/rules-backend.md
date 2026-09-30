@@ -4,25 +4,25 @@ Backend'in kod kuralları. "Neden" sorusunun cevabı [mimari dokümanda](archite
 
 ## Stack
 
-| Alan | Seçim |
-| --- | --- |
-| Runtime | Node.js 24 (`.nvmrc`), pnpm |
-| Framework | NestJS 11, TypeScript `strict` |
-| ORM | Prisma 7, PostgreSQL 16 |
-| Doğrulama ve sözleşme | Zod 4 + nestjs-zod, `@repo/contracts` |
-| Env | Zod şeması, `config/env.schema.ts` |
-| Request context | nestjs-cls, `@nestjs-cls/transactional` |
-| Kuyruk | BullMQ + Redis |
-| Dosya | S3 uyumlu (yerelde MinIO), presigned URL |
-| E-posta | SendGrid (yerelde Mailpit) |
-| PDF / Excel | Puppeteer + EJS, ExcelJS |
-| Public web | Handlebars, sunucu tarafı render |
-| Şifre | argon2id |
-| Log | Winston, `LoggerService` |
-| i18n | Yok; mesajlar Türkçe ve inline (ADR-0006) |
-| API dokümantasyonu | Swagger, nestjs-zod ile şemalardan üretilir |
-| Monorepo | Turborepo + pnpm workspaces |
-| Test | Jest, Supertest, gerçek Postgres |
+| Alan                  | Seçim                                       |
+| --------------------- | ------------------------------------------- |
+| Runtime               | Node.js 24 (`.nvmrc`), pnpm                 |
+| Framework             | NestJS 11, TypeScript `strict`              |
+| ORM                   | Prisma 7, PostgreSQL 16                     |
+| Doğrulama ve sözleşme | Zod 4 + nestjs-zod, `@repo/contracts`       |
+| Env                   | Zod şeması, `config/env.schema.ts`          |
+| Request context       | nestjs-cls, `@nestjs-cls/transactional`     |
+| Kuyruk                | BullMQ + Redis                              |
+| Dosya                 | S3 uyumlu (yerelde MinIO), presigned URL    |
+| E-posta               | SendGrid (yerelde Mailpit)                  |
+| PDF / Excel           | Puppeteer + EJS, ExcelJS                    |
+| Public web            | Handlebars, sunucu tarafı render            |
+| Şifre                 | argon2id                                    |
+| Log                   | Winston, `LoggerService`                    |
+| i18n                  | Yok; mesajlar Türkçe ve inline (ADR-0006)   |
+| API dokümantasyonu    | Swagger, nestjs-zod ile şemalardan üretilir |
+| Monorepo              | Turborepo + pnpm workspaces                 |
+| Test                  | Jest, Supertest, gerçek Postgres            |
 
 Başka kütüphane için açık bir sebep gerekir. Alan başına tek kütüphane. Bu tablo yığının **kanonik listesidir**; mimari doküman yığını tekrar etmez, yalnızca seçimlerin gerekçesini anlatır.
 
@@ -42,7 +42,7 @@ src/
       <modül>.service.spec.ts
 ```
 
-- Modül sınıfı: platform (mail, files, document-generator), çekirdek (users, auth, businesses, business-hours, legal), domain (catalog, customers, pets, appointments, grooming-reports, billing, expenses), orkestrasyon (reminders, intake, reports, privacy, admin, public-web). Bağımlılık yönü platform ← çekirdek ← domain ← orkestrasyon.
+- Modül sınıfı: platform (mail, files, document-generator), çekirdek (users, auth, businesses, business-hours, legal), domain (catalog, customers, pets, appointments, grooming-reports, billing, expenses), orkestrasyon (customer-overview, reminders, intake, reports, privacy, admin, public-web). Bağımlılık yönü platform ← çekirdek ← domain ← orkestrasyon.
 - Modül gerçekten büyüyünce klasörlere ayrılır, önceden değil. `dto/`, `repositories/`, `commands/`, `queries/` klasörleri açılmaz.
 - `utils/` çöplüğü yok. Bir yardımcı ikinci kullanıcısı çıkana kadar tek kullanıcısının yanında durur.
 
@@ -58,6 +58,7 @@ src/
 
 - Tenant işletmedir. İşletmeye ait her tabloda `businessId` vardır ve tablo `tenant.extension.ts`'teki `TENANT_MODELS` listesindedir. Sorgularda `businessId` elle yazılmaz; extension ekler. Context yoksa extension `MissingTenantContextError` fırlatır.
 - **Prisma'ya `PrismaService.client` üzerinden erişilir**, `this.prisma.customer` değil `this.prisma.client.customer`. `client` bağlama duyarlıdır: `@Transactional()` içindeysen o transaction'ın client'ını döner.
+- **Tenant tablosuna `include` ile gidilmez.** Extension yalnızca en üstteki sorguya `businessId` ekler; `include` ile gelen ilişki süzülmez. Tenant ilişkisi ayrı sorguyla okunur (`pets.service.ts` → `attachVaccinations`). Tenant olmayan ilişkiler (`User`, `ServiceTier`) için `include` serbest.
 - **`create`'te `businessId` yazmak için `scoped()` kullan.** Extension alanı çalışma zamanında doldurur ama Prisma'nın tipleri zorunlu görür: `data: scoped<Prisma.ExpenseUncheckedCreateInput>({ ... })`.
 - Tenant'sız kod `runAsSystem()`, işletme adına çalışan job `runAsTenant(businessId)` içinde çalışır. Başka yol yok. `runAsSystem()` bütün işletmeleri görür: kapsamı küçük tut ve içinde `businessId`'yi elle yaz.
 - **Tenant kapsamlı olmayan tablolar** ve nedenleri `tenant.extension.ts` başında yazılıdır: `Business` (tenant'ın kendisi), `User` (admin'in işletmesi yok), `RefreshToken` / `AuthToken` (kimlik doğrulamadan önce okunur), `LegalText` (Petzibu genelinde). Bunlara dokunan sorgular `runAsSystem()` içinde ve kapsamı elle yazar.

@@ -1,7 +1,7 @@
 # E5 · Randevu Operasyonu
 
-| Durum | Faz | Platform | Bağımlılık |
-| --- | --- | --- | --- |
+| Durum     | Faz | Platform        | Bağımlılık                 |
+| --------- | --- | --------------- | -------------------------- |
 | Yapılacak | MVP | Mobil öncelikli | [E4](04-takvim-randevu.md) |
 
 > Story'ler: Kesinleşti
@@ -14,40 +14,40 @@ Müşterinin salona gelişinden bakımın bitişine kadar olan süreç akıcı o
 
 Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
-| # | Başlık |
-| --- | --- |
-| [K1](index.md#alınan-kararlar) | Bir randevu içinde birden fazla hayvan olabilir. |
-| [K2](index.md#alınan-kararlar) | "Fatura", müşteriye gönderilen hizmet dökümü ve tahsilat kaydıdır. |
-| [K3](index.md#alınan-kararlar) | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar. |
-| [K26](index.md#alınan-kararlar) | Geçmiş tarihe randevu girilebilir. |
-| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı. |
-| [K33](index.md#alınan-kararlar) | Önce/sonra kolajı telefonda, paylaşım anında üretilir; saklanmaz. |
-| [K37](index.md#alınan-kararlar) | Tamamlanan randevu geri alınamaz. |
-| [K38](index.md#alınan-kararlar) | "Geldi" adımı atlanabilir. |
-| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil. |
-| [K40](index.md#alınan-kararlar) | Bakım raporu tamamlama akışından bağımsızdır; zorunlu adım değildir. |
+| #                               | Başlık                                                                                                           |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| [K1](index.md#alınan-kararlar)  | Bir randevu içinde birden fazla hayvan olabilir.                                                                 |
+| [K2](index.md#alınan-kararlar)  | "Fatura", müşteriye gönderilen hizmet dökümü ve tahsilat kaydıdır.                                               |
+| [K3](index.md#alınan-kararlar)  | Hatırlatmalar MVP'de yarı otomatik: uygulama mesajları kuyrukta listeler, owner tek dokunuşla WhatsApp'ı açar.   |
+| [K26](index.md#alınan-kararlar) | Geçmiş tarihe randevu girilebilir.                                                                               |
+| [K32](index.md#alınan-kararlar) | Randevu satırı fiyatı tek kuralla gelir: özel fiyat varsa o, yoksa kademe fiyatı.                                |
+| [K33](index.md#alınan-kararlar) | Önce/sonra kolajı telefonda, paylaşım anında üretilir; saklanmaz.                                                |
+| [K37](index.md#alınan-kararlar) | Tamamlanan randevu geri alınamaz.                                                                                |
+| [K38](index.md#alınan-kararlar) | "Geldi" adımı atlanabilir.                                                                                       |
+| [K39](index.md#alınan-kararlar) | Rebook hatırlatması müşteri bazındadır, hayvan bazında değil.                                                    |
+| [K40](index.md#alınan-kararlar) | Bakım raporu tamamlama akışından bağımsızdır; zorunlu adım değildir.                                             |
 | [K49](index.md#alınan-kararlar) | Rebook süresi tek kuralla belirlenir: son rapordaki öneri, yoksa son iki randevu arasındaki süre, yoksa 4 hafta. |
-| [K52](index.md#alınan-kararlar) | Tek tıkla onay linki MVP'de. |
+| [K52](index.md#alınan-kararlar) | Tek tıkla onay linki MVP'de.                                                                                     |
 
 ## Story listesi
 
 İlerleme bu tablodan takip edilir. Durum: `Yapılacak` → `Devam ediyor` → `Tamamlandı`.
 
-| ID | Başlık | Platform | Durum |
-| --- | --- | --- | --- |
-| OPR-01 | Durum akışı | Mobil + Web | Yapılacak |
-| OPR-02 | Randevu detayı | Mobil + Web | Yapılacak |
-| OPR-03 | İşlem sırasında hizmet ve ek ücret ekleme | Mobil | Yapılacak |
-| OPR-04 | Bakım raporu | Mobil | Yapılacak |
-| OPR-05 | Tamamlama | Mobil + Web | Yapılacak |
-| OPR-06 | Sonraki randevu | Mobil + Web | Yapılacak |
+| ID     | Başlık                                    | Platform    | Durum     |
+| ------ | ----------------------------------------- | ----------- | --------- |
+| OPR-01 | Durum akışı                               | Mobil + Web | Yapılacak |
+| OPR-02 | Randevu detayı                            | Mobil + Web | Yapılacak |
+| OPR-03 | İşlem sırasında hizmet ve ek ücret ekleme | Mobil       | Yapılacak |
+| OPR-04 | Bakım raporu                              | Mobil       | Yapılacak |
+| OPR-05 | Tamamlama                                 | Mobil + Web | Yapılacak |
+| OPR-06 | Sonraki randevu                           | Mobil + Web | Yapılacak |
 
 ---
 
 ## Durum ve detay
 
 **OPR-01 · Durum akışı** · Mobil + Web
-*Salon sahibi olarak randevunun hangi aşamada olduğunu tek dokunuşla güncelleyebilmek istiyorum.*
+_Salon sahibi olarak randevunun hangi aşamada olduğunu tek dokunuşla güncelleyebilmek istiyorum._
 
 - Durumlar ve renkleri:
   - Bekliyor (gri)
@@ -58,14 +58,14 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
   - Gelmedi (kırmızı #EF4444)
 - İzin verilen geçişler:
 
-  | Durumdan | Geçebileceği durumlar |
-  | --- | --- |
-  | Bekliyor | Onaylandı, Geldi, Tamamlandı, Gelmedi, İptal |
-  | Onaylandı | Geldi, Tamamlandı, Gelmedi, İptal |
-  | Geldi | Tamamlandı, İptal |
-  | Gelmedi | Bekliyor (geri alma) |
-  | Tamamlandı | — (K37) |
-  | İptal | — (RAN-06) |
+  | Durumdan   | Geçebileceği durumlar                        |
+  | ---------- | -------------------------------------------- |
+  | Bekliyor   | Onaylandı, Geldi, Tamamlandı, Gelmedi, İptal |
+  | Onaylandı  | Geldi, Tamamlandı, Gelmedi, İptal            |
+  | Geldi      | Tamamlandı, İptal                            |
+  | Gelmedi    | Bekliyor (geri alma)                         |
+  | Tamamlandı | — (K37)                                      |
+  | İptal      | — (RAN-06)                                   |
 
 - "Onaylandı" durumuna iki yoldan geçilir: owner elle işaretler (müşteri hatırlatmaya olumlu cevap verdiğinde) ya da müşteri tek tıkla onay linkine tıklar (HAT-05, K52). İkisi de aynı `confirmed` geçişidir.
 - "Geldi" adımı atlanabilir (K38).
@@ -73,18 +73,18 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 - "Gelmedi" olarak işaretlenen randevu müşterinin gelmedi sayısına (MUS-04) yansır ve takvimde görünür kalır (K27).
 - "Gelmedi" geri alınırsa randevu Bekliyor durumuna döner ve gelmedi sayısından düşer.
 - "Geldi" durumuna geçerken ek bir bilgi istenmez.
-**OPR-02 · Randevu detayı** · Mobil + Web
-*Salon sahibi olarak randevuyu açtığımda, işe başlamadan bilmem gereken her şeyi tek ekranda görmek istiyorum.*
+  **OPR-02 · Randevu detayı** · Mobil + Web
+  _Salon sahibi olarak randevuyu açtığımda, işe başlamadan bilmem gereken her şeyi tek ekranda görmek istiyorum._
 - **Üst bölüm:** durum chip'i, tarih ve saat aralığı, duruma göre değişen ana ve ikincil aksiyon butonları. Tabloda olmayan hiçbir geçiş ekranda görünmez (OPR-01):
 
-  | Durum | Ana aksiyon | İkincil aksiyonlar |
-  | --- | --- | --- |
-  | Bekliyor | "Geldi" | "Tamamla" (OPR-05), "Onaylandı" işaretle |
-  | Onaylandı | "Geldi" | "Tamamla" (OPR-05) |
-  | Geldi | "Tamamla" (OPR-05) | — |
-  | Tamamlandı | "Dökümü gör" (E7) | "Sonraki randevu" (OPR-06) |
-  | Gelmedi | "Geri al" (Bekliyor'a döner) | — |
-  | İptal | — | — |
+  | Durum      | Ana aksiyon                  | İkincil aksiyonlar                       |
+  | ---------- | ---------------------------- | ---------------------------------------- |
+  | Bekliyor   | "Geldi"                      | "Tamamla" (OPR-05), "Onaylandı" işaretle |
+  | Onaylandı  | "Geldi"                      | "Tamamla" (OPR-05)                       |
+  | Geldi      | "Tamamla" (OPR-05)           | —                                        |
+  | Tamamlandı | "Dökümü gör" (E7)            | "Sonraki randevu" (OPR-06)               |
+  | Gelmedi    | "Geri al" (Bekliyor'a döner) | —                                        |
+  | İptal      | —                            | —                                        |
 
 - Bitiş saati geçmiş Bekliyor/Onaylandı randevuda ana aksiyonun yerini "Geldi mi?" sorusu alır: "Tamamlandı" / "Gelmedi" (OPR-01).
 - Bekliyor/Onaylandı randevuda hatırlatma durumu görünür: "Hatırlatma gönderilmedi" / "Dün 18:05 gönderildi" (HAT-04).
@@ -109,7 +109,7 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 ## İşlem sırasında
 
 **OPR-03 · İşlem sırasında hizmet ve ek ücret ekleme** · Mobil
-*Salon sahibi olarak işe başladıktan sonra bir hayvana "keçe açma" gibi bir ek ücret veya ek hizmet ekleyebilmek istiyorum, böylece eklediğim kalem dökümde otomatik görünür.*
+_Salon sahibi olarak işe başladıktan sonra bir hayvana "keçe açma" gibi bir ek ücret veya ek hizmet ekleyebilmek istiyorum, böylece eklediğim kalem dökümde otomatik görünür._
 
 - Randevu Bekliyor, Onaylandı veya Geldi durumundayken yapılabilir.
 - Ek ücret, KUR-08'de tanımlı kalemlerden seçilir; tutarı o an değiştirilebilir.
@@ -118,8 +118,8 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 - Ek ücretin adı ve tutarı randevuya o anki değerleriyle kopyalanır.
 - Eklenen kalem kaldırılabilir.
 - Web'de bu ekran yoktur; tamamlanmış randevuya web'den kalem eklemek KAS-02 ile yapılır. Tamamlanmamış randevu için web'de ek ücret eklenmez; bu masa başı işi değildir.
-**OPR-04 · Bakım raporu** · Mobil
-*Salon sahibi olarak her hayvan için önce/sonra fotoğraflı bir rapor oluşturup WhatsApp'tan göndermek istiyorum.*
+  **OPR-04 · Bakım raporu** · Mobil
+  _Salon sahibi olarak her hayvan için önce/sonra fotoğraflı bir rapor oluşturup WhatsApp'tan göndermek istiyorum._
 - Rapor hayvan başınadır. Randevu Geldi veya Tamamlandı durumundayken oluşturulabilir. Bekliyor veya Onaylandı randevuda rapor başlatılırsa randevu otomatik olarak **Geldi** durumuna geçer (K38); ek dokunuş istenmez.
 - İçerik: önce fotoğrafı, sonra fotoğrafı, yapılandırılmış alanlar ve not. Hepsi isteğe bağlıdır; en az biri dolu olmalıdır.
 - **Yapılandırılmış alanlar**, her biri tek seçimli chip:
@@ -144,7 +144,7 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 ## Bitiş
 
 **OPR-05 · Tamamlama** · Mobil + Web
-*Salon sahibi olarak randevuyu tamamladığımda tahsilat ve sonraki randevu adımlarına sırayla yönlendirilmek istiyorum.*
+_Salon sahibi olarak randevuyu tamamladığımda tahsilat ve sonraki randevu adımlarına sırayla yönlendirilmek istiyorum._
 
 - "Tamamla" butonu Bekliyor, Onaylandı ve Geldi durumlarında kullanılabilir (K38). Yeri OPR-02'deki aksiyon tablosundadır.
 - Tamamlamadan önce onay istenir: "Tamamlanan randevu geri alınamaz."
@@ -154,8 +154,8 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 - Her adım atlanabilir. Tahsilat atlanırsa tutar müşterinin borcuna yazılır (E7).
 - Tamamlanan randevu müşterinin "son ziyaret" bilgisini ve "Yeni" etiketini günceller (MUS-01); müşteri gelmeyenler listesinden gizlenmişse gizleme kalkar (HAT-07).
 - Tamamlanan randevu geri alınamaz (K37).
-**OPR-06 · Sonraki randevu** · Mobil + Web
-*Salon sahibi olarak tamamlanan randevudan, aynı hayvanlar ve hizmetlerle dolu bir sonraki randevu formu açabilmek istiyorum.*
+  **OPR-06 · Sonraki randevu** · Mobil + Web
+  _Salon sahibi olarak tamamlanan randevudan, aynı hayvanlar ve hizmetlerle dolu bir sonraki randevu formu açabilmek istiyorum._
 - "3 / 4 / 6 / 8 hafta sonra" seçenekleri sunulur.
 - Varsayılan seçenek K49 kuralıyla gelir: bu randevudaki hayvanların raporlarında sonraki bakım önerisi varsa o (birden fazla hayvanda farklı öneriler varsa en kısası); yoksa müşterinin son iki tamamlanmış randevusu arasındaki süreye en yakın seçenek; yoksa 4 hafta.
 - Seçim yapılınca, seçilen haftanın aynı günü ve aynı saatiyle, aynı hayvanlar ve hizmetlerle dolu bir randevu formu açılır.
@@ -180,45 +180,45 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
 ## Teknik notlar
 
-| Konu | Karar | Story |
-| --- | --- | --- |
-| Durum geçişleri | İzin verilen geçişler sunucuda tek bir durum servisinde tanımlıdır; tabloda olmayan geçiş API'de `409 INVALID_STATUS_TRANSITION` ile reddedilir. Enum: `pending \| confirmed \| arrived \| completed \| no_show \| cancelled`. HAT-05 onay sayfası da aynı servisi çağırır. Sonuçlanmış / sonuçlanmamış tanımı E4 teknik notlarındadır. | OPR-01 |
-| Durum renkleri | Story'deki hex değerler tasarım referansıdır; kodda token kullanılır (`global.css` / `tailwind.config.js`, `lib/theme.ts`). | OPR-01 |
-| "Geldi mi?" sorusu | Saklanmaz; `endAt < şimdi` ve durum Bekliyor/Onaylandı ise istemci gösterir. Owner cevap vermezse randevu Bekliyor kalır ve soru görünmeye devam eder. | OPR-01 |
-| Gelmedi sayısı | Saklanmaz; müşterinin "Gelmedi" durumundaki randevu sayısından hesaplanır. | OPR-01, MUS-04 |
-| Ek ücret | `appointmentLine` tablosunda `type: service \| extra`. Ek ücret satırında `extraChargeId`, kopyalanmış ad ve tutar bulunur; `serviceId` boş, `durationMin` 0'dır. E4 veri modeli notu buna göre güncellendi. | OPR-03 |
-| Bakım raporu | `groomingReport` (`appointmentPetId`, `beforePhotoId`, `afterPhotoId`, `behavior`, `skinFinding`, `earFinding`, `coatFinding`, `nextCareWeeks`, `note`, `sharedAt`). Enum'lar API'de tanımlı, hepsi nullable. Fotoğraflar HAY-04 ile aynı depolamayı ve multipart yüklemeyi kullanır. | OPR-04 |
-| Rapor başlatma | Rapor oluşturma isteği, randevu `pending` veya `confirmed` ise sunucuda aynı transaction'da `arrived`'a geçirir. Durum geçiş tablosuna örtük geçiş olarak eklidir. | OPR-04, OPR-01 |
-| Rapor mesajı | Mesaj metnini backend üretir (HAT-02 şablon servisi); OPR-02 yanıtındaki hayvan kartı `reportMessage` alanını taşır. İstemci şablon çözmez. | OPR-04 |
-| Paylaşım | Hayvan başına tek görsel + metin. `expo-sharing` yalnızca dosya paylaştığı için metin React Native `Share` ile verilir; Android'de görsel ve metin ayrı ayrı paylaşılabilir, cihaz testine göre karar. Yeni kütüphane yok. | OPR-04 |
-| Kolaj | İstemcide görünüm yakalama: `react-native-view-shot`, [mobil RULES.md](../rules-mobile.md) kütüphane tablosuna "görsel birleştirme" satırı olarak eklenir. Çıktı geçici dosyadır, paylaşımdan sonra silinir. | OPR-04 |
-| Son ziyaret | OPR-02 yanıtında hayvan başına `lastReport` (nullable): `note`, `afterPhotoUrl`, `behavior`; ayrıca `referencePhotoUrl`. Ayrı istek yok. | OPR-02 |
-| Etiket önerisi | İstemci, son iki raporun `behavior` değerinden türetir; saklanmaz. | OPR-04 |
-| Rebook süresi | Sunucu hesaplar ve tamamlama yanıtında `suggestedRebookWeeks` döner (K49: rapor `nextCareWeeks` → son iki tamamlanmış randevu arası → 4). OPR-04 mesaj metni aynı değeri hayvan bazında kullanır (`groomingReport.nextCareWeeks` doluysa o). | OPR-04, OPR-06 |
-| Tamamlama | `completedAt` saklanır. Tamamlama isteği döküm oluşturma (E7) ile aynı işlemde, tek transaction'da yapılır; `customer.hiddenFromInactiveAt` boşaltılır (HAT-07). | OPR-05 |
-| Rebook tarihi | Müşteride `rebookReminderAt`. İleri tarihli sonuçlanmamış randevu varken hatırlatma sorguları bu müşteriyi dışarıda bırakır. Arşivlenmemiş hayvan kalmayınca HAY-05 alanı boşaltır. | OPR-06 |
-| Kod yeri | Randevu detayı, durum geçişleri ve rapor `features/appointments/` altında; sonraki randevu formu RAN-02 bileşenini yeniden kullanır. | Tümü |
+| Konu               | Karar                                                                                                                                                                                                                                                                                                                                   | Story          |
+| ------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| Durum geçişleri    | İzin verilen geçişler sunucuda tek bir durum servisinde tanımlıdır; tabloda olmayan geçiş API'de `409 INVALID_STATUS_TRANSITION` ile reddedilir. Enum: `pending \| confirmed \| arrived \| completed \| no_show \| cancelled`. HAT-05 onay sayfası da aynı servisi çağırır. Sonuçlanmış / sonuçlanmamış tanımı E4 teknik notlarındadır. | OPR-01         |
+| Durum renkleri     | Story'deki hex değerler tasarım referansıdır; kodda token kullanılır (`global.css` / `tailwind.config.js`, `lib/theme.ts`).                                                                                                                                                                                                             | OPR-01         |
+| "Geldi mi?" sorusu | Saklanmaz; `endAt < şimdi` ve durum Bekliyor/Onaylandı ise istemci gösterir. Owner cevap vermezse randevu Bekliyor kalır ve soru görünmeye devam eder.                                                                                                                                                                                  | OPR-01         |
+| Gelmedi sayısı     | Saklanmaz; müşterinin "Gelmedi" durumundaki randevu sayısından hesaplanır.                                                                                                                                                                                                                                                              | OPR-01, MUS-04 |
+| Ek ücret           | `appointmentLine` tablosunda `type: service \| extra`. Ek ücret satırında `extraChargeId`, kopyalanmış ad ve tutar bulunur; `serviceId` boş, `durationMin` 0'dır. E4 veri modeli notu buna göre güncellendi.                                                                                                                            | OPR-03         |
+| Bakım raporu       | `groomingReport` (`appointmentPetId`, `beforePhotoId`, `afterPhotoId`, `behavior`, `skinFinding`, `earFinding`, `coatFinding`, `nextCareWeeks`, `note`, `sharedAt`). Enum'lar API'de tanımlı, hepsi nullable. Fotoğraflar HAY-04 ile aynı depolamayı ve multipart yüklemeyi kullanır.                                                   | OPR-04         |
+| Rapor başlatma     | Rapor oluşturma isteği, randevu `pending` veya `confirmed` ise sunucuda aynı transaction'da `arrived`'a geçirir. Durum geçiş tablosuna örtük geçiş olarak eklidir.                                                                                                                                                                      | OPR-04, OPR-01 |
+| Rapor mesajı       | Mesaj metnini backend üretir (HAT-02 şablon servisi); OPR-02 yanıtındaki hayvan kartı `reportMessage` alanını taşır. İstemci şablon çözmez.                                                                                                                                                                                             | OPR-04         |
+| Paylaşım           | Hayvan başına tek görsel + metin. `expo-sharing` yalnızca dosya paylaştığı için metin React Native `Share` ile verilir; Android'de görsel ve metin ayrı ayrı paylaşılabilir, cihaz testine göre karar. Yeni kütüphane yok.                                                                                                              | OPR-04         |
+| Kolaj              | İstemcide görünüm yakalama: `react-native-view-shot`, [mobil RULES.md](../rules-mobile.md) kütüphane tablosuna "görsel birleştirme" satırı olarak eklenir. Çıktı geçici dosyadır, paylaşımdan sonra silinir.                                                                                                                            | OPR-04         |
+| Son ziyaret        | OPR-02 yanıtında hayvan başına `lastReport` (nullable): `note`, `afterPhotoUrl`, `behavior`; ayrıca `referencePhotoUrl`. Ayrı istek yok.                                                                                                                                                                                                | OPR-02         |
+| Etiket önerisi     | İstemci, son iki raporun `behavior` değerinden türetir; saklanmaz.                                                                                                                                                                                                                                                                      | OPR-04         |
+| Rebook süresi      | Sunucu hesaplar ve tamamlama yanıtında `suggestedRebookWeeks` döner (K49: rapor `nextCareWeeks` → son iki tamamlanmış randevu arası → 4). OPR-04 mesaj metni aynı değeri hayvan bazında kullanır (`groomingReport.nextCareWeeks` doluysa o).                                                                                            | OPR-04, OPR-06 |
+| Tamamlama          | `completedAt` saklanır. Tamamlama isteği döküm oluşturma (E7) ile aynı işlemde, tek transaction'da yapılır; `customer.hiddenFromInactiveAt` boşaltılır (HAT-07).                                                                                                                                                                        | OPR-05         |
+| Rebook tarihi      | Müşteride `rebookReminderAt`. İleri tarihli sonuçlanmamış randevu varken hatırlatma sorguları bu müşteriyi dışarıda bırakır. Arşivlenmemiş hayvan kalmayınca HAY-05 alanı boşaltır.                                                                                                                                                     | OPR-06         |
+| Kod yeri           | Randevu detayı, durum geçişleri ve rapor `features/appointments/` altında; sonraki randevu formu RAN-02 bileşenini yeniden kullanır.                                                                                                                                                                                                    | Tümü           |
 
 ## Diğer epic'lere bağlantılar
 
-| Buradan | Oraya | Konu |
-| --- | --- | --- |
-| OPR-01 | MUS-04 | Gelmedi sayısı |
-| OPR-01 | RAN-01, RAN-02, RAN-06 | "Geldi mi?" takvim bloğunda, geçmiş randevu, iptal durumu |
-| OPR-01 | HAT-05 | Onay linki `confirmed` üretir |
-| OPR-02 | HAY-02, HAY-03, RAN-04, RAN-07 | Uyarı şeritleri ve not |
-| OPR-02 | INT-02, INT-03 | Formu gönder, "Bakım onayı yok" işareti |
-| OPR-02 | HAY-04 | Son ziyaret fotoğrafı ve referans fotoğrafı |
-| OPR-02 | HAT-04, HAT-08 | Hatırlatma durumu ve "Hazır" butonu |
-| OPR-04 | HAY-02 | "Huzursuz" tekrarında etiket önerisi |
-| OPR-04 | HAT-02 | Rapor mesajı şablonu |
-| OPR-03 | KUR-08, KAS-02 | Ek ücret kalemleri; tamamlanmış randevuda düzeltme |
-| OPR-04 | HAY-04 | Rapor fotoğraflarının fotoğraf geçmişine eklenmesi |
-| OPR-05 | E7 | Döküm, tahsilat, borç |
-| OPR-05 | MUS-01, HAT-07 | Son ziyaret, "Yeni" etiketi, gelmeyenler gizlemesi |
-| OPR-06 | RAN-02, RAN-04 | Sonraki randevunun kaydedilmesi |
-| OPR-06 | HAT-06 | Rebook hatırlatması |
-| OPR-06 | HAY-05 | Arşivlenmemiş hayvan kalmayınca rebook tarihi temizlenir |
+| Buradan | Oraya                          | Konu                                                      |
+| ------- | ------------------------------ | --------------------------------------------------------- |
+| OPR-01  | MUS-04                         | Gelmedi sayısı                                            |
+| OPR-01  | RAN-01, RAN-02, RAN-06         | "Geldi mi?" takvim bloğunda, geçmiş randevu, iptal durumu |
+| OPR-01  | HAT-05                         | Onay linki `confirmed` üretir                             |
+| OPR-02  | HAY-02, HAY-03, RAN-04, RAN-07 | Uyarı şeritleri ve not                                    |
+| OPR-02  | INT-02, INT-03                 | Formu gönder, "Bakım onayı yok" işareti                   |
+| OPR-02  | HAY-04                         | Son ziyaret fotoğrafı ve referans fotoğrafı               |
+| OPR-02  | HAT-04, HAT-08                 | Hatırlatma durumu ve "Hazır" butonu                       |
+| OPR-04  | HAY-02                         | "Huzursuz" tekrarında etiket önerisi                      |
+| OPR-04  | HAT-02                         | Rapor mesajı şablonu                                      |
+| OPR-03  | KUR-08, KAS-02                 | Ek ücret kalemleri; tamamlanmış randevuda düzeltme        |
+| OPR-04  | HAY-04                         | Rapor fotoğraflarının fotoğraf geçmişine eklenmesi        |
+| OPR-05  | E7                             | Döküm, tahsilat, borç                                     |
+| OPR-05  | MUS-01, HAT-07                 | Son ziyaret, "Yeni" etiketi, gelmeyenler gizlemesi        |
+| OPR-06  | RAN-02, RAN-04                 | Sonraki randevunun kaydedilmesi                           |
+| OPR-06  | HAT-06                         | Rebook hatırlatması                                       |
+| OPR-06  | HAY-05                         | Arşivlenmemiş hayvan kalmayınca rebook tarihi temizlenir  |
 
 ## Açık sorular
 
