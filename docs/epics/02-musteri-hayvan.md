@@ -33,7 +33,7 @@ Tam liste için bkz. [Epic Haritası](index.md#alınan-kararlar).
 
 İlerleme bu tablodan takip edilir. Durum: `Yapılacak` → `Devam ediyor` → `Tamamlandı`.
 
-Backend tarafı BS2'de kapandı; story'leri `Tamamlandı`ya mobil sprint (MS2) taşır. MUS-06'nın backend işi yok. Randevuya bağlı alanlar (son ziyaret, "Yeni" rozeti, sayaçlar, randevu listesi, arşiv kilidi) E4 gelene kadar sözleşmedeki boş hâlleriyle dönüyor.
+Backend tarafı BS2'de kapandı; story'leri `Tamamlandı`ya mobil sprint (MS2) taşır. MUS-06'nın backend işi yok. Randevuya bağlı alanlar (son ziyaret, "Yeni" rozeti, sayaçlar, randevu listesi, arşiv kilidi) BS3-08'de doldu; geriye yalnızca `balance` ve `stats.totalPaid` kaldı (E7).
 
 | ID     | Başlık                              | Platform        | Durum     |
 | ------ | ----------------------------------- | --------------- | --------- |
@@ -223,8 +223,10 @@ _Salon sahibi olarak bir müşteriye birden fazla hayvan ekleyebilmek ve bilgile
 | Rehber             | Rehbere yalnızca MUS-03 ekranında erişilir; izin reddedilirse uygulama akışı bozulmaz. `expo-contacts` eklenir; Expo Go'da çalışır.                                                                                                             | MUS-03                 |
 | Hızlı iletişim     | `tel:` ve `whatsapp://send?phone=` şemaları; WhatsApp yoksa ve web'de `https://wa.me/`. Yeni kütüphane gerekmez.                                                                                                                                | MUS-06                 |
 | Fotoğraf | Yüklemeden önce istemcide sıkıştırılır (`expo-image-manipulator`). Yükleme kendi API'ye **multipart** ile yapılır (alan adı `photo`), backend dosyayı alıp depolar. Okuma adresleri ön imzalı ve 15 dakika geçerli. Ön imzalı PUT'a geçiş Faz 5'te. | HAY-04, HAY-01 |
-| Liste alanları     | `lastVisitAt` (nullable) ve `isNew` müşteri listesi yanıtında yer alır. E4 öncesi `lastVisitAt` boş, `isNew` true gelir. Alan adları E4 teknik notlarıyla aynıdır.                                                                              | MUS-01                 |
-| Arşiv kilidi       | Arşivleme isteği, ileri tarihli Bekliyor/Onaylandı randevu varsa `409 PET_HAS_UPCOMING_APPOINTMENTS` ile reddedilir ve yanıt randevu listesini taşır. İstemci de aynı kontrolü butonu pasifleştirmek için yapar.                                | HAY-05                 |
+| Liste alanları     | `lastVisitAt` (nullable) ve `isNew` müşteri listesi yanıtında yer alır. `lastVisitAt` son **tamamlanmış** randevunun başlangıcıdır; `isNew` saklanmaz, onun boşluğundan türer — iki alan tek gerçeği iki kez taşımaz. `lastServiceName` o ziyaretin **ilk** hizmetinin adıdır (liste tek ad gösterir). | MUS-01                 |
+| Sayaçlar           | `noShowCount` ve detaydaki `stats` saklanmaz, randevu geçmişinden okuma anında hesaplanır: saklanan bir sayaç iptal düzeltilince ya da randevu silinince gerçeği söylemeyi bırakırdı. `stats.cancelled` yalnızca `cancelledBy: customer` iptallerini sayar (MUS-04); salon iptalleri müşterinin risk göstergesi değildir. `stats.upcoming` sonuçlanmamış **ve** ileri tarihli randevulardır — randevu listesindeki "yaklaşanlar" bölümünden farklı, çünkü ileri tarihli iptal edilmiş bir randevu listede görünür ama sayaca girmez. | MUS-01, MUS-04 |
+| Uçların yeri       | `/customers` ve `/pets` uçlarının **tamamı** orkestrasyon modüllerindedir (`customer-overview`, `pet-overview`): ikisi de randevu verisi taşıyor ve `appointments` bu iki modüle bağımlı, yani ters yön döngü olurdu (§4.2). `customers` ve `pets` yalnızca tabloyu ve kurallarını bilir, controller'ları yoktur. | MUS-01, HAY-05 |
+| Arşiv kilidi       | Arşivleme isteği, ileri tarihli Bekliyor/Onaylandı randevu varsa `409 PET_HAS_UPCOMING_APPOINTMENTS` ile reddedilir. `Geldi` sayılmaz: hayvan salonda ve başlangıç geçmiş, yani ileri tarihli bir randevu değil. **Hata gövdesi randevu listesi taşımaz** — `errorBody.errors` `fieldError[]` biçimindedir (`envelope.ts`) ve istemci listeyi `GET /pets/:id`'nin `upcomingAppointments`'ından okuyup butonu zaten kilitliyor; `409` sunucu tarafı emniyettir. Zaten arşivli hayvan kontrole girmez. Kontrol `pet-overview`'da, `PetsService.archive`'ın önünde. | HAY-05                 |
 
 ## Diğer epic'lere bağlantılar
 

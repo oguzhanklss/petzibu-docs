@@ -2,7 +2,7 @@
 
 Mimari dokümanın gerekçesini taşıyan, bir kez verilmiş ve tartışması kapanmış kararlar. Her kayıt kısa tutulur: bağlam, karar, sonuçlar. Bir karar değişirse eski kayıt silinmez, `Durum` alanı "Yerini X aldı" olur ve yeni kayıt açılır.
 
-Ürün kararları (K1…K58) burada değil, epic dosyalarında yaşar. Buraya yalnızca kodun şeklini belirleyen teknik kararlar girer.
+Ürün kararları (K1…K62) burada değil, epic dosyalarında yaşar. Buraya yalnızca kodun şeklini belirleyen teknik kararlar girer.
 
 | # | Karar | Durum |
 | --- | --- | --- |
@@ -14,6 +14,8 @@ Mimari dokümanın gerekçesini taşıyan, bir kez verilmiş ve tartışması ka
 | [0006](0006-i18n-yok.md) | Backend'de i18n yoktur; mesajlar Türkçe ve inline'dır | Kabul edildi |
 | [0007](0007-uuid-v7.md) | Birincil anahtarlar UUID v7'dir | Kabul edildi |
 | [0008](0008-docs-kaynagi-kod-reposu.md) | Dokümanların kaynağı kod reposudur; site onu build sırasında kopyalar | Kabul edildi |
+| [0009](0009-uydu-tablo-ayri-modul-degil.md) | Uydu tablo ayrı modül değildir, aynı modülde ikinci servistir | Kabul edildi |
+| [0010](0010-dokum-ara-toplami-ve-statements-orkestrasyonu.md) | Döküm ara toplamı `billing`'de saklanır; döküm uçları `statements` orkestrasyonundadır | Kabul edildi |
 
 ## Biçim
 

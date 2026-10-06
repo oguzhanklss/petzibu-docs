@@ -42,7 +42,7 @@ src/
       <modül>.service.spec.ts
 ```
 
-- Modül sınıfı: platform (mail, files, document-generator), çekirdek (users, auth, businesses, business-hours, legal), domain (catalog, customers, pets, appointments, grooming-reports, billing, expenses), orkestrasyon (customer-overview, reminders, intake, reports, privacy, admin, public-web). Bağımlılık yönü platform ← çekirdek ← domain ← orkestrasyon.
+- Modül sınıfı: platform (mail, files, document-generator), çekirdek (users, auth, businesses, business-hours, legal), domain (catalog, customers, pets, appointments, grooming-reports, billing, expenses), orkestrasyon (customer-overview, pet-overview, closed-day-overview, statements, reminders, intake, reports, privacy, admin, public-web). Bağımlılık yönü platform ← çekirdek ← domain ← orkestrasyon.
 - Modül gerçekten büyüyünce klasörlere ayrılır, önceden değil. `dto/`, `repositories/`, `commands/`, `queries/` klasörleri açılmaz.
 - `utils/` çöplüğü yok. Bir yardımcı ikinci kullanıcısı çıkana kadar tek kullanıcısının yanında durur.
 

@@ -74,14 +74,17 @@ apps/api/src/
     │  # Domain
     ├── catalog/               # hizmetler, kademeler, ek ücret kalemleri
     ├── customers/             # müşteri kaydı, telefon tekilliği (K16), arama; controller'ı yok
-    ├── pets/                  # hayvan, aşı, uyarı etiketleri, fotoğraflar, özel fiyat
-    ├── appointments/          # randevu, satırlar, durum geçişleri, uyarılar, fiyat kuralı (K32), onay token'ı
-    ├── grooming-reports/      # bakım raporu, önce/sonra fotoğrafları, sonraki bakım önerisi (K40)
+    ├── pets/                  # hayvan, aşı, uyarı etiketleri, fotoğraflar, özel fiyat; controller'ı yok
+    ├── appointments/          # randevu, satırlar, durum geçişleri, uyarılar, fiyat kuralı (K32), onay token'ı,
+    │                          #   bakım raporu (uydu tablo, ADR-0009): önce/sonra fotoğrafı, rebook önerisi (K40, K49)
     ├── billing/               # döküm, indirim, tahsilat, borç dağıtımı (K41)
     ├── expenses/
     │
     │  # Orkestrasyon — birden çok modülü birleştirir, kimse bunlara bağımlı değildir
-    ├── customer-overview/     # /customers uçları: kayıt + hayvanlar (+ E4 randevu, E7 bakiye)
+    ├── customer-overview/     # /customers uçları: kayıt + hayvanlar + randevu (+ E7 bakiye)
+    ├── pet-overview/          # /pets uçları: kayıt + fotoğraflar + açık randevular, arşiv kilidi (HAY-05)
+    ├── closed-day-overview/   # /business/closed-days uçları: kapalı gün + çakışan randevular (KUR-09)
+    ├── statements/            # /statements uçları: döküm gövdesi = billing (para) + appointments (satır içeriği) + customers (ad); PDF (ADR-0010)
     ├── reminders/             # kuyruk sorgusu, şablonlar, gönderildi kaydı, rebook
     ├── intake/                # linkler, başvurular, onay → customers/pets
     ├── reports/               # kasa ve aylık özet (salt okuma)
@@ -96,6 +99,7 @@ apps/api/src/
 - İki şey **ayrı sebeplerle değişiyorsa** ayrı modül olur.
 - İki şey **aynı kuralı birlikte koruyorsa** bölünmez. Randevu ve satırları bir aradadır (süre satırların toplamı, K30); döküm ve tahsilat bir aradadır (K41).
 - Tek bir kural için modül açılmaz. Fiyat kuralı (K32) bugün yalnızca randevuda kullanıldığı için `appointments`'ta durur, özel fiyat tablosu `pets`'te. İkinci bir kullanıcı (ör. lodging) gelince ayrılır.
+- **Uydu tablo ebeveyninin modülünde kalır** (ADR-0009). Ölçüt, sahibi dışında bir tüketicisi olmasıdır; kendi enum'ları, kendi prisma dosyası ya da kendi uçları olması değil. Tek tüketicisi ebeveyn aggregate olan tablo kendi **servis dosyasını** alır, kendi modülünü almaz: `PetPhoto` → `pets`, `ClosedDay` → `business-hours`, `GroomingReport` → `appointments`. Prisma dosyası modül sınırını belirlemez.
 
 ### 4.2. Modül anayasası
 
@@ -109,27 +113,36 @@ apps/api/src/
 ```text
 platform ← çekirdek ← catalog, customers
                        catalog, customers ← pets
-                       catalog, pets, business-hours ← appointments ← grooming-reports
-                                                       appointments → billing
-orkestrasyon (customer-overview, reminders, intake, reports, privacy, admin, public-web) → herkes
+                       catalog, pets, business-hours ← appointments → billing
+orkestrasyon (customer-overview, pet-overview, closed-day-overview, statements,
+              reminders, intake, reports, privacy, admin, public-web) → herkes
 ```
 
 `privacy` bu kuralın örneğidir: müşteri silme borca (`billing`) ve ileri tarihli randevuya (`appointments`) bakar. Bu mantık `customers`'ta olsaydı `customers → billing → customers` döngüsü oluşurdu.
 
-`customer-overview` aynı kuralın okuma tarafıdır: müşteri listesi ve detayı hayvanları (`pets`), son ziyareti ve sayaçları (`appointments`, E4), bakiyeyi (`billing`, E7) taşır ve bunların hepsi `customers`'a bağımlıdır. Bu yüzden `/customers` uçlarının tamamı orkestrasyondadır; `customers` yalnızca kaydı ve kurallarını bilir, controller'ı yoktur. Hayvan adıyla arama ve tür süzgeci `pets`'ten müşteri id listesine çevrilip `customers`'ın sorgusuna verilir; sayfalama ve sıralama tek yerde kalır. Başka modülün alanına göre sıralama (ör. son ziyaret) istenirse bu yaklaşım yetmez; o gün ayrıca karar verilir (BS2-05).
+`pet-overview` ve `closed-day-overview` aynı kuralın E4'te ortaya çıkan iki örneğidir. Hayvan detayı ileri tarihli randevuları listeler ve arşivleme onlara bakıp reddeder (HAY-05); kapalı gün uçlarının dördü de aralığa düşen randevuları taşır (KUR-09). `appointments` hem `pets`'e hem `businesses`'a bağımlı olduğu için ters yön döngü olurdu. Çözüm `forwardRef` değil, controller'ı bir üst katmana taşımaktır: tablo ve kurallar `pets` / `businesses`'ta kaldı, uçlar orkestrasyona geçti ve `PetsModule` — `customers` gibi — controller'sız kaldı. Bir kaynağın uçlarından yalnızca randevuya bakanları taşımak, kalan uçları arayan birine "bunların ikisi neden başka yerde?" sorusunu bırakırdı; bu yüzden kaynağın controller'ı bütün olarak taşınıyor.
+
+Bu katman yalnızca **kaçınılmaz** ters yönler için açılır. Buradaki döngü iki tablonun birbirine gerçekten ihtiyaç duymasından geliyor. Kendi ürettiğimiz bir döngüyü çözmek için orkestrasyon modülü açılmaz: E5 hazırlığında bakım raporu ayrı bir domain modülü olarak planlandı, bu `appointments`'ı raporun altına düşürdü (detay son raporu, tamamlama rebook önerisini taşıyor) ve `/appointments` uçlarını taşıyacak dördüncü bir katman gerektirdi. Rapor `appointments`'ın uydu tablosu olunca döngü de katman da ortadan kalktı (ADR-0009); `AppointmentsModule` controller'ını korur.
+
+`customer-overview` aynı kuralın okuma tarafıdır: müşteri listesi ve detayı hayvanları (`pets`), son ziyareti ve sayaçları (`appointments`), bakiyeyi (`billing`, E7) taşır ve bunların hepsi `customers`'a bağımlıdır. Bu yüzden `/customers` uçlarının tamamı orkestrasyondadır; `customers` yalnızca kaydı ve kurallarını bilir, controller'ı yoktur. Hayvan adıyla arama ve tür süzgeci `pets`'ten müşteri id listesine çevrilip `customers`'ın sorgusuna verilir; sayfalama ve sıralama tek yerde kalır. Başka modülün alanına göre sıralama (ör. son ziyaret) istenirse bu yaklaşım yetmez; o gün ayrıca karar verilir (BS2-05).
+
+`statements` E7'de aynı sebeple doğdu (ADR-0010). Döküm gövdesi üç modülün verisidir: para `billing`'den, satır içeriği `appointments`'tan (randevu dökümünün satırları kopya değil, `appointmentLine` kayıtlarıdır), müşteri adı `customers`'tan. `billing` `appointments`'ı çağıramaz (yön `appointments → billing`), `appointments` döküm bilmez; birleştiren katman bu modüldür ve `/statements` uçlarının tamamı buradadır. `billing`'in controller'ı yoktur. Borcun kendisi için orkestrasyon gerekmez: `Statement.subtotal` saklandığı için `billing` kalanı, borcu ve borçlu listesini kendi tablolarından verir (§5.5).
 
 ### 4.3. Modül içi yapı
 
 ```text
 appointments/
 ├── appointments.module.ts
-├── appointments.controller.ts
+├── appointments.controller.ts         # /appointments uçlarının tamamı, rapor uçları dahil
 ├── appointments.service.ts
+├── appointment-status.service.ts      # izin verilen geçişler, tek yerde (OPR-01)
+├── grooming-reports.service.ts        # uydu tablo: rapor, paylaşım metni, K49 (ADR-0009)
 └── appointments.service.spec.ts
 ```
 
 - **Servis + doğrudan Prisma.** Repository katmanı ve CQRS kullanılmaz. Boilerplate'teki `announcements` (CQRS) ve `users` (repository) örnekleri yeni modüllere model değildir.
 - DTO sınıfı yazılmaz; şemalar `contracts`'tan gelir (§6).
+- **Modül başına birden çok servis olağandır**, modül başına birden çok controller değil. Ayrı sebeplerle değişen mantık ayrı **dosyaya** girer (`pets` iki, `businesses` üç servisli); kaynağın uçları tek controller'da kalır ki `/pets` ya da `/appointments` yolu iki yere dağılmasın.
 - Bir modül gerçekten büyüdüğünde klasörlere ayrılır, önceden değil.
 
 ### 4.4. Bildirim kanalları
@@ -184,6 +197,7 @@ Tenant **işletmedir** (K5). İşletmeye ait her tabloda `businessId` bulunur.
 - **Tek para birimi TRY.** Değerlerle birlikte `currency` alanı taşınmaz.
 - Para alanlarında birim eki yoktur (`price`, `total`, `amount`): bütün para alanları kuruştur. Tek istisnasız kural olduğu için ek gerekmez.
 - Yüzde indirim (K43) kuruşa çevrilirken **yarım yukarı yuvarlanır**; hesap tek bir fonksiyonda (`billing`) yapılır.
+- **`Statement.subtotal` saklanır** (ADR-0010): dökümün satırlarının toplamı. Hesaplanan değerlerin saklanmaması kuralının gerekçeli tek istisnasıdır; döküm durumu, kalan, borç ve alacak saklanmaz. Tek yazıcı satırları yazan transaction'dır (tamamlama ve KAS-02), bu yüzden ayrışamaz; `billing` borcu kendi tablolarından, `appointments`'a gitmeden hesaplar.
 - Fiyatlar KDV dahildir, vergi hesaplanmaz (K45).
 - `Int` üst sınırı (~21 milyon TL) tek bir işlem için yeterlidir. Toplamlar Postgres'te `bigint` olarak hesaplanır ve JS'e `number` olarak döner.
 
@@ -420,7 +434,7 @@ Liste epic'ler ilerledikçe `errors.ts`'te büyür; bu tablo örnektir.
 | Konu             | Durum                                                                                                                                                     |
 | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Hosting ve bölge | Belirlenmedi. KVKK açısından verinin yurt içinde tutulması gerekip gerekmediği hosting seçiminden önce netleşmeli. Mimari Docker ile her ortamda çalışır. |
-| S3 temizliği     | Ertelendi. Yetim nesne kaynakları ve katmanlı öneri migration belgesinde (Faz 5). Bucket ve hosting kararıyla birlikte ADR olur.                            |
+| S3 temizliği     | Ertelendi. Yetim nesne kaynakları ve katmanlı öneri migration belgesinde (Faz 5). Bucket ve hosting kararıyla birlikte ADR olur.                          |
 | Monetization     | Plan ve paket yapısı netleşince `subscriptions` modülü eklenir. Bugün ödeme manuel; durum `businesses`'ta.                                                |
 
 Kapatılan kararlar ADR olarak `decisions/` altında yaşar.
